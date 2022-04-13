@@ -21,19 +21,14 @@ public class Conta {
 	}
 	
 	public boolean transferir(double valor, Conta contaDestino) {
-		if (this.saldo < valor) {
-			return false;
-		} else {
-			double novoSaldo = this.saldo - valor;
-			this.saldo = novoSaldo;
+			sacar(valor);
+			contaDestino.depositar(valor);
 			return true;
-		}
+		
 	}
 	
 	public void depositar(double valor) {
 		this.saldo += valor;
-		
-		
 	}
 
 //	Métodos Especiais:
