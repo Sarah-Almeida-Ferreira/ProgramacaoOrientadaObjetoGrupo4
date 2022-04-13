@@ -5,7 +5,39 @@ public class Conta {
 	public int numConta;
 	private String nome;
 	public double saldo = 0;
+	
+//  Métodos Públicos:
+	
+	public boolean sacar(double valor) {
+		if (this.saldo < valor) {
+			return false;
+		
+		} else {
+			double novoSaldo = this.saldo - valor;
+			this.saldo = novoSaldo;
+			return true;
+		}
+		
+	}
+	
+	public boolean transferir(double valor, Conta contaDestino) {
+		if (this.saldo < valor) {
+			return false;
+		} else {
+			double novoSaldo = this.saldo - valor;
+			this.saldo = novoSaldo;
+			return true;
+		}
+	}
+	
+	public void depositar(double valor) {
+		this.saldo += valor;
+		
+		
+	}
 
+//	Métodos Especiais:
+	
 	public Conta(int numConta, String nome, double saldo) {
 		super();
 		this.numConta = numConta;
@@ -36,36 +68,8 @@ public class Conta {
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
-
-	public boolean sacar(double valor) {
-		if (this.saldo < valor) {
-			return false;
-			
-		} else {
-			double novoSaldo = this.saldo - valor;
-			this.saldo = novoSaldo;
-
-			return true;
-		}
-
-	}
-
-	public boolean transferir(double valor, Conta contaDestino) {
-		if (this.saldo < valor) {
-			return false;
-			
-		} else {
-			double novoSaldo = this.saldo - valor;
-			this.saldo = novoSaldo;
-			contaDestino.depositar(valor);
-			return true;
-		}
-	}
+	
 
 	
-	public void depositar(double valor) {
-		this.saldo += valor;
 		
-		
-	}
 }

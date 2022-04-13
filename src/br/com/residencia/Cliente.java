@@ -9,6 +9,8 @@ public class Cliente {
 	private String endereco;
 	private double renda;
 	
+	
+	
 	public Cliente(String nome, String cpf, String endereco, double renda) {
 		this.nome = nome;
 		this.cpf = cpf;
@@ -56,8 +58,8 @@ public class Cliente {
 		System.out.println("Endereco: " + this.endereco);
 		System.out.printf(Locale.ITALIAN, "Renda: R$ %.2f%n", this.renda);
 	}
-	public void get() {
-		System.out.println("Não foi possível realizar a operação.");
-}
 	
+	public void get() {
+		System.out.println("Nao foi possivel realizar a operacao.");
+    }
 }
