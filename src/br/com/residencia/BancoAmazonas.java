@@ -14,13 +14,27 @@ public class BancoAmazonas {
 		c[5] = new Cliente ("Pereira", "102938123", "Rua das Pontas", 1.99);
 		c[6] = new Cliente ("Aline", "102378128", "Rua Joao", 900);
 		
-		c[0].imprimirCliente();
-		c[1].imprimirCliente();
-		c[2].imprimirCliente();
-		c[3].imprimirCliente();
-		c[4].imprimirCliente();
-		c[5].imprimirCliente();
-		c[6].imprimirCliente();				
+		//c[0].imprimirCliente();
+		//c[1].imprimirCliente();
+		//c[2].imprimirCliente();
+		//c[3].imprimirCliente();
+		//c[4].imprimirCliente();
+		//c[5].imprimirCliente();
+		//c[6].imprimirCliente();				
+		
+		
+		Conta conta = new Conta(001, "Joao", 250);
+		Conta conta2 = new Conta(002, "Maria", 300);
+		System.out.println("Saldo anterior: "+conta2.getSaldo());
+		//conta2.sacar(150.00);
+		//conta.transferir(100, conta2);
+		System.out.println("Saldo atual: "+conta2.getSaldo());
+		
+		
+		
+		
+		
+		
 	}
 
 }

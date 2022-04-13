@@ -56,6 +56,8 @@ public class Cliente {
 		System.out.println("Endereco: " + this.endereco);
 		System.out.printf(Locale.ITALIAN, "Renda: R$ %.2f%n", this.renda);
 	}
-	
+	public void get() {
+		System.out.println("Não foi possível realizar a operação.");
+}
 	
 }
