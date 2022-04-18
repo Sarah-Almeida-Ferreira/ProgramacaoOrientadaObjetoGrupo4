@@ -1,7 +1,5 @@
 package br.com.residencia;
 
-import java.util.Locale;
-
 public class Cliente extends Pessoa {
 	
 	private double renda;

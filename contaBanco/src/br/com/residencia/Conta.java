@@ -1,7 +1,5 @@
 package br.com.residencia;
 
-import java.util.Set;
-
 public class Conta {
 	
 	private String tipo;
