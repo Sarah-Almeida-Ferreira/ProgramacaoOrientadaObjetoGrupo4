@@ -8,43 +8,26 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class LeituraEscrita {
-	
+
 	static final String PATH_BASICO = "./temp/";
 	static final String EXTENSAO = ".txt";
-		
-	public static void leitor(String path)throws IOException{
+
+	public static void leitor(String path) throws IOException {
 		BufferedReader buffRead = new BufferedReader(new FileReader(PATH_BASICO + path + EXTENSAO));
 		String linha = "";
-		while(true){
+		while (true) {
 			linha = buffRead.readLine();
-			if(linha !=null){
-				//String[] objeto = linha.split(";");
+			if (linha != null) {
+//				String[] objeto = linha.split(";");
 				System.out.println(linha);
 //				for(int i = 0; i < objeto.length; i++) {
 //					System.out.println(objeto[i]);
 //				}
-//				Conta conta = new Conta(objeto[0], objeto[1], objeto[2], objeto[3], objeto[4], objeto[5]);
-			}
-			else{
+				// Conta conta = new Conta(objeto[0]);
+			} else {
 				break;
 			}
 		}
 		buffRead.close();
 	}
-	
-	public static void escritor()throws IOException{
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Escreva o nome do arquivo: ");
-		String nome = sc.next();
-		
-		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nome + EXTENSAO));
-		String linha = "";
-		
-		System.out.println("Escreva algo :");
-		linha = sc.next();
-		buffWrite.append(linha + "\n");
-		buffWrite.close();
-		sc.close();
-	}
 }
-

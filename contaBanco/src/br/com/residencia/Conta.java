@@ -1,16 +1,16 @@
 package br.com.residencia;
 
 public class Conta {
-	
+
 	private String tipo;
 	private int numConta;
 	private int agencia;
 	private String nomeCliente;
 	private double saldo = 0;
 	private boolean status;
-	
+
 //  Métodos Públicos:
-	
+
 //	public void abrirConta(String tipoConta) {
 //			this.setTipo(tipoConta);
 //			this.setStatus(true);
@@ -32,36 +32,39 @@ public class Conta {
 //				System.out.println("Conta fechada com sucesso!");
 //			}
 //		}
-		
+
 	public boolean sacar(double valor) {
-		
+
 		if (this.saldo < valor) {
 			return false;
-		
+
 		} else {
 			double novoSaldo = this.saldo - valor;
 			this.saldo = novoSaldo;
 			return true;
 		}
-		
+
 	}
-	
+
 	public boolean transferir(double valor, Conta contaDestino) {
-			sacar(valor);
-			contaDestino.depositar(valor);
-			return true;
-		
+		sacar(valor);
+		contaDestino.depositar(valor);
+		return true;
+
 	}
-	
+
 	public void depositar(double valor) {
 		this.saldo += valor;
 	}
 
-	
 //  Métodos Especiais:
-	
+
+	public Conta(String tipo) {
+
+	}
+
 	public Conta(String tipo, int numConta, int agencia, String nomeCliente, double saldo, boolean status) {
-		
+
 		this.tipo = tipo;
 		this.numConta = numConta;
 		this.agencia = agencia;
@@ -117,5 +120,11 @@ public class Conta {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-		
+
+	@Override
+	public String toString() {
+		return "Conta [tipo=" + tipo + ", numConta=" + numConta + ", agencia=" + agencia + ", nomeCliente="
+				+ nomeCliente + ", saldo=" + saldo + ", status=" + status + "]";
+	}
+
 }
