@@ -37,8 +37,8 @@ public class BancoAmazonas {
 //		System.out.println("Saldo atual conta 2: "+conta2.getSaldo());
 //		//conta2.depositar(200, conta);
 		
-		//LeituraEscrita.leitor("base");
-		LeituraEscrita.escritor();
+		LeituraEscrita.leitor("base");
+		//LeituraEscrita.escritor();
 	}
 
 }

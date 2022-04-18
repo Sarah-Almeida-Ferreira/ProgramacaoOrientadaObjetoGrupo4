@@ -18,8 +18,8 @@ public class LeituraEscrita {
 		while(true){
 			linha = buffRead.readLine();
 			if(linha !=null){
-				String[] objeto = linha.split(";");
-				System.out.println();
+				//String[] objeto = linha.split(";");
+				System.out.println(linha);
 //				for(int i = 0; i < objeto.length; i++) {
 //					System.out.println(objeto[i]);
 //				}

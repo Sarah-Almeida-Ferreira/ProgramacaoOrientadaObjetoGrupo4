@@ -17,10 +17,10 @@ Cliente;StefanyRenataElisaCarvalho;252.938.160-71;MorroDaPedra;900;10000
 Cliente;ArthurGabrielMoura;314.129.714-20;RuaDasJoanas;900;10000
 Cliente;SebastianaSarahCarolinaBarros;211.774.383-80;RuaDaBarreira;1.99;200
 Cliente;ThalesMatheusAlexandreMelo;189.898.676-22;RuaDeJaneiro;900;10000
-Gerente;WandersonChevrand;585.332.431-46;RuaDasPedras;
-Gerente;AndreLucas;709.837.725-25;MonteOlimpo;
-Gerente;Patrick;019.417.621-58;RuaDasAguas;
-Gerente;Pereira;376.542.018-26;RuaDasPontas;
-Gerente;TheoBittencourt;580.181.963-03;RuaDasFlechas;
-Diretor;Aline;887.928.755-99;RuaJoao;
+Gerente;WandersonChevrand;585.332.431-46;RuaDasPedras
+Gerente;AndreLucas;709.837.725-25;MonteOlimpo
+Gerente;Patrick;019.417.621-58;RuaDasAguas
+Gerente;Pereira;376.542.018-26;RuaDasPontas
+Gerente;TheoBittencourt;580.181.963-03;RuaDasFlechas
+Diretor;Aline;887.928.755-99;RuaJoao
 Presidente;SarahAlmeida;554.525.494-39;RuaDosVoodoos
