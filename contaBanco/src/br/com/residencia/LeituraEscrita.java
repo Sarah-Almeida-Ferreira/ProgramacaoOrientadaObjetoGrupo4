@@ -40,11 +40,11 @@ public class LeituraEscrita {
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nome + EXTENSAO));
 		String linha = "";
 		
-		System.out.println("Escreva algo");
-		linha = sc.nextLine();
-		sc.close();
+		System.out.println("Escreva algo :");
+		linha = sc.next();
 		buffWrite.append(linha + "\n");
 		buffWrite.close();
+		sc.close();
 	}
 }
 
