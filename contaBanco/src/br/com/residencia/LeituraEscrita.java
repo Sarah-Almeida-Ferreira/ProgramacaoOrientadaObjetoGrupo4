@@ -19,7 +19,7 @@ public class LeituraEscrita {
 			linha = buffRead.readLine();
 			if(linha !=null){
 				String[] objeto = linha.split(";");
-				System.out.println(linha);
+				System.out.println();
 //				for(int i = 0; i < objeto.length; i++) {
 //					System.out.println(objeto[i]);
 //				}
@@ -32,12 +32,12 @@ public class LeituraEscrita {
 		buffRead.close();
 	}
 	
-	public static void escritor(String path)throws IOException{
+	public static void escritor()throws IOException{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Escreva o nome do arquivo: ");
 		String nome = sc.next();
 		
-		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nome + path));
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nome + EXTENSAO));
 		String linha = "";
 		
 		System.out.println("Escreva algo");
