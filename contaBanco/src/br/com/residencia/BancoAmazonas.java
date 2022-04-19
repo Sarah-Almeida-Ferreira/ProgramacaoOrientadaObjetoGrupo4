@@ -2,6 +2,7 @@ package br.com.residencia;
 
 import java.io.IOException;
 
+
 public class BancoAmazonas {
 
 	public static void main(String[] args) throws IOException {
@@ -36,8 +37,8 @@ public class BancoAmazonas {
 //		System.out.println("Saldo atual conta 2: "+conta2.getSaldo());
 //		//conta2.depositar(200, conta);
 
-		LeituraEscrita.leitor("base");
-		// Escritor.escritor("teste");
+		//LeituraEscrita.leitor("base");
+		Escritor.escritor("");
 	}
 
 }

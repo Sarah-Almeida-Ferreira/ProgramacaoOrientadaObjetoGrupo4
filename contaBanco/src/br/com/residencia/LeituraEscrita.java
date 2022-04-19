@@ -9,24 +9,27 @@ import java.util.Scanner;
 
 public class LeituraEscrita {
 
-	static final String PATH_BASICO = "./temp/";
-	static final String EXTENSAO = ".txt";
+	public static final String PATH_BASICO = "./temp/";
+	public static final String EXTENSAO = ".txt";
 
 	public static void leitor(String path) throws IOException {
 		BufferedReader buffRead = new BufferedReader(new FileReader(PATH_BASICO + path + EXTENSAO));
 		String linha = "";
+
 		while (true) {
 			linha = buffRead.readLine();
-			if (linha != null) {
-//				String[] objeto = linha.split(";");
-				System.out.println(linha);
-//				for(int i = 0; i < objeto.length; i++) {
-//					System.out.println(objeto[i]);
-//				}
-				// Conta conta = new Conta(objeto[0]);
-			} else {
-				break;
+			while (linha != null) {
+				String[] param = linha.split(";");
+				linha = buffRead.readLine();
+
+				for (int i = 0; i < param.length; i++) {
+					System.out.print(param[i] + " ");
+
+				}
+				System.out.print("\n");
 			}
+			break;
+
 		}
 		buffRead.close();
 	}
