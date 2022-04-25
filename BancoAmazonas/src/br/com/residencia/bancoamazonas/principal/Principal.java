@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.residencia.bancoamazonas.endereco.Endereco;
+import br.com.residencia.bancoamazonas.pessoas.Funcionario;
+import br.com.residencia.bancoamazonas.pessoas.Gerente;
 
 public class Principal {
 
@@ -22,12 +24,25 @@ public class Principal {
 			System.out.println(enderecos.get(i));
 		}
 		
-		for (int i = 0; i < agencias.size(); i++) {
-			System.out.println(agencias.get(i));
-			if (idDiretor.get(i) == idAgencia.get(i)) {
-				
-			}
-		}
+		
+		//Gerente gerente1 = new Gerente();
+		
+		//System.out.println(gerente1.getBonificacao());
+		
+		Funcionario funcionario1 = new Gerente();
+		System.out.println(funcionario1.getBonificacao());
+		Funcionario funcionario2 = new Funcionario();
+		System.out.println(funcionario2.getBonificacao());
+		
+	
+		
+		
+//		for (int i = 0; i < agencias.size(); i++) {
+//			System.out.println(agencias.get(i));
+//			if (idDiretor.get(i) == idAgencia.get(i)) {
+//				
+//			}
+//		}
 
 		
 		

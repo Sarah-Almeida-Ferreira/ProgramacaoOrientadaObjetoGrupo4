@@ -2,9 +2,11 @@ package br.com.residencia.bancoamazonas.agencias;
 
 public class Agencia {
 
-	Integer idAgencia;
-	Integer idDiretor;
-	String endereco;
-	Integer numeroAgencia;	
+	private Integer idAgencia;
+	private Integer idDiretor;
+	private String endereco;
+	private Integer numeroAgencia;	
+	
+	
 	
 }
