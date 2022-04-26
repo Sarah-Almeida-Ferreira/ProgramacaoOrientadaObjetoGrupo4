@@ -12,8 +12,9 @@ public abstract class Conta {
 	private Double saldo;
 	private LocalDate dataAbertura;
 	private Boolean status;
+	private int totalDeContas;
 
-// Métodos Públicos
+// Metodos Publicos
 	public boolean fecharConta() {
 		return this.status = false;
 
@@ -46,7 +47,13 @@ public abstract class Conta {
 	}
 	
 	
-//  Métodos Especiais:
+//  Metodos Especiais:
+	
+	public Conta () {
+		this.totalDeContas = this.totalDeContas + 1;
+	}
+	
+	
 	
 	public Double getSaldo() {
 		return this.saldo;
