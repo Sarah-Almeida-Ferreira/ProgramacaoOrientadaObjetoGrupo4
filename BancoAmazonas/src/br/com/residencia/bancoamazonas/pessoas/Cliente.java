@@ -10,14 +10,14 @@ public class Cliente extends Pessoa {
 	private String numeroCartao;
 	private List<Conta> contas = new ArrayList<>();
 
-// Métodos Públicos:
+// Metodos Pï¿½blicos:
 	
 	
 	
 	
 	
 	
-//  Métodos Especiais:
+//  Metodos Especiais:
 	
 	
 

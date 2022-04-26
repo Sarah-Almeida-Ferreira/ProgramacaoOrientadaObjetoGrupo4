@@ -5,20 +5,30 @@ import java.time.LocalDate;
 import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
 
 public abstract class Pessoa {
-	
+
 	private String nome;
 	private String cpf;
+	private String senha;
 	private String telefone;
 	private String endereco;
 	private LocalDate dataNascimento;
 	private TipoPessoa tipoPessoa;
 	
-// Métodos Públicos:
+// Metodos Publicos:
 
 	public void fazerAniversario() {
 		
 	}
 	
-//	Métodos Especiais:
+<<<<<<< HEAD
+	
+
+//	Metodos Especiais:
+	
+	
+
+	
+	
+
 	
 }
