@@ -19,24 +19,42 @@ public abstract class Conta {
 
 	}
 
-	public void sacar() {
+	public boolean sacar(double valorSacado) {
+		if (this.saldo < valorSacado) {
+			return false;
+		} else {
+			this.saldo -= valorSacado;
+			return true;
+		}
 
 	}
 
-	public void depositar() {
-
+	public void depositar(double valorDepositado) {
+		this.saldo += valorDepositado;
 	}
-	
-	public void transferir() {
-		
+
+	public boolean transferir(double valorTransferido, Conta contaDestino) {
+		if (sacar(valorTransferido)) {
+			contaDestino.depositar(valorTransferido);
+			return true;
+		}
+		return false;
 	}
 
 	public boolean verificarSaldo() {
 		return this.saldo > 0 ? true : false;
-		
+	}
+	
+	
+//  Métodos Especiais:
+	
+	public Double getSaldo() {
+		return this.saldo;
 	}
 
+public Conta(Double saldo) {
+	super();
+	this.saldo = saldo;
+}
 	
-//  Métodos Especiais:	
-
 }
