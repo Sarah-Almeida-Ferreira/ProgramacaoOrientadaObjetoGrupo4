@@ -2,10 +2,9 @@ package br.com.residencia.bancoamazonas.menu;
 
 public class MenuInterativo {
 	
-		
-	
-	
-	
+		public void menu() {
+			
+		}
 	
 //	saque
 //	deposito

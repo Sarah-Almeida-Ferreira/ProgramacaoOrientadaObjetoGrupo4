@@ -9,10 +9,4 @@ public class Presidente extends Funcionario {
 	Integer idPresidente;
 	List<Diretor> diretores = new ArrayList<>();
 	
-	public void reuniao() {
-		System.out.println("Em que pe estamos?");
 	}
-	
-	
-	
-}

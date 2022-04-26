@@ -13,7 +13,7 @@ public abstract class Conta {
 	private LocalDate dataAbertura;
 	private Boolean status;
 
-// MÃ©todos PÃºblicos
+// Métodos Públicos
 	public boolean fecharConta() {
 		return this.status = false;
 
@@ -37,6 +37,6 @@ public abstract class Conta {
 	}
 
 	
-//  MÃ©todos Especiais:	
+//  Métodos Especiais:	
 
 }
