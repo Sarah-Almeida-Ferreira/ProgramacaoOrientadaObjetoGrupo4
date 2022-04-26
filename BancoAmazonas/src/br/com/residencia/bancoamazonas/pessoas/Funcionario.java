@@ -1,18 +1,14 @@
 package br.com.residencia.bancoamazonas.pessoas;
 
-public class Funcionario extends Pessoa {
+public abstract class Funcionario extends Pessoa {
 
-	protected Integer idFuncionario;
-	private String senha;
-	private String login;
-	public Double salario = 1789.67;
+	private Double salario;
 	protected String cargo;
 	
-// Métodos públicos
+	//ser uma classe abstrata com atributos de cpf e senha para que possa logar no sistema
+	// 
 	
-	public Double getBonificacao() {
-		return this.salario * 0.10;
-	}
+// Métodos públicos
 	
 	
 	

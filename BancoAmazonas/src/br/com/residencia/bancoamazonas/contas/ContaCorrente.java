@@ -1,9 +1,13 @@
 package br.com.residencia.bancoamazonas.contas;
 
+import br.com.residencia.bancoamazonas.enuns.TipoConta;
+
 public final class ContaCorrente extends Conta {
 
-	Integer idContaCorrente;
-	Double chequeEspecial;
-	Double taxa;
+	
+	private TipoConta tipoConta = TipoConta.CORRENTE;
+	
+	
+	//colocar o tipo de conta
 
 }

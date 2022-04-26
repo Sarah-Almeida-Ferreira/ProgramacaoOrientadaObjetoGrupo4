@@ -1,10 +1,7 @@
 package br.com.residencia.bancoamazonas.pessoas;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-import javax.management.RuntimeErrorException;
-
-import br.com.residencia.bancoamazonas.endereco.Endereco;
 import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
 
 public abstract class Pessoa {
@@ -13,45 +10,55 @@ public abstract class Pessoa {
 	private static final int TAMANHO_CNPJ = 14;
 	
 	private String nome;
-	private String genero;
-	private String estadoCivil;
-	private String cadastroNacional;
+	private String cpf;
 	private String telefone;
-	private Endereco endereco;
-	private String email;
-	private Date dataNascimento;
+	private String endereco;
+	private LocalDate dataNascimento;
 	private TipoPessoa tipoPessoa;
-
+	
 // Métodos Públicos:
 
 	public void fazerAniversario() {
-
+		
 	}
 	
 	public void setCadastroNacional(String cadastroNacional) {
 		if (cadastroNacional == null || cadastroNacional.isEmpty()) {
-			throw new RuntimeException("CPF não pode ser nulo ou vazio");
+			throw new RuntimeException("CPF nao pode ser nulo ou vazio");
 		}
 		
 		if (cadastroNacional.length() == TAMANHO_CPF) {
-			tipoPessoa = TipoPessoa.FISICA;
+			tipoPessoa = TipoPessoa.CLIENTE;
 		}
 		else if (cadastroNacional.length() == TAMANHO_CNPJ) {
-			tipoPessoa = TipoPessoa.JURIDICA;
+			tipoPessoa = TipoPessoa.FUNCIONARIO;
 		} else {
 			throw new RuntimeException("Documento invalido para cadastro nacional de pessoa fisica ou juridica");
 		}
 		
-		this.cadastroNacional = cadastroNacional;
+		this.cpf = cadastroNacional;
 	}
 	
 	private void setCadastroNacional(String cadastroNacional, TipoPessoa tipoPessoa) {
-		this.cadastroNacional = cadastroNacional;
+		this.cpf = cadastroNacional;
 		this.tipoPessoa = tipoPessoa;
 	}
 
 //	Métodos Especiais:
+	
+	public void Pessoa() {
+		
+	}
 
+	public TipoPessoa getTipoPessoa() {
+		return tipoPessoa;
+	}
+
+	public void setTipoPessoa(TipoPessoa tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
+	}
+
+	
 	
 	
 }

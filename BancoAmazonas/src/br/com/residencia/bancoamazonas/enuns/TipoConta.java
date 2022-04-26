@@ -3,7 +3,7 @@ package br.com.residencia.bancoamazonas.enuns;
 public enum TipoConta {
 	
 	CORRENTE,
-	POUPANCA
+	POUPANCA;
 	// FIM ENUM
 	
 	

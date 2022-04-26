@@ -1,28 +1,42 @@
 package br.com.residencia.bancoamazonas.contas;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import br.com.residencia.bancoamazonas.enuns.TipoConta;
 
 public abstract class Conta {
 
-	protected Integer idConta;
-	protected TipoConta tipoConta;
-	private String senha;
+	private String cpfTitular;
+	private String numeroConta;
 	private Integer numeroAgencia;
-	String numeroConta;
-	Double saldo;
-	Date dataAbertura;
-	Boolean status;
+	private Double saldo;
+	private LocalDate dataAbertura;
+	private Boolean status;
 
-	
 // Métodos Públicos
-	public void abrirConta() {
+	public boolean fecharConta() {
+		return this.status = false;
 
 	}
 
-//  Métodos Especiais:	
+	public void sacar() {
+
+	}
+
+	public void depositar() {
+
+	}
+	
+	public void transferir() {
+		
+	}
+
+	public boolean verificarSaldo() {
+		return this.saldo > 0 ? true : false;
+		
+	}
 
 	
+//  Métodos Especiais:	
 
 }
