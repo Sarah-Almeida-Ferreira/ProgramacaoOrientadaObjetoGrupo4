@@ -20,8 +20,6 @@ public abstract class Pessoa {
 		
 	}
 	
-<<<<<<< HEAD
-	
 
 //	Metodos Especiais:
 	

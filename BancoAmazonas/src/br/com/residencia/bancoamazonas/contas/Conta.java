@@ -49,10 +49,9 @@ public abstract class Conta {
 	
 //  Metodos Especiais:
 	
-	public Conta () {
+	public Conta() {
 		this.totalDeContas = this.totalDeContas + 1;
 	}
-	
 	
 	
 	public Double getSaldo() {
