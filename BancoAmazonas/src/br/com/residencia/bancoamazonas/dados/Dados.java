@@ -18,7 +18,6 @@ public class Dados {
 	Cliente cliente1 = new Cliente();
 	Cliente cliente2 = new Cliente();
 	
-	clientes.add(cliente1);
-	clientes.add(cliente2);
+	
 
 }

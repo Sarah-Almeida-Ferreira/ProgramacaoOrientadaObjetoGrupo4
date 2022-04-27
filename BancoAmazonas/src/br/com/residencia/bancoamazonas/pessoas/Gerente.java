@@ -8,7 +8,7 @@ import br.com.residencia.bancoamazonas.contas.Conta;
 public class Gerente extends Funcionario {
 
 	private Integer numeroAgencia;
-	private static List<Cliente> clientes = new ArrayList<>();
+	
 
 //	Metodos Publicos:
 

@@ -6,11 +6,13 @@ import br.com.residencia.bancoamazonas.enuns.TipoConta;
 
 public abstract class Conta {
 
+	private TipoConta tipoConta;
 	private String numeroConta;
-	private Integer numeroAgencia;
+	private String numeroAgencia;
+	private String cpfTitular;
 	private Double saldo;
-	private LocalDate dataAbertura;
 	private Boolean status;
+	private LocalDate dataAbertura;
 	private static Integer totalDeContas = 0;
 
 // Metodos Publicos

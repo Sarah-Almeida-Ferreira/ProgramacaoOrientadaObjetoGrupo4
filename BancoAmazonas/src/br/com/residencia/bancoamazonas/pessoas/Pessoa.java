@@ -6,10 +6,10 @@ import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
 
 public abstract class Pessoa {
 
+	private TipoPessoa tipoPessoa;
 	private String nome;
 	private String cpf;
 	private String senha;
-	private TipoPessoa tipoPessoa;
 
 // Metodos Publicos:
 
