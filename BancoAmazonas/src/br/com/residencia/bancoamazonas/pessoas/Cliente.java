@@ -10,15 +10,12 @@ public class Cliente extends Pessoa {
 	private String numeroCartao;
 	private List<Conta> contas = new ArrayList<>();
 
+	public Cliente(String cpf, String senha) {
+		super(cpf, senha);
+	}
+
 // Metodos P�blicos:
-	
-	
-	
-	
-	
-	
+
 //  Metodos Especiais:
-	
-	
 
 }

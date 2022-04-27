@@ -13,22 +13,26 @@ public abstract class Pessoa {
 	private String endereco;
 	private LocalDate dataNascimento;
 	private TipoPessoa tipoPessoa;
-	
+
 // Metodos Publicos:
 
 	public void fazerAniversario() {
-		
+
 	}
-	
-<<<<<<< HEAD
-	
 
 //	Metodos Especiais:
-	
-	
+	public Pessoa(String cpf, String senha) {
+		super();
+		this.cpf = cpf;
+		this.senha = senha;
+	}
 
-	
-	
+	public String getCpf() {
+		return cpf;
+	}
 
-	
+	public String getSenha() {
+		return senha;
+	}
+
 }
