@@ -4,15 +4,15 @@ import br.com.residencia.bancoamazonas.enuns.TipoConta;
 
 public final class ContaCorrente extends Conta {
 
+	private TipoConta tipoConta = TipoConta.CORRENTE;
 	
-	public ContaCorrente(Double saldo) {
-		super(saldo);
+	public ContaCorrente() {
+		super();
 		
 	}
 
-	private TipoConta tipoConta = TipoConta.CORRENTE;
+    	
 	
-	
-	//colocar o tipo de conta
+
 
 }

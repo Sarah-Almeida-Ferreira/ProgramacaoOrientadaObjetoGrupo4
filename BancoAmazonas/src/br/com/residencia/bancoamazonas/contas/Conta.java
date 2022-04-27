@@ -12,7 +12,7 @@ public abstract class Conta {
 	private Double saldo;
 	private LocalDate dataAbertura;
 	private Boolean status;
-	private int totalDeContas;
+	private static Integer totalDeContas = 0;
 
 // Metodos Publicos
 	public boolean fecharConta() {
@@ -45,23 +45,29 @@ public abstract class Conta {
 	public boolean verificarSaldo() {
 		return this.saldo > 0 ? true : false;
 	}
-	
-	
+
 //  Metodos Especiais:
-	
-	public Conta () {
+
+	public Conta() {
 		this.totalDeContas = this.totalDeContas + 1;
 	}
-	
-	
-	
+
 	public Double getSaldo() {
 		return this.saldo;
 	}
 
-public Conta(Double saldo) {
-	super();
-	this.saldo = saldo;
-}
+	public Conta(Double saldo) {
+		super();
+		this.saldo = saldo;
+	}
+
+	public static Integer getTotalDeContas() {
+		return totalDeContas;
+	}
+
+	
+
+	
+	
 	
 }
