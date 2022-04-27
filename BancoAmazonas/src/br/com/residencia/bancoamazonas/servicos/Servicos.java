@@ -7,16 +7,9 @@ import java.util.Scanner;
 import br.com.residencia.bancoamazonas.pessoas.Cliente;
 
 public class Servicos {
-	
-	
-
-	
-	
-	
 
 	public static boolean login() {
-		
-		
+
 		Scanner scan = new Scanner(System.in);
 
 		String cpf, senha;
@@ -26,10 +19,10 @@ public class Servicos {
 		System.out.println("Perfeito, agora digite sua senha: ");
 		senha = scan.next();
 
-		if (senha.equals(cliente1.getSenha()) && cpf.equals(cliente1.getCpf())) {
+		if (senha.equals(Cliente.getSenha()) && cpf.equals(cliente1.getCpf())) {
 			System.out.println("Bem vindo!");
 		} else {
-		System.out.println("Senha invalida");
+			System.out.println("Senha invalida");
 		}
 
 		return true;

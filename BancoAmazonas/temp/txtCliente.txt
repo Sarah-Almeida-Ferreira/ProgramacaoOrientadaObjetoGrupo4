@@ -1,2 +1,0 @@
-Cliente;Fabiana;910.127.492-90
-Cliente;Tomas;569.581.036-10

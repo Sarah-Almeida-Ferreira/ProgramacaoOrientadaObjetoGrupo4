@@ -1,19 +1,0 @@
-
-]
-java:S1068",Remove this unused "endereco" private field.(Å¶§ÿüÿÿÿÿHÓRMAJORZ
-CODE_SMELL
-_
-java:S1068".Remove this unused "tipoPessoa" private field.(ª§Ú´üÿÿÿÿHÛRMAJORZ
-CODE_SMELL
-]
-java:S1068",Remove this unused "telefone" private field.(¦ôÒ¯úÿÿÿÿHÙRMAJORZ
-CODE_SMELL
-T
-java:S1068	"(Remove this unused "nome" private field.(«Ÿ¡ùHÑRMAJORZ
-CODE_SMELL
-h
-java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èýÿÿÿÿ8ÇÆ…Þ†0H×RMINORZ
-CODE_SMELL
-j
-java:S5993"9Change the visibility of this constructor to "protected".(ðí”ÂÿÿÿÿÿHÕRMAJORZ
-CODE_SMELL

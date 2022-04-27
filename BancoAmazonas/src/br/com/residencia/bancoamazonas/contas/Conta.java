@@ -6,7 +6,6 @@ import br.com.residencia.bancoamazonas.enuns.TipoConta;
 
 public abstract class Conta {
 
-	private String cpfTitular;
 	private String numeroConta;
 	private Integer numeroAgencia;
 	private Double saldo;
@@ -65,9 +64,4 @@ public abstract class Conta {
 		return totalDeContas;
 	}
 
-	
-
-	
-	
-	
 }

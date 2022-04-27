@@ -10,14 +10,10 @@ public class SistemaInterno {
 	public static void main(String[] args) throws IOException, ParseException {
 		
 		
-		Leitor.leitor("");
 		
-
-//		Cliente cliente1 = new Cliente("2425", "andre");
-//		Cliente cliente2 = new Cliente("8586", "wanderson");
-//		
-//		clientes.add(cliente1);
-//		clientes.add(cliente2);
+		
+		
+		
 //		
 //		clientes.forEach(cliente ->System.out.println(cliente));
 //		

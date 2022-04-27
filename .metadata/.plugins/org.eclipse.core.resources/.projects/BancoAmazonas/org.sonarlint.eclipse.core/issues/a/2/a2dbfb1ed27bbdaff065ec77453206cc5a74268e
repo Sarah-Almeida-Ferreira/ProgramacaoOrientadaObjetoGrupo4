@@ -1,9 +1,0 @@
-
-n	java:S125"<This block of commented-out lines of code should be removed.(Ã§å·8¯Å¡ß†0HªRMAJORZ
-CODE_SMELL
-n	java:S125"<This block of commented-out lines of code should be removed.(÷ˆóÜ8Ñ…ıß†0H¥RMAJORZ
-CODE_SMELL
-©
-java:S1130
-"qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.( äöÛùÿÿÿÿ8ÓĞà†0HRMINORZ
-CODE_SMELL
