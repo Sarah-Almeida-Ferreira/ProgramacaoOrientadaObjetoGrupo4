@@ -14,8 +14,13 @@ public class Cliente extends Pessoa {
 		super(cpf, senha);
 	}
 
-// Metodos P�blicos:
+// Metodos Publicos:
+	
+	
+	
 
 //  Metodos Especiais:
+	
+	
 
 }

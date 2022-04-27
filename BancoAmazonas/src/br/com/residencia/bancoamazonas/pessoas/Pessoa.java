@@ -11,7 +11,6 @@ public abstract class Pessoa {
 	private String senha;
 	private String telefone;
 	private String endereco;
-	private LocalDate dataNascimento;
 	private TipoPessoa tipoPessoa;
 
 // Metodos Publicos:
@@ -34,5 +33,12 @@ public abstract class Pessoa {
 	public String getSenha() {
 		return senha;
 	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [cpf=" + cpf + ", senha=" + senha + "]";
+	}
+	
+	
 
 }

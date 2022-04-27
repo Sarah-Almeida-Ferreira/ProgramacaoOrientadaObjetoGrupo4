@@ -8,12 +8,12 @@ import br.com.residencia.bancoamazonas.contas.Conta;
 public class Gerente extends Funcionario {
 
 	private Integer numeroAgencia;
-	private List<Cliente> clientes = new ArrayList<>();
+	private static List<Cliente> clientes = new ArrayList<>();
 
-//	Métodos Públicos:
+//	Metodos Publicos:
 
 
-//  Métodos Especiais:	
+//  Metodos Especiais:	
 	
 	public void chamarFuncao() {
 	Conta.getTotalDeContas();

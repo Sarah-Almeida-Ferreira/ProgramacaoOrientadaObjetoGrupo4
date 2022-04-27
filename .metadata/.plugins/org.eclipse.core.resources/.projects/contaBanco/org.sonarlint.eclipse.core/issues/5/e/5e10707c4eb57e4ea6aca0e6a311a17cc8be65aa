@@ -1,0 +1,20 @@
+
+k
+java:S1118
+":Add a private constructor to hide the implicit public one.(øÃç¥ÿÿÿÿÿHöRMAJORZ
+CODE_SMELL
+d	java:S106"9Replace this use of System.out or System.err by a logger.(ÑößÀH÷RMAJORZ
+CODE_SMELL
+c	java:S106"9Replace this use of System.out or System.err by a logger.(°•ÞHøRMAJORZ
+CODE_SMELL
+^
+java:S1128"3Remove this unused import 'java.io.BufferedWriter'.(¬õº/HùRMINORZ
+CODE_SMELL
+`
+java:S1128"/Remove this unused import 'java.io.FileWriter'.(Ã‘ÅÃýÿÿÿÿHûRMINORZ
+CODE_SMELL
+_
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿHýRMINORZ
+CODE_SMELL
+x
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(Å¯Ù˜ùÿÿÿÿHÿRBLOCKERZBUG

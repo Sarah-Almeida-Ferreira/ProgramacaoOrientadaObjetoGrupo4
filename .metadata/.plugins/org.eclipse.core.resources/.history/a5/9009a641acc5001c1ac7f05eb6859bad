@@ -1,0 +1,40 @@
+package br.com.residencia.bancoamazonas.pessoas;
+
+import java.time.LocalDate;
+
+import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
+
+public abstract class Pessoa {
+<<<<<<< HEAD
+
+=======
+	
+>>>>>>> 077e1f3b5d795fffc08034f4d8ec613929e7b55c
+	private String nome;
+	private String cpf;
+	private String senha;
+	private String telefone;
+	private String endereco;
+	private LocalDate dataNascimento;
+	private TipoPessoa tipoPessoa;
+	
+// Métodos Públicos:
+
+	public void fazerAniversario() {
+		
+	}
+	
+<<<<<<< HEAD
+	
+
+//	MÃ©todos Especiais:
+	
+	
+
+	
+	
+=======
+//	Métodos Especiais:
+>>>>>>> 077e1f3b5d795fffc08034f4d8ec613929e7b55c
+	
+}

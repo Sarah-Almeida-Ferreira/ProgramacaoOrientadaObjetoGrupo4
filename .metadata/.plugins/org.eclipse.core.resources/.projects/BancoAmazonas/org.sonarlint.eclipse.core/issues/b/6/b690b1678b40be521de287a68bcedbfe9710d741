@@ -1,0 +1,41 @@
+
+l
+java:S59933"9Change the visibility of this constructor to "protected".(˜ÚŸ­8â ÕÀ†0HåRMAJORZ
+CODE_SMELL
+]
+java:S1068"1Remove this unused "numeroAgencia" private field.(¤¸ßßHçRMAJORZ
+CODE_SMELL
+}
+java:S1128"LRemove this unused import 'br.com.residencia.bancoamazonas.enuns.TipoConta'.(ÊµôüÿÿÿÿHéRMINORZ
+CODE_SMELL
+\
+java:S30104"*Remove this assignment of "totalDeContas".(Úì W8‘‹Ã†0HëRMAJORZ
+CODE_SMELL
+a
+java:S1068"0Remove this unused "dataAbertura" private field.(ˆâñ¤şÿÿÿÿHíRMAJORZ
+CODE_SMELL
+Z
+java:S1121".Extract the assignment out of this expression.(ßêÖÔHïRMAJORZ
+CODE_SMELL
+g
+java:S22094"5Change this instance-reference to a static reference.(Úì W8‘‹Ã†0HğRMAJORZ
+CODE_SMELL
+j
+java:S5993;"9Change the visibility of this constructor to "protected".(Í¶Ğ”ûÿÿÿÿHòRMAJORZ
+CODE_SMELL
+Y
+java:S1068	".Remove this unused "cpfTitular" private field.(Ÿ¸õ{HôRMAJORZ
+CODE_SMELL
+€
+java:S1450"URemove the "status" field and declare it as a local variable in the relevant methods.(—‡¦5HöRMINORZ
+CODE_SMELL
+T
+java:S1125."(Remove the unnecessary boolean literals.(•‹‰¦H÷RMINORZ
+CODE_SMELL
+g
+java:S22094"5Change this instance-reference to a static reference.(Úì W8‘‹Ã†0HúRMAJORZ
+CODE_SMELL
+`
+java:S1068
+"/Remove this unused "numeroConta" private field.(¿£ºãÿÿÿÿÿHüRMAJORZ
+CODE_SMELL

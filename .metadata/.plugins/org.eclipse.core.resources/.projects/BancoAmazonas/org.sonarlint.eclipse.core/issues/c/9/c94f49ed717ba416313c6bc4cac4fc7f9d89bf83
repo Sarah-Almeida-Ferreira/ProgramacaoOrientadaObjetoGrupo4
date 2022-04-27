@@ -1,0 +1,17 @@
+
+d	java:S106"9Replace this use of System.out or System.err by a logger.(Çêš”HµRMAJORZ
+CODE_SMELL
+l	java:S125'"<This block of commented-out lines of code should be removed.(ÂËªçúÿÿÿÿH¶RMAJORZ
+CODE_SMELL
+i	java:S106"9Replace this use of System.out or System.err by a logger.(üÈ¢¿øÿÿÿÿHÁRMAJORZ
+CODE_SMELL
+d	java:S106"9Replace this use of System.out or System.err by a logger.(ŠäÐ¢HÂRMAJORZ
+CODE_SMELL
+k
+java:S1118	":Add a private constructor to hide the implicit public one.(ˆ»õÛüÿÿÿÿHÃRMAJORZ
+CODE_SMELL
+T
+java:S1659"#Declare "senha" on a separate line.(Ëª¨ŸýÿÿÿÿHÄRMINORZ
+CODE_SMELL
+k	java:S106 "9Replace this use of System.out or System.err by a logger.(‰ç×à8¼Å¡ß†0HÆRMAJORZ
+CODE_SMELL

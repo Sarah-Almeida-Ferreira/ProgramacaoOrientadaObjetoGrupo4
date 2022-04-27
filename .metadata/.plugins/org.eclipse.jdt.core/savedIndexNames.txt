@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+E:\DOWNLOADS HD\PROGRAMAÇÃO\RESIDENCIA EM SOFTWARE - SERRATEC\Java POO\ProgramacaoOrientadaObjetoGrupo4\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3803306768.index
+1167275426.index
+3472534671.index
