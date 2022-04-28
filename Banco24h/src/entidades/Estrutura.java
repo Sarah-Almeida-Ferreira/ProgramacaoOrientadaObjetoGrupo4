@@ -51,12 +51,15 @@ public abstract class Estrutura {
 			saida += "idEstrutura="+idEstrutura;
 			if(e.getTipoEstrutura()==EnumTipoEstrutura.BANCO) {
 				saida += ", nomeBanco="+((Banco)e).getNomeBanco();
+				saida += ","+((Banco)e).listarRegionais();
 			}else if(e.getTipoEstrutura()==EnumTipoEstrutura.REGIONAL) {
 				saida += ", nomeRegiao="+((Regional)e).getNomeRegiao();
-				saida += ", idBanco="+((Regional)e).getIdBanco();
+				saida += ", Banco="+((Regional)e).getBanco().getNomeBanco();
+				saida += ","+((Regional)e).listarAgencias();
 			}else if(e.getTipoEstrutura()==EnumTipoEstrutura.AGENCIA) {
 				saida += ", numeroAgencia="+((Agencia)e).getNumeroAgencia();
-				saida += ", idRegiao="+((Agencia)e).getIdRegiao();
+				saida += ", Banco="+((Agencia)e).getRegional().getBanco().getNomeBanco();
+				saida += ", Regional="+((Agencia)e).getRegional().getNomeRegiao();
 				saida += ", endereco="+((Agencia)e).getEndereco();
 			}
 			saida += ")";
@@ -118,6 +121,18 @@ public abstract class Estrutura {
 				e.printStackTrace();
 			}
         }
+	}
+
+	public static Banco associarBanco(int idBanco, Regional regional) {
+		Banco b = (Banco)Estrutura.estruturas.get(idBanco);
+		b.associarRegional(regional);
+		return b;
+	}
+
+	public static Regional associarRegional(int idRegional, Agencia agencia) {
+		Regional r = (Regional)Estrutura.estruturas.get(idRegional);
+		r.associarAgencia(agencia);
+		return r;
 	}
 
 }
