@@ -5,16 +5,30 @@ import java.util.Scanner;
 import br.com.residencia.bancoamazonas.contas.Conta;
 import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
 import br.com.residencia.bancoamazonas.pessoas.Cliente;
+import br.com.residencia.bancoamazonas.servicos.Login;
 
 public class MenuInterativo {
+	public static void iniciarMenu() {
+		String cpf;
+		String senha;
+		Scanner sc = new Scanner (System.in);
+		
+		System.out.println("Digite cpf");
+			cpf = sc.next();
+		System.out.println("Digite senha");
+			senha = sc.next();
+
+		Login login = new Login(cpf, senha);
+		
+		login.fazerLogin();
+	}
 
 	public static void menuCliente(Cliente cliente) {
 		String operacao;
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Escolha a operação: [1] Saque\n[2] Depósito\n[3] Transferência\n[4] Verificar saldo\n[5] Relatório de tributação");
+		System.out.println("Escolha a operação:\n[1] Saque\n[2] Depósito\n[3] Transferência\n[4] Verificar saldo\n[5] Relatório de tributação");
 			operacao = sc.next();
-			sc.close();
 		
 		switch(operacao) {
 			case "1":
@@ -37,6 +51,7 @@ public class MenuInterativo {
  		}
 		
 	}
+	
 	
 //	public void menuFuncionario () {
 //		imprimirMenu();

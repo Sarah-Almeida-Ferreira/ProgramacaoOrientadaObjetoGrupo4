@@ -19,7 +19,6 @@ public abstract class Conta {
 	
 	public boolean fecharConta() {
 		return this.status = false;
-
 	}
 
 	public boolean sacar(double valorSacado) {

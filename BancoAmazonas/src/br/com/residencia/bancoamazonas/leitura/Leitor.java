@@ -22,7 +22,6 @@ public class Leitor {
 	private BufferedReader lerArquivo;
 	
 	public List<Cliente> lerArquivoClientes (String caminhoArquivo) {
-		List<Cliente> clientes = new ArrayList<>();
 		try {
 			arquivo = new FileReader(caminhoArquivo);
 			lerArquivo = new BufferedReader(arquivo);
@@ -33,7 +32,7 @@ public class Leitor {
 				String cpf = campo[1];
 				String senha = campo[2];
 				Cliente cliente = new Cliente(nome, cpf, senha, TipoPessoa.CLIENTE);
-				clientes.add(cliente);
+				Dados.addClientes(cliente);
 			}
 			
 			arquivo.close();
@@ -41,7 +40,7 @@ public class Leitor {
 		} catch (Exception e) {
 			System.out.println("ERRO");
 		}
-		return clientes;
+		return Dados.getClientes();
 	}
 	
 	
