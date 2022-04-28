@@ -15,15 +15,15 @@ import br.com.residencia.bancoamazonas.pessoas.Presidente;
 
 public class Leitor {
 	
-	public static void CarregarPessoas() {
+	public static void carregarPessoas() {
 		BufferedReader arquivo = null;
 		try {
-			arquivo = new BufferedReader(new FileReader(Parametros.ARQUIVO_PESSOAS));
+			arquivo = new BufferedReader(new FileReader("./cargas/base_pessoa.txt"));
 	        String linha;
 	        String[] campos;
 	        while((linha = arquivo.readLine()) != null){
 	            campos = linha.split(Parametros.DELIMITADOR_CAMPOS);
-	            TipoPessoa tipoPessoa = TipoPessoa.valueOf(campos[0]);
+	            String tipoPessoa = campos[0];
 	            String nome = campos[1];
 	            String cpf = campos[2];
 	            String senha = campos[3];

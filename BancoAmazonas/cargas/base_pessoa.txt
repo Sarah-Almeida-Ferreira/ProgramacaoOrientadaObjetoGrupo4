@@ -1,19 +1,19 @@
-CLIENTE;Fabiana Rosa Regina Duarte;91012749290;7896
-CLIENTE;Tomas Nathandas Neves;56958103610;7874
-CLIENTE;Andre Juan Nathan Assuncao;56918291734;8520
-CLIENTE;Stefany Renata Elisa Carvalho;25293816071;5876
-CLIENTE;Arthur Gabriel Moura;31412971420;2352
-CLIENTE;Sebastiana Sarah Carolina Barros;21177438380;3291
-CLIENTE;Thales Matheus Alexandre Melo;18989867622;3695
-CLIENTE;Guilherme Thales Freitas;85442750956;6544
-CLIENTE;Carolina Bianca Daniela Lima;29265767812;5525
-CLIENTE;Kamilly Clarice Raimunda Rocha;50989094901;6635
-CLIENTE;Mariana Daniela Vitória Vieira;363827262;2249
-CLIENTE;Calebe Tiago Mateus Moraes;23903285803;5571
 GERENTE;Wanderson Chevrand;58533243146;1802;2200.90;0001
 GERENTE;Andre Lucas;70983772525;0001;2200.90;0002
 GERENTE;Patrick Monteiro;01941762158;2027;2200.90;0003
 GERENTE;Pereira Gomes;37654201826;0002;2200.90;0004
-DIRETOR;Aline Silva;88792875599;0004;2250.90
-DIRETOR;Theo Bittencourt;58018196303;0003;2200.90
-PRESIDENTE;Sarah Almeida;55452549439;7440;999999.90
+DIRETOR;Aline Silva;88792875599;0004;2250.90;mandioca
+DIRETOR;Theo Bittencourt;58018196303;0003;2200.90;mandioca
+PRESIDENTE;Sarah Almeida;55452549439;7440;999999.90;1.0
+CLIENTE;Fabiana Rosa Regina Duarte;91012749290;7896;1.0;mandioca
+CLIENTE;Tomas Nathandas Neves;56958103610;7874;1.0;mandioca
+CLIENTE;Andre Juan Nathan Assuncao;56918291734;8520;1.0;mandioca
+CLIENTE;Stefany Renata Elisa Carvalho;25293816071;5876;1.0;mandioca
+CLIENTE;Arthur Gabriel Moura;31412971420;2352;1.0;mandioca
+CLIENTE;Sebastiana Sarah Carolina Barros;21177438380;3291;1.0;mandioca
+CLIENTE;Thales Matheus Alexandre Melo;18989867622;3695;1.0;mandioca
+CLIENTE;Guilherme Thales Freitas;85442750956;6544;1.0;mandioca
+CLIENTE;Carolina Bianca Daniela Lima;29265767812;5525;1.0;mandioca
+CLIENTE;Kamilly Clarice Raimunda Rocha;50989094901;6635;1.0;mandioca
+CLIENTE;Mariana Daniela Vitória Vieira;363827262;2249;1.0;mandioca
+CLIENTE;Calebe Tiago Mateus Moraes;23903285803;5571;1.0;mandioca

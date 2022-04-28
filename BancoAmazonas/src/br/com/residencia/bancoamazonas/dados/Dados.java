@@ -28,5 +28,7 @@ public class Dados {
 		Dados.agencias.add(agencia);
 	}
 
-	
+	public static void imprimir() {
+		System.out.println(pessoas);
+	}
 }
