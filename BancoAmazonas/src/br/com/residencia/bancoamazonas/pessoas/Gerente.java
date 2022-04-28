@@ -8,10 +8,10 @@ import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
 
 public class Gerente extends Funcionario {
 
-	private Integer numeroAgencia;
+	private String numeroAgencia;
 
-	public Gerente(String nome, String cpf, String senha, TipoPessoa tipoPessoa, String cargo, Integer numeroAgencia) {
-		super(nome, cpf, senha, tipoPessoa, cargo);
+	public Gerente(TipoPessoa tipoPessoa, String nome, String cpf, String senha, Double salario, String numeroAgencia) {
+		super(tipoPessoa, nome, cpf, senha, salario);
 		this.numeroAgencia = numeroAgencia;
 	}
 	

@@ -8,8 +8,8 @@ import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
 
 public class Cliente extends Pessoa {
 
-	public Cliente(String nome, String CPF, String senha, TipoPessoa tipoPessoa) {
-		super(nome, CPF, senha, tipoPessoa);
+	public Cliente(TipoPessoa tipoPessoa, String nome, String CPF, String senha) {
+		super(tipoPessoa, nome, CPF, senha);
 	}
 
 // Metodos Publicos:

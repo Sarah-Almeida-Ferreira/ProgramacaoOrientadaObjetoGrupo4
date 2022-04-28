@@ -17,7 +17,7 @@ public abstract class Pessoa {
 
 	}
 
-	public Pessoa(String nome, String cpf, String senha, TipoPessoa tipoPessoa) {
+	public Pessoa(TipoPessoa tipoPessoa, String nome, String cpf, String senha) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.senha = senha;
