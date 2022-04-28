@@ -4,10 +4,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-public class Finalizador {
+public class Relatorio {
 	
-	public static void gerarRelatorio() {
-        try (BufferedWriter br = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Parametros.ARQUIVO_RELATORIOS)))) {
+	public static void descarregar(String pathArquivo) {
+        try (BufferedWriter br = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(pathArquivo)))) {
 			br.write(Log.getLog());
 		} catch (IOException e) {
 			e.printStackTrace();

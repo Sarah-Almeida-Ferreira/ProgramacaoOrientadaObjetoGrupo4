@@ -1,24 +1,22 @@
 package sistema;
 
-public class Parametros {
+public interface Parametros {
 	
-	public static final String PATH_CARGAS = "./cargas/";
-	public static final String PATH_RELATORIOS = "./relatorios/";
+	final String DELIMITADOR_CAMPOS = ";";
+	final String TAG_COMENTARIO = "#";
+
+	final String PATH_CARGAS = "./cargas/";
+	final String PATH_RELATORIOS = "./relatorios/";
 	
-	public static final String ARQUIVO_PESSOAS = PATH_CARGAS + "pessoas.txt";
-	public static final String ARQUIVO_CONTAS = PATH_CARGAS + "contas.txt";
-	public static final String ARQUIVO_RELATORIOS = PATH_RELATORIOS + "relatorios.txt";
+	final String ARQUIVO_PESSOAS = PATH_CARGAS + "pessoas.txt";
+	final String ARQUIVO_CONTAS = PATH_CARGAS + "contas.txt";
+	final String ARQUIVO_ESTRUTURAS = PATH_CARGAS + "estruturas.txt";
+	final String ARQUIVO_RELATORIOS = PATH_RELATORIOS + "relatorios.txt";
 
-	public static final int QUANTIDADE_CAMPOS_PESSOAS = 2;
-	public static final int QUANTIDADE_CAMPOS_CONTAS = 2;
+	void start();
+	void carregar();
+	void listar();
+	void iniciar();
+	void descarregar();
 	
-	public static final String TAG_CLIENTE = "CLIENTE";
-	public static final String TAG_PRESIDENTE = "PRESIDENTE";
-	public static final String TAG_DIRETOR = "DIRETOR";
-	public static final String TAG_GERENTE = "GERENTE";
-
-	public static final String TAG_CORRENTE = "CORRENTE";
-	public static final String TAG_POUPANCA = "POUPANCA";
-
-	public static final String DELIMITADOR_CAMPOS = ";";
 }
