@@ -21,9 +21,11 @@ public class Login {
 	
 	public void fazerLogin() {
 		Leitor leitor = new Leitor();
-		final String CAMINHO_ARQUIVO_CLIENTES = "C:\\Users\\Lucas\\Desktop\\Serratec\\ProgramacaoOrientadaObjetoGrupo4\\BancoAmazonas\\temp\\clientes.txt";
+		final String CAMINHO_BASE_AGENCIA = ".\temp\base_agencia.txt";
+		final String CAMINHO_BASE_PESSOA = ".\temp\base_pessoa.txt";
+		final String CAMINHO_ARQUIVO_CONTA = ".\temp\base_conta.txt";
 		
-		List<Cliente> clientes = leitor.lerArquivoClientes(CAMINHO_ARQUIVO_CLIENTES);
+		List<Pessoa> clientes = leitor.lerArquivoClientes(CAMINHO_BASE_PESSOA);
 
 		for(int i = 0; i < clientes.size(); i++) {
 			if(this.cpf.equals(clientes.get(i).getCpf())

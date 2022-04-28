@@ -21,7 +21,7 @@ public class Leitor {
 	private FileReader arquivo;
 	private BufferedReader lerArquivo;
 	
-	public List<Cliente> lerArquivoClientes (String caminhoArquivo) {
+	public List<Pessoa> pessoas (String caminhoArquivo) {
 		List<Cliente> clientes = new ArrayList<>();
 		try {
 			arquivo = new FileReader(caminhoArquivo);
