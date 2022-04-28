@@ -90,7 +90,6 @@ public abstract class Conta {
         	int numeroConta = 0; 
         	int idAgencia = 0; 
         	int idPessoa = 0;
-        	int campo5 = 0;
         	int limite = 0; 
         	int aniversario = 0; 
 	        while((linha = arquivo.readLine()) != null){
@@ -101,12 +100,11 @@ public abstract class Conta {
 		            if(campos.length>=3) numeroConta = Integer.valueOf(campos[2]); 
 		            if(campos.length>=4) idAgencia = Integer.valueOf(campos[3]); 
 		            if(campos.length>=5) idPessoa = Integer.valueOf(campos[4]); 
-		            if(campos.length>=6) campo5 = Integer.valueOf(campos[5]); 
 	            	if (tipoConta.toUpperCase().equals(EnumTipoConta.CORRENTE.name())) {
-						limite = campo5;
+			            if(campos.length>=6) limite = Integer.valueOf(campos[5]); 
 						Conta.addConta(new Corrente(EnumTipoConta.CORRENTE, id, numeroConta, idAgencia, idPessoa, limite));
 	            	}else if (tipoConta.toUpperCase().equals(EnumTipoConta.POUPANCA.name())) {
-						aniversario = campo5;
+			            if(campos.length>=6) aniversario = Integer.valueOf(campos[5]); 
 						Conta.addConta(new Poupanca(EnumTipoConta.POUPANCA, id, numeroConta, idAgencia, idPessoa, aniversario));
 	            	}else{
 	            		System.out.println("#Erro#Tipo de conta não identificado: "+tipoConta);
@@ -116,7 +114,6 @@ public abstract class Conta {
 	            	numeroConta = 0;
 	            	idAgencia = 0; 
 	            	idPessoa = 0; 
-	            	campo5 = 0;
 	            	limite = 0;
 	            	aniversario = 0;
 	        	}
