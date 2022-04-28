@@ -3,6 +3,7 @@ import java.util.Date;
 import java.util.Random;
 
 import entidades.Conta;
+import entidades.Estrutura;
 import entidades.Pessoa;
 
 public class Sistema implements Parametros{	
@@ -17,6 +18,7 @@ public class Sistema implements Parametros{
 	public void carregar() {
 		Pessoa.Carregar(Parametros.ARQUIVO_PESSOAS);
 		Conta.Carregar(Parametros.ARQUIVO_CONTAS);
+		Estrutura.Carregar(Parametros.ARQUIVO_ESTRUTURAS);
 	}
 	
 	public void listar() {
@@ -25,6 +27,9 @@ public class Sistema implements Parametros{
 		System.out.println();
 		System.out.println("Listagem de Contas");
 		System.out.println(Conta.listarContas());
+		System.out.println();
+		System.out.println("Listagem de Estruturas");
+		System.out.println(Estrutura.listarEstruturas());
 		System.out.println();
 	}
 
