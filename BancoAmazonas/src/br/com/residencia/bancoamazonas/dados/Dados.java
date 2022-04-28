@@ -24,28 +24,5 @@ public class Dados {
 		return clientes;
 	}
 
-	public static void setClientes() {
-		Dados.clientes.add(new Cliente(Leitor.getCampos(0), Leitor.getCampos(1), Leitor.getCampos(2), Leitor.getCampos(3)));
-	}
-
-	public static void setDiretores() {
-		Dados.diretores.add(new Diretor(Leitor.getCampos(0), Leitor.getCampos(1), Leitor.getCampos(2), Leitor.getCampos(3), Leitor.getCampos(4), Leitor.getCampos(5)));
-	}
-
-	public static void setPresidentes() {
-		Dados.presidentes.add(new Presidente(Leitor.getCampos(0), Leitor.getCampos(1), Leitor.getCampos(2), Leitor.getCampos(3), Leitor.getCampos(4), Leitor.getCampos(5)));
-	}
 	
-	public static void setGerentes() {
-		Dados.gerentes.add(new Gerente (Leitor.getCampos(0), Leitor.getCampos(1), Leitor.getCampos(2), Leitor.getCampos(3), Leitor.getCampos(4), Leitor.getCampos(5)));
-	}
-
-	public static void setContas(List<Conta> contas) {
-		Dados.contas = contas;
-	}
-	
-	public static void setAgencias(List<Agencia> agencias) {
-		Dados.agencias = agencias;
-	}
-    	
 }

@@ -1,9 +1,13 @@
 package br.com.residencia.bancoamazonas.pessoas;
 
-public abstract class Funcionario extends Pessoa {
+import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
 
-	private Double salario;
+public abstract class Funcionario extends Pessoa {
 	protected String cargo;
+	public Funcionario(String nome, String cpf, String senha, TipoPessoa tipoPessoa, String cargo) {
+		super(nome, cpf, senha, tipoPessoa);
+	}
+	
 	
 // Métodos Públicos
 	

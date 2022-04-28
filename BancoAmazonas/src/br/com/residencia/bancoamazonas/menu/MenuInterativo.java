@@ -1,30 +1,60 @@
 package br.com.residencia.bancoamazonas.menu;
 
+import java.util.Scanner;
+
+import br.com.residencia.bancoamazonas.contas.Conta;
 import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
+import br.com.residencia.bancoamazonas.pessoas.Cliente;
 
 public class MenuInterativo {
 
-	public void menuCliente() {
-
+	public static void menuCliente(Cliente cliente) {
+		String operacao;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Escolha a operação: [1] Saque\n[2] Depósito\n[3] Transferência\n[4] Verificar saldo\n[5] Relatório de tributação");
+			operacao = sc.next();
+			sc.close();
+		
+		switch(operacao) {
+			case "1":
+				System.out.println("sacar");
+				break;
+			case "2":
+				System.out.println("depositar");
+				break;
+			case "3":
+				System.out.println("transferir");
+				break;
+			case "4":
+				System.out.println("saldo");
+				break;
+			case "5":
+				System.out.println("Relatorio tributação");
+				break;
+			default:
+				System.out.println("Operação inválida!");
+ 		}
+		
 	}
-
-	public void menuFuncionario () {
-		imprimirMenu();
-		int escolha = 1;
-		switch (escolha ) {
-		case 1:
+	
+//	public void menuFuncionario () {
+//		imprimirMenu();
+//		int escolha = 1;
+//		switch (escolha ) {
+//		case 1:
 //			relatorioContas();
-		break;
-		case 2:
+//		break;
+//		case 2:
 //			condicional verifica se é diretor ou presidente
 //			relatorioClientes();
-		break;
-		case 3:
+//		break;
+//		case 3:
 //			condicional verifica se é presidente
 //			relatorioCapital();
-			break;
-		}
-		}
+//			break;
+//		}
+//		}
 
 //	public void imprimirMenu() {
 //		if (this.tipoPessoa.equals(TipoPessoa.CLIENTE))
@@ -32,7 +62,7 @@ public class MenuInterativo {
 //			System.out.println("");
 //		}
 		
-	}
+//	}
 //	saque
 //	deposito
 //	transferencia
