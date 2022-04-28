@@ -60,6 +60,45 @@ public class Leitor {
         }
 	}
 	
+	public static void carregarContas() {
+		BufferedReader arquivo = null;
+		try {
+			arquivo = new BufferedReader(new FileReader(Parametros.ARQUIVO_PESSOAS));
+	        String linha;
+	        String[] campos;
+	        while((linha = arquivo.readLine()) != null){
+	            campos = linha.split(Parametros.DELIMITADOR_CAMPOS);
+	            String tipoPessoa = campos[0];
+	            String nome = campos[1];
+	            String cpf = campos[2];
+	            String senha = campos[3];
+	            Double salario = Double.parseDouble(campos[4]);
+	            String numeroAgencia = campos[5];
+	            
+	            switch (tipoPessoa) {
+					case Parametros.TAG_CLIENTE:
+						Dados.addPessoa(new Cliente(tipoPessoa, nome, cpf, senha));
+						break;
+					case Parametros.TAG_PRESIDENTE:
+						Dados.addPessoa(new Presidente(tipoPessoa, nome, cpf, senha, salario));
+						break;
+					default:
+			            System.out.println("#Erro#Tipo de pessoa não identificado");
+			            continue;
+				}
+	        }
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        if (arquivo!=null) {
+			try {
+				arquivo.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        }
+	}
+	
 	
 //	static String linha;
 //	static String[] campos; 
