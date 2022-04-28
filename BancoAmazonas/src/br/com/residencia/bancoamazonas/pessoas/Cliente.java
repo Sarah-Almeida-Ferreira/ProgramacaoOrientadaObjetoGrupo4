@@ -7,18 +7,12 @@ import br.com.residencia.bancoamazonas.contas.Conta;
 
 public class Cliente extends Pessoa {
 
-	private String numeroCartao;
-	private List<Conta> contas = new ArrayList<>();
+	public Cliente(String nome, String CPF, String senha, String tipoPessoa) {
+		// TODO Auto-generated constructor stub
+	}
 
-// Metodos P�blicos:
-	
-	
-	
-	
-	
-	
-//  Metodos Especiais:
-	
-	
+// Metodos Publicos:
+
+// Metodos Especiais:
 
 }

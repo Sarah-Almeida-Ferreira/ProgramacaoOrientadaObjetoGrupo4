@@ -6,12 +6,7 @@ public final class ContaCorrente extends Conta {
 
 	private TipoConta tipoConta = TipoConta.CORRENTE;
 	
-	public ContaCorrente() {
-		super();
-		
-	}
-
-    	
+	   	
 	
 
 

@@ -1,29 +1,18 @@
 package br.com.residencia.bancoamazonas.leitura;
 
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
-public class Escritor throws IOException {
-	File funcionarios = new File("funcionarios.txt");
-	FileWriter leitor = new FileWriter(funcionarios);
+public class Escritor {
 	
-//	String nota = "nota.txt";
-//	
-//	BufferedWriter writer = new BufferedWriter(new FileWriter(nota));
-//
-//	for (Lanche lanche : lanchesPedido) {
-//		writer.append(lanche.getNome()).append(" - ").append(lanche.getValor().toString()).append("\n");
-//	}
-//	for (Bebida bebida : bebidasPedido) {
-//		writer.append(bebida.getNome()).append(" - ").append(bebida.getValor().toString()).append("\n");
-//	}
-//
-//	writer.append("Valor total - ").append(valorTotal.toString());
-//
-//	writer.close();
-//
-//	System.out.print("\nNota fiscal emitida!");
-//
-//	scan.close();
+	public static void gerarRelatorio() {
+        try (BufferedWriter br = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Parametros.ARQUIVO_RELATORIOS)))) {
+			br.write(Log.getLog());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
