@@ -3,40 +3,107 @@ package br.com.residencia.bancoamazonas.menu;
 import java.util.Scanner;
 
 import br.com.residencia.bancoamazonas.contas.Conta;
+import br.com.residencia.bancoamazonas.contas.ContaCorrente;
 import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
-import br.com.residencia.bancoamazonas.pessoas.Cliente;
 
 public class MenuInterativo {
 
-	public static void menuCliente(Cliente cliente) {
-		String operacao;
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Escolha a opera��o: [1] Saque\n[2] Dep�sito\n[3] Transfer�ncia\n[4] Verificar saldo\n[5] Relat�rio de tributa��o");
-			operacao = sc.next();
-			sc.close();
-		
-		switch(operacao) {
-			case "1":
-				System.out.println("sacar");
-				break;
-			case "2":
-				System.out.println("depositar");
-				break;
-			case "3":
-				System.out.println("transferir");
-				break;
-			case "4":
-				System.out.println("saldo");
-				break;
-			case "5":
-				System.out.println("Relatorio tributa��o");
-				break;
-			default:
-				System.out.println("Opera��o inv�lida!");
- 		}
-		
+	public static void menuCliente(Scanner sc) {
+		imprimirMenuCliente();
+
+//		+ "\n1 - Saque"
+//		+ "\n2 - Depósito"
+//		+ "\n3 - Transferência"
+//		+ "\n4 - Relatórios"
+//		+ "\n5 - Fechar conta"
+//		+ "\n0 - Finalizar sessão\n: ");
+		String escolha = sc.nextLine();
+		switch (escolha) {
+		case "1":
+			Conta conta1 = new ContaCorrente();
+			System.out.println("Qual o valor do saque?: ");
+			int valorSaque = sc.nextInt();
+			//conta.sacar(valorSaque);
+			break;
+		case "2":
+			System.out.println("Qual o valor do depósito: ");
+			int valorDeposito = sc.nextInt();
+			//conta.depositar(valorDeposito);
+			break;
+		case "3":
+			System.out.println("Qual o valor de transferência: ");
+			int valorTransferencia = sc.nextInt();
+			Conta.transferir(valorTransferencia, null);
+			break;
+		case "4":
+			System.out.println("Qual relatório deseja ver?\n"
+					+ "\n1 - Saldo"
+					+ "\n2 - Relatório de	tributação"
+					+ "\n3 - Relatório de rendimento da poupança"
+					+ "\n4 - Retornar");
+			escolha = sc.next();
+			casoRelatorio(escolha);
+			break;
+		case "5":
+			break;
+		case "0":
+			break;
+		default:
+			break;
+		}
 	}
+
+	private static void casoRelatorio(String escolha) {
+		switch (escolha) {
+		case "1":
+		//imprimirSaldo();
+			break;
+		case "2":
+		//relatorioTributo();
+			break;
+		case "3":
+		//rendimentoPoupanca();	
+			break;
+		case "4":
+		System.out.println("Retornando");	
+			break;
+		default:
+			System.out.println("Opção inválida, retornando");
+			break;
+
+		}
+
+	}
+
+	public static void menuFuncionario() {
+		imprimirMenuFuncionario();
+		int escolha = 1;
+		switch (escolha) {
+		case 1:
+//			relatorioContas();
+			break;
+		case 2:
+//			condicional verifica se é diretor ou presidente
+//			relatorioClientes();
+			break;
+		case 3:
+//			condicional verifica se é presidente
+//			relatorioCapital();
+			break;
+		}
+	}
+
+	private static void imprimirMenuFuncionario() {
+		System.out.println("Qual operação deseja fazer?");
+
+	}
+
+	private static void imprimirMenuCliente() {
+		System.out.println("Qual operação deseja fazer?" + "\n1 - Saque" + "\n2 - Depósito" + "\n3 - Transferência"
+				+ "\n4 - Relatórios" + "\n5 - Fechar conta" + "\n0 - Finalizar sessão\n: ");
+
+	}
+}
 	
 //	public void menuFuncionario () {
 //		imprimirMenu();
@@ -46,11 +113,11 @@ public class MenuInterativo {
 //			relatorioContas();
 //		break;
 //		case 2:
-//			condicional verifica se � diretor ou presidente
+//			condicional verifica se é diretor ou presidente
 //			relatorioClientes();
 //		break;
 //		case 3:
-//			condicional verifica se � presidente
+//			condicional verifica se é presidente
 //			relatorioCapital();
 //			break;
 //		}
@@ -70,20 +137,20 @@ public class MenuInterativo {
 //	sair
 //	
 	// RELATORIOS
-	// relatorio de tributação da conta corrente
+	// relatorio de tributaÃ§Ã£o da conta corrente
 	// saldo o sistema imprime o saldo na tela do terminal
 
-	// relatorio poupança
+	// relatorio poupanÃ§a
 	// retorna um valor de rendimento da poupanca no prazo informado
 
 	// desafio
 	// criar classe seguro de vida q possa ser contratado pelo cliente
-	// onde é informado o valor que sera segurado
-	// no ato da contratação sera debitado 20% do valor contratado como tributo
+	// onde Ã© informado o valor que sera segurado
+	// no ato da contrataÃ§Ã£o sera debitado 20% do valor contratado como tributo
 
 	// CASO 2
 	// GERENTE
-	// 1 movimentações e informações da conta
+	// 1 movimentaÃ§Ãµes e informaÃ§Ãµes da conta
 	// a saque b deposito c transferencia para outra conta
 
 	// 2 RELATORIOS identico ao cliente
@@ -97,6 +164,6 @@ public class MenuInterativo {
 
 	// CASO 4
 	// PRESIDENTE
-	// relatórios:
+	// relatÃ³rios:
 	// valor total do capital armazenado no banco
 }
