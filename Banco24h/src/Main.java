@@ -1,4 +1,4 @@
-import sistema.Sistema;
+import br.com.banco24h.sistema.Sistema;
 
 public class Main {
 

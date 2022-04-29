@@ -1,36 +1,42 @@
-package entidades;
+package br.com.banco24h.entidades;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
-import entidades.contas.Corrente;
-import entidades.contas.Poupanca;
-import sistema.Parametros;
+import br.com.banco24h.entidades.contas.Corrente;
+import br.com.banco24h.entidades.contas.Poupanca;
+import br.com.banco24h.entidades.estruturas.Agencia;
+import br.com.banco24h.entidades.pessoas.Cliente;
+import br.com.banco24h.enums.EnumConta;
+import br.com.banco24h.sistema.Parametros;
 
 public abstract class Conta {
 	
-	private static HashMap<Integer, Conta> contas = new HashMap<>();
+	private static Map<Integer, Conta> contas = new HashMap<>();
 	
-	public enum EnumTipoConta {CORRENTE, POUPANCA};
-	
-	private EnumTipoConta tipoConta;
+	private EnumConta tipoConta;
 	private int id = 0;
 	private int numeroConta = 0;
 	private int idAgencia = 0;
-	private int idPessoa = 0;
-	
-	protected Conta(EnumTipoConta tipoConta, int id, int numeroConta, int idAgencia, int idPessoa) {
+	private int idCliente = 0;
+
+	private Agencia agencia = null;
+	private Cliente cliente = null;
+
+	protected Conta(EnumConta tipoConta, int id, int numeroConta, int idAgencia, int idCliente) {
 		this.tipoConta=tipoConta;
 		this.id=id;
 		this.numeroConta=numeroConta;
 		this.idAgencia=idAgencia;
-		this.idPessoa=idPessoa;
+		this.idCliente=idCliente;
+		this.agencia=Estrutura.getAgenciaById(idAgencia);
+		this.cliente=Pessoa.getClienteById(idCliente);
 	}
 	
-	public EnumTipoConta getTipoConta() {
+	public EnumConta getTipoConta() {
 		return tipoConta;
 	}
 
@@ -46,8 +52,8 @@ public abstract class Conta {
 		return idAgencia;
 	}
 
-	public int getIdPessoa() {
-		return idPessoa;
+	public int getIdCliente() {
+		return idCliente;
 	}
 
 	public static void addConta(Conta conta) {
@@ -67,11 +73,11 @@ public abstract class Conta {
 			saida += c.getTipoConta().name()+"(";
 			saida += "idConta="+idConta;
 			saida += ", numeroConta= "+c.getNumeroConta();
-			saida += ", idAgencia="+c.getIdAgencia();
-			saida += ", idPessoa="+c.getIdPessoa();
-			if(c.getTipoConta()==EnumTipoConta.CORRENTE) {
+			saida += ", Agencia("+c.getAgencia().getNumeroAgencia()+"/"+c.getAgencia().getEndereco()+")";
+			saida += ", Cliente("+c.getCliente().getNome()+")";
+			if(c.getTipoConta()==EnumConta.CORRENTE) {
 				saida += ", limite="+((Corrente)c).getLimite();
-			}else if(c.getTipoConta()==EnumTipoConta.POUPANCA) {
+			}else if(c.getTipoConta()==EnumConta.POUPANCA) {
 				saida += ", aniversario="+((Poupanca)c).getAniversario();
 			}
 			saida += ")";
@@ -92,6 +98,8 @@ public abstract class Conta {
         	int idPessoa = 0;
         	int limite = 0; 
         	int aniversario = 0; 
+        	Corrente corrente;
+        	Poupanca poupanca;
 	        while((linha = arquivo.readLine()) != null){
 	        	if(!linha.startsWith(Parametros.TAG_COMENTARIO)) {
 		            campos = linha.split(Parametros.DELIMITADOR_CAMPOS);
@@ -100,12 +108,18 @@ public abstract class Conta {
 		            if(campos.length>=3) numeroConta = Integer.valueOf(campos[2]); 
 		            if(campos.length>=4) idAgencia = Integer.valueOf(campos[3]); 
 		            if(campos.length>=5) idPessoa = Integer.valueOf(campos[4]); 
-	            	if (tipoConta.toUpperCase().equals(EnumTipoConta.CORRENTE.name())) {
+	            	if (tipoConta.toUpperCase().equals(EnumConta.CORRENTE.name())) {
 			            if(campos.length>=6) limite = Integer.valueOf(campos[5]); 
-						Conta.addConta(new Corrente(EnumTipoConta.CORRENTE, id, numeroConta, idAgencia, idPessoa, limite));
-	            	}else if (tipoConta.toUpperCase().equals(EnumTipoConta.POUPANCA.name())) {
-			            if(campos.length>=6) aniversario = Integer.valueOf(campos[5]); 
-						Conta.addConta(new Poupanca(EnumTipoConta.POUPANCA, id, numeroConta, idAgencia, idPessoa, aniversario));
+			            corrente = new Corrente(EnumConta.CORRENTE, id, numeroConta, idAgencia, idPessoa, limite);
+						Conta.addConta(corrente);
+						corrente.getAgencia().addConta(corrente);
+						corrente.getCliente().addConta(corrente);
+	            	}else if (tipoConta.toUpperCase().equals(EnumConta.POUPANCA.name())) {
+			            if(campos.length>=6) aniversario = Integer.valueOf(campos[5]);
+			            poupanca = new Poupanca(EnumConta.POUPANCA, id, numeroConta, idAgencia, idPessoa, aniversario);
+						Conta.addConta(poupanca);
+						poupanca.getAgencia().addConta(poupanca);
+						poupanca.getCliente().addConta(poupanca);
 	            	}else{
 	            		System.out.println("#Erro#Tipo de conta não identificado: "+tipoConta);
 					}
@@ -116,6 +130,8 @@ public abstract class Conta {
 	            	idPessoa = 0; 
 	            	limite = 0;
 	            	aniversario = 0;
+	            	corrente = null;
+	            	poupanca = null;
 	        	}
 	        }
 		} catch (IOException e) {
@@ -128,6 +144,14 @@ public abstract class Conta {
 				e.printStackTrace();
 			}
         }
+	}
+
+	public Agencia getAgencia() {
+		return agencia;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
 	}
 
 }

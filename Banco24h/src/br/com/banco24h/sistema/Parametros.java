@@ -1,4 +1,4 @@
-package sistema;
+package br.com.banco24h.sistema;
 
 public interface Parametros {
 	

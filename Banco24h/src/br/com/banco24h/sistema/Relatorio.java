@@ -1,4 +1,4 @@
-package sistema;
+package br.com.banco24h.sistema;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;

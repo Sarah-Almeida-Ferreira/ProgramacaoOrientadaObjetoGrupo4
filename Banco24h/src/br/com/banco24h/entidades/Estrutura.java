@@ -1,31 +1,32 @@
-package entidades;
+package br.com.banco24h.entidades;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
-import entidades.estruturas.Banco;
-import entidades.estruturas.Regional;
-import entidades.estruturas.Agencia;
-import sistema.Parametros;
+import br.com.banco24h.entidades.estruturas.Agencia;
+import br.com.banco24h.entidades.estruturas.Banco;
+import br.com.banco24h.entidades.estruturas.Regional;
+import br.com.banco24h.enums.EnumEstrutura;
+import br.com.banco24h.sistema.Parametros;
 
 public abstract class Estrutura {
 	
-	private static HashMap<Integer, Estrutura> estruturas = new HashMap<>();
+	private static Map<Integer, Estrutura> estruturas = new HashMap<>();
 	
-	public enum EnumTipoEstrutura {BANCO, REGIONAL, AGENCIA};
+	//public enum EnumTipoEstrutura {BANCO, REGIONAL, AGENCIA};
 	
-	private EnumTipoEstrutura tipoEstrutura;
+	private EnumEstrutura tipoEstrutura;
 	private int id = 0;
 	
-	protected Estrutura(EnumTipoEstrutura tipoEstrutura, int id) {
+	protected Estrutura(EnumEstrutura tipoEstrutura, int id) {
 		this.tipoEstrutura=tipoEstrutura;
 		this.id=id;
 	}
 	
-	public EnumTipoEstrutura getTipoEstrutura() {
+	public EnumEstrutura getTipoEstrutura() {
 		return tipoEstrutura;
 	}
 
@@ -49,18 +50,21 @@ public abstract class Estrutura {
 			saida += (saida==""?"":"\n");
 			saida += e.getTipoEstrutura().name()+"(";
 			saida += "idEstrutura="+idEstrutura;
-			if(e.getTipoEstrutura()==EnumTipoEstrutura.BANCO) {
+			if(e.getTipoEstrutura()==EnumEstrutura.BANCO) {
 				saida += ", nomeBanco="+((Banco)e).getNomeBanco();
-				saida += ","+((Banco)e).listarRegionais();
-			}else if(e.getTipoEstrutura()==EnumTipoEstrutura.REGIONAL) {
+				saida += ", "+((Banco)e).listarRegionais();
+				saida += ", Presidente="+((Banco)e).getPresidente().getNome();
+			}else if(e.getTipoEstrutura()==EnumEstrutura.REGIONAL) {
 				saida += ", nomeRegiao="+((Regional)e).getNomeRegiao();
 				saida += ", Banco="+((Regional)e).getBanco().getNomeBanco();
 				saida += ","+((Regional)e).listarAgencias();
-			}else if(e.getTipoEstrutura()==EnumTipoEstrutura.AGENCIA) {
+				saida += ", Diretor="+((Regional)e).getDiretor().getNome();
+			}else if(e.getTipoEstrutura()==EnumEstrutura.AGENCIA) {
 				saida += ", numeroAgencia="+((Agencia)e).getNumeroAgencia();
 				saida += ", Banco="+((Agencia)e).getRegional().getBanco().getNomeBanco();
 				saida += ", Regional="+((Agencia)e).getRegional().getNomeRegiao();
 				saida += ", endereco="+((Agencia)e).getEndereco();
+				saida += ","+((Agencia)e).listarContas();
 			}
 			saida += ")";
 		}
@@ -81,23 +85,31 @@ public abstract class Estrutura {
         	int numeroAgencia = 0;
         	int idRegiao = 0;
         	String endereco = "";
+        	Banco banco;
+        	Regional regional;
+        	Agencia agencia;
 	        while((linha = arquivo.readLine()) != null){
 	        	if(!linha.startsWith(Parametros.TAG_COMENTARIO)) {
 		            campos = linha.split(Parametros.DELIMITADOR_CAMPOS);
 		            if(campos.length>=1) tipoEstrutura = campos[0];
 		            if(campos.length>=2) id = Integer.valueOf(campos[1]); 
-	            	if (tipoEstrutura.toUpperCase().equals(EnumTipoEstrutura.BANCO.name())) {
-			            if(campos.length>=3) nomeBanco = campos[2]; 
-						Estrutura.addEstrutura(new Banco(EnumTipoEstrutura.BANCO, id, nomeBanco));
-	            	}else if (tipoEstrutura.toUpperCase().equals(EnumTipoEstrutura.REGIONAL.name())) {
+	            	if (tipoEstrutura.toUpperCase().equals(EnumEstrutura.BANCO.name())) {
+			            if(campos.length>=3) nomeBanco = campos[2];
+			            banco = new Banco(EnumEstrutura.BANCO, id, nomeBanco);
+						Estrutura.addEstrutura(banco);
+	            	}else if (tipoEstrutura.toUpperCase().equals(EnumEstrutura.REGIONAL.name())) {
 			            if(campos.length>=3) nomeRegiao = campos[2]; 
-			            if(campos.length>=4) idBanco = Integer.valueOf(campos[3]); 
-						Estrutura.addEstrutura(new Regional(EnumTipoEstrutura.REGIONAL, id, nomeRegiao, idBanco));
-	            	}else if (tipoEstrutura.toUpperCase().equals(EnumTipoEstrutura.AGENCIA.name())) {
+			            if(campos.length>=4) idBanco = Integer.valueOf(campos[3]);
+			            regional = new Regional(EnumEstrutura.REGIONAL, id, nomeRegiao, idBanco);
+						Estrutura.addEstrutura(regional);
+						regional.getBanco().addRegional(regional);
+	            	}else if (tipoEstrutura.toUpperCase().equals(EnumEstrutura.AGENCIA.name())) {
 			            if(campos.length>=3) numeroAgencia = Integer.valueOf(campos[2]); 
 			            if(campos.length>=4) idRegiao = Integer.valueOf(campos[3]); 
-			            if(campos.length>=5) endereco = campos[4]; 
-						Estrutura.addEstrutura(new Agencia(EnumTipoEstrutura.AGENCIA, id, numeroAgencia, idRegiao, endereco));
+			            if(campos.length>=5) endereco = campos[4];
+			            agencia = new Agencia(EnumEstrutura.AGENCIA, id, numeroAgencia, idRegiao, endereco);
+						Estrutura.addEstrutura(agencia);
+						agencia.getRegional().addAgencia(agencia);
 	            	}else{
 	            		System.out.println("#Erro#Tipo de conta não identificado: "+tipoEstrutura);
 					}
@@ -109,6 +121,9 @@ public abstract class Estrutura {
 	            	numeroAgencia = 0;
 	            	idRegiao = 0;
 	            	endereco = "";
+	            	banco = null;
+	            	regional = null;
+	            	agencia = null;
 	        	}
 	        }
 		} catch (IOException e) {
@@ -123,16 +138,16 @@ public abstract class Estrutura {
         }
 	}
 
-	public static Banco associarBanco(int idBanco, Regional regional) {
-		Banco b = (Banco)Estrutura.estruturas.get(idBanco);
-		b.associarRegional(regional);
-		return b;
+	public static Banco getBancoById(int idBanco) {
+		return (Banco)Estrutura.estruturas.get(idBanco);
 	}
 
-	public static Regional associarRegional(int idRegional, Agencia agencia) {
-		Regional r = (Regional)Estrutura.estruturas.get(idRegional);
-		r.associarAgencia(agencia);
-		return r;
+	public static Regional getRegionalById(int idRegional) {
+		return (Regional)Estrutura.estruturas.get(idRegional);
+	}
+
+	public static Agencia getAgenciaById(int idAgencia) {
+		return (Agencia)Estrutura.estruturas.get(idAgencia);
 	}
 
 }

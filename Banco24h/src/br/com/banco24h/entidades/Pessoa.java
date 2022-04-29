@@ -1,30 +1,29 @@
-package entidades;
+package br.com.banco24h.entidades;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
-import entidades.pessoas.Cliente;
-import entidades.pessoas.Funcionario;
-import entidades.pessoas.funcionarios.Diretor;
-import entidades.pessoas.funcionarios.Gerente;
-import entidades.pessoas.funcionarios.Presidente;
-import sistema.Parametros;
+import br.com.banco24h.entidades.pessoas.Cliente;
+import br.com.banco24h.entidades.pessoas.funcionarios.Diretor;
+import br.com.banco24h.entidades.pessoas.funcionarios.Gerente;
+import br.com.banco24h.entidades.pessoas.funcionarios.Presidente;
+import br.com.banco24h.enums.EnumPessoa;
+import br.com.banco24h.sistema.Parametros;
 
 public abstract class Pessoa {
 	
-	private static HashMap<Integer, Pessoa> pessoas = new HashMap<>();
+	private static Map<Integer, Pessoa> pessoas = new HashMap<>();
 
-	public enum EnumTipoPessoa {CLIENTE, GERENTE, DIRETOR, PRESIDENTE};
-	
-	private EnumTipoPessoa tipoPessoa;
+	private EnumPessoa tipoPessoa;
 	private int id;
 	private String nome = "";
 	private String cpf = "";
 	private String senha = "";
 	
-	protected Pessoa(EnumTipoPessoa tipoPessoa, int id, String nome, String cpf, String senha) {
+	protected Pessoa(EnumPessoa tipoPessoa, int id, String nome, String cpf, String senha) {
 		this.tipoPessoa=tipoPessoa;
 		this.nome=nome;
 		this.id=id;
@@ -36,7 +35,7 @@ public abstract class Pessoa {
 		return this.nome;
 	}
 
-	public EnumTipoPessoa getTipoPessoa() {
+	public EnumPessoa getTipoPessoa() {
 		return this.tipoPessoa;
 	}
 
@@ -62,7 +61,6 @@ public abstract class Pessoa {
 
 	public static String listarPessoas() {
 		String saida = "";
-		int i = 1;
 		boolean ehFuncionario = false;
 		Pessoa p;
 		for (int idPessoa : pessoas.keySet()) {
@@ -74,11 +72,20 @@ public abstract class Pessoa {
 			saida += ", cpf="+p.getCpf();
 			saida += ", senha="+p.getSenha();
 			ehFuncionario = false;
-			ehFuncionario |= (p.getTipoPessoa()==EnumTipoPessoa.GERENTE);
-			ehFuncionario |= (p.getTipoPessoa()==EnumTipoPessoa.DIRETOR);
-			ehFuncionario |= (p.getTipoPessoa()==EnumTipoPessoa.PRESIDENTE);
+			ehFuncionario |= (p.getTipoPessoa()==EnumPessoa.GERENTE);
+			ehFuncionario |= (p.getTipoPessoa()==EnumPessoa.DIRETOR);
+			ehFuncionario |= (p.getTipoPessoa()==EnumPessoa.PRESIDENTE);
 			if(ehFuncionario) {
-				saida += ", lotacao="+((Funcionario)p).getIdLotacao();
+				if(p.getTipoPessoa()==EnumPessoa.PRESIDENTE) {
+					saida += ", Banco("+((Presidente)p).getBanco().getNomeBanco()+")";
+				}else if(p.getTipoPessoa()==EnumPessoa.DIRETOR) {
+					saida += ", Regional("+((Diretor)p).getRegional().getNomeRegiao()+")";
+				}else if(p.getTipoPessoa()==EnumPessoa.GERENTE) {
+					saida += ", Agencia("+((Gerente)p).getAgencia().getNumeroAgencia()+"/"+((Gerente)p).getAgencia().getEndereco()+")";
+				}
+
+			}else if(p.getTipoPessoa()==EnumPessoa.CLIENTE) {
+				saida += ", "+((Cliente)p).listarContas();
 			}
 			saida += ")";
 		}
@@ -97,6 +104,10 @@ public abstract class Pessoa {
         	String cpf = ""; 
         	String senha = ""; 
         	int idLotacao = 0; 
+        	Cliente cliente;
+        	Presidente presidente;
+        	Diretor diretor;
+        	Gerente gerente;
 	        while((linha = arquivoFonte.readLine()) != null){
 	        	if(!linha.startsWith(Parametros.TAG_COMENTARIO)) {
 		            campos = linha.split(Parametros.DELIMITADOR_CAMPOS);
@@ -106,14 +117,21 @@ public abstract class Pessoa {
 	            	if(campos.length>=4) cpf = campos[3]; 
 	            	if(campos.length>=5) senha = campos[4]; 
 	            	if(campos.length>=6) idLotacao = Integer.valueOf(campos[5]); 
-	            	if (tipoPessoa.toUpperCase().equals(EnumTipoPessoa.CLIENTE.name())) {
-						Pessoa.addPessoa(new Cliente(EnumTipoPessoa.CLIENTE, id, nome, cpf, senha));
-	            	} else if (tipoPessoa.toUpperCase().equals(EnumTipoPessoa.PRESIDENTE.name())) {
-						Pessoa.addPessoa(new Presidente(EnumTipoPessoa.PRESIDENTE, id, nome, cpf, senha, idLotacao));
-	            	} else if (tipoPessoa.toUpperCase().equals(EnumTipoPessoa.DIRETOR.name())) {
-						Pessoa.addPessoa(new Diretor(EnumTipoPessoa.DIRETOR, id, nome, cpf, senha, idLotacao));
-	            	} else if (tipoPessoa.toUpperCase().equals(EnumTipoPessoa.GERENTE.name())) {
-						Pessoa.addPessoa(new Gerente(EnumTipoPessoa.GERENTE, id, nome, cpf, senha, idLotacao));
+	            	if (tipoPessoa.toUpperCase().equals(EnumPessoa.CLIENTE.name())) {
+	            		cliente = new Cliente(EnumPessoa.CLIENTE, id, nome, cpf, senha);
+						Pessoa.addPessoa(cliente);
+	            	} else if (tipoPessoa.toUpperCase().equals(EnumPessoa.PRESIDENTE.name())) {
+	            		presidente = new Presidente(EnumPessoa.PRESIDENTE, id, nome, cpf, senha, idLotacao);
+						Pessoa.addPessoa(presidente);
+						presidente.getBanco().setPresidente(presidente);
+	            	} else if (tipoPessoa.toUpperCase().equals(EnumPessoa.DIRETOR.name())) {
+	            		diretor = new Diretor(EnumPessoa.DIRETOR, id, nome, cpf, senha, idLotacao);
+						Pessoa.addPessoa(diretor);
+						diretor.getRegional().setDiretor(diretor);
+	            	} else if (tipoPessoa.toUpperCase().equals(EnumPessoa.GERENTE.name())) {
+	            		gerente = new Gerente(EnumPessoa.GERENTE, id, nome, cpf, senha, idLotacao);
+						Pessoa.addPessoa(gerente);
+						gerente.getAgencia().setGerente(gerente);
 	            	} else {
 		            	System.out.println("#Erro#Tipo de pessoa não identificado: "+tipoPessoa);
 					}
@@ -123,6 +141,10 @@ public abstract class Pessoa {
 		        	cpf = "";
 		        	senha = ""; 
 		        	idLotacao = 0;
+		        	cliente = null;
+		        	presidente = null;
+		        	diretor = null;
+		        	gerente = null;
 	        	}
 	        }
 		} catch (IOException e) {
@@ -137,5 +159,8 @@ public abstract class Pessoa {
         }
 	}
 	
+	public static Cliente getClienteById(int idCliente) {
+		return (Cliente)Pessoa.pessoas.get(idCliente);
+	}
 
 }

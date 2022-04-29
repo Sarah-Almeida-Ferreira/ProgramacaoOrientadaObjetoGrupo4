@@ -1,13 +1,14 @@
-package sistema;
+package br.com.banco24h.sistema;
 import java.util.Date;
 import java.util.Random;
 
-import entidades.Conta;
-import entidades.Estrutura;
-import entidades.Pessoa;
+import br.com.banco24h.entidades.Conta;
+import br.com.banco24h.entidades.Estrutura;
+import br.com.banco24h.entidades.Pessoa;
 
 public class Sistema implements Parametros{	
 	
+	@Override
 	public void start() {
 		carregar();
 		listar();
@@ -15,12 +16,14 @@ public class Sistema implements Parametros{
 		descarregar();
 	}
 	
+	@Override
 	public void carregar() {
+		Estrutura.Carregar(Parametros.ARQUIVO_ESTRUTURAS);
 		Pessoa.Carregar(Parametros.ARQUIVO_PESSOAS);
 		Conta.Carregar(Parametros.ARQUIVO_CONTAS);
-		Estrutura.Carregar(Parametros.ARQUIVO_ESTRUTURAS);
 	}
 	
+	@Override
 	public void listar() {
 		System.out.println("Listagem de Pessoas");
 		System.out.println(Pessoa.listarPessoas());
@@ -33,10 +36,12 @@ public class Sistema implements Parametros{
 		System.out.println();
 	}
 
+	@Override
 	public void descarregar() {
 		Relatorio.descarregar(Parametros.ARQUIVO_RELATORIOS);
 	}
 
+	@Override
 	public void iniciar() {        
 		popularLog();
 	}
