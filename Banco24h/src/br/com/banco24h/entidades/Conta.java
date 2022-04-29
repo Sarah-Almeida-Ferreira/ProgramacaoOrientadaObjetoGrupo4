@@ -153,4 +153,29 @@ public abstract class Conta {
 		return saldo;
 	}
 
+	public void setSaldo(double novoSaldo) {
+		this.saldo = novoSaldo;
+	}
+
+	public static double sacar(Conta conta, double valorSacado) throws Exception {
+		if (conta.getSaldo() < valorSacado) throw new Exception("Não há saldo disponível");
+		conta.setSaldo(conta.getSaldo()-valorSacado);
+		return valorSacado;
+	}
+
+	public static void depositar(Conta conta, double valorDepositado) throws Exception {
+		if(valorDepositado<0) throw new Exception("O Valor a ser depositado não pode ser negativo");
+		conta.setSaldo(conta.getSaldo()+valorDepositado);
+	}
+
+	public static void transferir(Conta contaOrigem, Conta contaDestino, double valorTransferido) throws Exception {
+		if(valorTransferido<0) throw new Exception("O Valor a ser tranferido não pode ser negativo");
+		double valorSacado = Conta.sacar(contaOrigem, valorTransferido);
+		Conta.depositar(contaDestino, valorSacado);
+	}
+
+	public static Conta getContaById(int idConta) {
+		return (Conta)Conta.contas.get(idConta);
+	}
+
 }

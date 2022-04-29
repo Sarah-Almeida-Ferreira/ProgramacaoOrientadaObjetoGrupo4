@@ -11,7 +11,7 @@ public class Sistema implements Parametros{
 	@Override
 	public void start() {
 		carregar();
-		listar();
+		//listar();
 		iniciar();
 		descarregar();
 	}
@@ -43,8 +43,52 @@ public class Sistema implements Parametros{
 
 	@Override
 	public void iniciar() { 
-		new Menu().fluxo();
-		popularLog();
+		//new Menu().fluxo();
+		testeOperacoesConta();
+		//popularLog();
+	}
+
+	private void testeOperacoesConta() {
+		System.out.println("Teste operações conta");
+		Conta contaA = Conta.getContaById(2001);
+		System.out.println("ContaA: "+contaA.getId());
+		System.out.println("saldoA: "+contaA.getSaldo());
+		double valor = 100.10d;
+		System.out.println("depósitoA: "+valor);
+		try {
+			Conta.depositar(contaA, valor);
+			Log.addLog("Deposito: conta: "+contaA.getId()+" valor="+String.format("%.2f", valor));
+		} catch (Exception e) {
+			System.out.println("#Erro#"+e.getMessage());
+		}
+		System.out.println("saldoA: "+contaA.getSaldo());
+		System.out.println();
+		Conta contaB = Conta.getContaById(2002);
+		System.out.println("ContaB: "+contaB.getId());
+		System.out.println("saldoB: "+contaB.getSaldo());
+		System.out.println("TransferenciaA->B: contaOrigem="+contaA.getId()+" contaDestino="+contaB.getId()+" valor="+valor);
+		try {
+			Conta.transferir(contaA, contaB, valor);
+			Log.addLog("Transferencia: contaAOrigem: "+contaA.getId()+" contaDestino: "+contaB.getId()+" valor="+String.format("%.2f", valor));
+		} catch (Exception e) {
+			System.out.println("#Erro#"+e.getMessage());
+		}
+		System.out.println("saldoA: "+contaA.getSaldo());
+		System.out.println("saldoB: "+contaB.getSaldo());
+		try {
+			Conta.sacar(contaA, valor);
+		} catch (Exception e) {
+			System.out.println("#Erro#"+e.getMessage());
+		}
+		System.out.println();
+		System.out.println("sacarB: "+valor);
+		try {
+			Conta.sacar(contaB, valor);
+			Log.addLog("Saque: contaA: "+contaB.getId()+" valor="+String.format("%.2f", valor));
+		} catch (Exception e) {
+			System.out.println("#Erro#"+e.getMessage());
+		}
+		System.out.println("saldoB: "+contaB.getSaldo());
 	}
 
 	private void popularLog() {//método descartável //TODO Excluir método
