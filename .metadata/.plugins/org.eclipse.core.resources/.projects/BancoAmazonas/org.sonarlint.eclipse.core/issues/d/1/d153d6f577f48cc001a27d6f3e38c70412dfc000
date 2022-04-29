@@ -1,15 +1,0 @@
-
-e
-java:S1118
-":Add a private constructor to hide the implicit public one.(ƒÍØÙHHRMAJORZ
-CODE_SMELL
-h	java:S106"9Replace this use of System.out or System.err by a logger.(–ò³ˆøÿÿÿÿHIRMAJORZ
-CODE_SMELL
-p	java:S106""9Replace this use of System.out or System.err by a logger.(•–ƒ·üÿÿÿÿ8¿˜¼›‡0HƒRMAJORZ
-CODE_SMELL
-k	java:S106&"9Replace this use of System.out or System.err by a logger.(Ù³ûÔ8¿˜¼›‡0H„RMAJORZ
-CODE_SMELL
-k	java:S106-"9Replace this use of System.out or System.err by a logger.(¡İĞ8¿˜¼›‡0H…RMAJORZ
-CODE_SMELL
-p	java:S1062"9Replace this use of System.out or System.err by a logger.(º„Æ¿ıÿÿÿÿ8¿˜¼›‡0H†RMAJORZ
-CODE_SMELL
