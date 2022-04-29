@@ -28,6 +28,11 @@ public class Servicos {
 		return true;
 
 	}
+	
+	private void syso() {
+		// TODO Auto-generated method stub
+
+	}
 
 	// public static void imprimirTestes() {
 //		ContaCorrente conta1 = new ContaCorrente(4000.0);
