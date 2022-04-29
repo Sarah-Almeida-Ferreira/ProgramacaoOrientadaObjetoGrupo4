@@ -14,6 +14,7 @@ public abstract class Conta {
 	private Boolean status;
 	private LocalDate dataAbertura;
 	private static Integer totalDeContas = 0;
+	public static Object conta1;
 
 // Metodos Publicos
 	public boolean fecharConta() {
@@ -35,7 +36,7 @@ public abstract class Conta {
 		this.saldo += valorDepositado;
 	}
 
-	public static boolean transferir(double valorTransferido, Conta contaDestino) {
+	public boolean transferir(double valorTransferido, Conta contaDestino) {
 		if (sacar(valorTransferido)) {
 			contaDestino.depositar(valorTransferido);
 			return true;

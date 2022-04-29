@@ -3,6 +3,7 @@ package br.com.residencia.bancoamazonas.menu;
 import java.util.Scanner;
 
 import br.com.residencia.bancoamazonas.contas.Conta;
+import br.com.residencia.bancoamazonas.contas.ContaCorrente;
 import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
 
 public class MenuInterativo {
@@ -19,14 +20,15 @@ public class MenuInterativo {
 		String escolha = sc.nextLine();
 		switch (escolha) {
 		case "1":
+			Conta conta1 = new ContaCorrente();
 			System.out.println("Qual o valor do saque?: ");
 			int valorSaque = sc.nextInt();
-			Conta.sacar(valorSaque);
+			//conta.sacar(valorSaque);
 			break;
 		case "2":
 			System.out.println("Qual o valor do depósito: ");
 			int valorDeposito = sc.nextInt();
-			Conta.depositar(valorDeposito);
+			//conta.depositar(valorDeposito);
 			break;
 		case "3":
 			System.out.println("Qual o valor de transferência: ");
