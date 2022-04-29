@@ -42,7 +42,8 @@ public class Sistema implements Parametros{
 	}
 
 	@Override
-	public void iniciar() {        
+	public void iniciar() { 
+		new Menu().fluxo();
 		popularLog();
 	}
 

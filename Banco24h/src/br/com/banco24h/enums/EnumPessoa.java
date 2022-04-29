@@ -5,7 +5,8 @@ public enum EnumPessoa {
 	CLIENTE("Corrente","corrente"),
 	GERENTE("Gerente","gerente"),
 	DIRETOR("Diretor","diretor"),
-	PRESIDENTE("Presidente","presidente");
+	PRESIDENTE("Presidente","presidente"),
+	FUNCIONARIO("Funcionario","funcionario");
 
     private String descricaoprimeiraMaiuscula;
 	private String descricaoMinuscula;
