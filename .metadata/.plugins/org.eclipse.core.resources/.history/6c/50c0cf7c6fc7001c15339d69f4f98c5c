@@ -11,16 +11,15 @@ import br.com.residencia.bancoamazonas.pessoas.Cliente;
 import br.com.residencia.bancoamazonas.pessoas.Pessoa;
 
 public class Login {
-//    private String cpf;
-//    private String senha;
-//    private boolean autenticidade = false;
-//    Cliente cliente = new Cliente("","","",null);
-}
+    private String cpf;
+    private String senha;
+    private boolean autenticidade = false;
+    Cliente cliente = new Cliente("","","",null);
 
-//    public Login(String cpf, String senha) {
-//        this.cpf = cpf;
-//        this.senha = senha;
-//    }
+    public Login(String cpf, String senha) {
+        this.cpf = cpf;
+        this.senha = senha;
+    }
 
 //    public void fazerLogin() {
 //        autenticarUsuario();

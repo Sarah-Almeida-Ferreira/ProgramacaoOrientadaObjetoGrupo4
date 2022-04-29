@@ -1,0 +1,38 @@
+
+u
+java:S2094"BRemove this empty class, write its code or make it an "interface".(Ä½„‚8ÑÄÃ›‡0H•RMINORZ
+CODE_SMELL
+s	java:S125"<This block of commented-out lines of code should be removed.(åü«­þÿÿÿÿ8ÑÄÃ›‡0H–RMAJORZ
+CODE_SMELL
+s	java:S125"<This block of commented-out lines of code should be removed.(¤¯¯½úÿÿÿÿ8ÑÄÃ›‡0HšRMAJORZ
+CODE_SMELL
+s	java:S125"<This block of commented-out lines of code should be removed.(ì¬ÖÃøÿÿÿÿ8ÑÄÃ›‡0HžRMAJORZ
+CODE_SMELL
+f
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8ÑÄÃ›‡0H°RMINORZ
+CODE_SMELL
+c
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÑÄÃ›‡0H²RMINORZ
+CODE_SMELL
+c
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÑÄÃ›‡0H´RMINORZ
+CODE_SMELL
+
+java:S1128"IRemove this unused import 'br.com.residencia.bancoamazonas.contas.Conta'.(—Ðö­þÿÿÿÿ8ÑÄÃ›‡0H¶RMINORZ
+CODE_SMELL
+{
+java:S1128"HRemove this unused import 'br.com.residencia.bancoamazonas.dados.Dados'.(ô”Ú8ÑÄÃ›‡0H¸RMINORZ
+CODE_SMELL
+~
+java:S1128"KRemove this unused import 'br.com.residencia.bancoamazonas.leitura.Leitor'.(°å‹8ÑÄÃ›‡0HºRMINORZ
+CODE_SMELL
+ƒ
+java:S1128	"PRemove this unused import 'br.com.residencia.bancoamazonas.menu.MenuInterativo'.(ªŸ¯Ô8ÑÄÃ›‡0H¼RMINORZ
+CODE_SMELL
+
+java:S1128
+"LRemove this unused import 'br.com.residencia.bancoamazonas.pessoas.Cliente'.(™×êê8ÑÄÃ›‡0H¾RMINORZ
+CODE_SMELL
+~
+java:S1128"KRemove this unused import 'br.com.residencia.bancoamazonas.pessoas.Pessoa'.(‹‘ØÆ8ÑÄÃ›‡0HÀRMINORZ
+CODE_SMELL

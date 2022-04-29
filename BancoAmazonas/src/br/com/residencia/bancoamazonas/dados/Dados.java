@@ -1,14 +1,11 @@
 package br.com.residencia.bancoamazonas.dados;
 
-import java.util.ArrayList;
+import java.util.*;
+
 import br.com.residencia.bancoamazonas.agencias.Agencia;
 import br.com.residencia.bancoamazonas.contas.Conta;
-import br.com.residencia.bancoamazonas.leitura.Leitor;
-import br.com.residencia.bancoamazonas.pessoas.Cliente;
-import br.com.residencia.bancoamazonas.pessoas.Diretor;
-import br.com.residencia.bancoamazonas.pessoas.Gerente;
 import br.com.residencia.bancoamazonas.pessoas.Pessoa;
-import br.com.residencia.bancoamazonas.pessoas.Presidente;
+
 
 public class Dados {
 
@@ -31,4 +28,28 @@ public class Dados {
 	public static void imprimir() {
 		System.out.println(pessoas);
 	}
+	
+	public static boolean fazerLogin() {
+		Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o seu cpf/login: ");
+        String loginEntrada;
+        loginEntrada = sc.next();
+
+        System.out.println("Digite a sua senha para entrar: ");
+        String senhaEntrada;
+        senhaEntrada = sc.next();
+
+        for (int i = 0; i < pessoas.size(); i++) {
+            if (loginEntrada.equalsIgnoreCase(pessoas.get(i).getCpf())
+                    && senhaEntrada.equalsIgnoreCase(pessoas.get(i).getSenha())) {
+                System.out.println("Login efetuado com sucesso! Seja bem-vindo(a), " + pessoas.get(i).getNome());
+                return true;
+            }
+
+        }
+        System.out.println("Andre certo com sucesso!");
+        return false;
+    }
 }
+	
+

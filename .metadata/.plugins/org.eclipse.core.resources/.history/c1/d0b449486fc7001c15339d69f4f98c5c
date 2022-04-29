@@ -2,9 +2,8 @@ package br.com.residencia.bancoamazonas.principal;
 
 import java.io.IOException;
 import java.text.ParseException;
-
-import br.com.residencia.bancoamazonas.dados.Dados;
 import br.com.residencia.bancoamazonas.leitura.Leitor;
+import br.com.residencia.bancoamazonas.dados.Dados;
 
 public class SistemaInterno {
 
@@ -12,8 +11,6 @@ public class SistemaInterno {
 		
 		Leitor.carregarPessoas();
 		Dados.imprimir();
-		Dados.fazerLogin();
-		
 	}
 
 }
