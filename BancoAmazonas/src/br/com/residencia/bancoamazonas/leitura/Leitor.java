@@ -1,11 +1,9 @@
 package br.com.residencia.bancoamazonas.leitura;
 
-import java.io.BufferedReader;import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.residencia.bancoamazonas.contas.ContaCorrente;
 import br.com.residencia.bancoamazonas.contas.ContaPoupanca;
 import br.com.residencia.bancoamazonas.dados.Dados;
@@ -17,31 +15,88 @@ import br.com.residencia.bancoamazonas.pessoas.Presidente;
 
 public class Leitor {
 	
-	private String caminhoArquivo;
-	private FileReader arquivo;
-	private BufferedReader lerArquivo;
-	
-	public List<Cliente> lerArquivoClientes (String caminhoArquivo) {
-		List<Cliente> clientes = new ArrayList<>();
+	public static void carregarPessoas() {
+		BufferedReader arquivo = null;
 		try {
-			arquivo = new FileReader(caminhoArquivo);
-			lerArquivo = new BufferedReader(arquivo);
-			
-			for (String linha = lerArquivo.readLine(); linha != null; linha = lerArquivo.readLine()) {
-				String[] campo = linha.split(";");
-				String nome = campo[0];
-				String cpf = campo[1];
-				String senha = campo[2];
-				Cliente cliente = new Cliente(nome, cpf, senha, TipoPessoa.CLIENTE);
-				clientes.add(cliente);
-			}
-			
-			arquivo.close();
-			lerArquivo.close(); 
-		} catch (Exception e) {
-			System.out.println("ERRO");
+			arquivo = new BufferedReader(new FileReader("./cargas/base_pessoa.txt"));
+	        String linha;
+	        String[] campos;
+	        while((linha = arquivo.readLine()) != null){
+	            campos = linha.split(Parametros.DELIMITADOR_CAMPOS);
+	            String tipoPessoa = campos[0];
+	            String nome = campos[1];
+	            String cpf = campos[2];
+	            String senha = campos[3];
+	            Double salario = Double.parseDouble(campos[4]);
+	            String numeroAgencia = campos[5];
+	            
+	            switch (tipoPessoa) {
+					case Parametros.TAG_CLIENTE:
+						Dados.addPessoa(new Cliente(tipoPessoa, nome, cpf, senha));
+						break;
+					case Parametros.TAG_PRESIDENTE:
+						Dados.addPessoa(new Presidente(tipoPessoa, nome, cpf, senha, salario));
+						break;
+					case Parametros.TAG_DIRETOR:
+						Dados.addPessoa(new Diretor(tipoPessoa, nome, cpf, senha, salario));
+						break;
+					case Parametros.TAG_GERENTE:
+						Dados.addPessoa(new Gerente(tipoPessoa, nome, cpf, senha, salario, numeroAgencia));
+						break;
+					default:
+			            System.out.println("#Erro#Tipo de pessoa não identificado");
+			            continue;
+				}
+	        }
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		return clientes;
+        if (arquivo!=null) {
+			try {
+				arquivo.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        }
+	}
+	
+	public static void carregarContas() {
+		BufferedReader arquivo = null;
+		try {
+			arquivo = new BufferedReader(new FileReader(Parametros.ARQUIVO_PESSOAS));
+	        String linha;
+	        String[] campos;
+	        while((linha = arquivo.readLine()) != null){
+	            campos = linha.split(Parametros.DELIMITADOR_CAMPOS);
+	            String tipoPessoa = campos[0];
+	            String nome = campos[1];
+	            String cpf = campos[2];
+	            String senha = campos[3];
+	            Double salario = Double.parseDouble(campos[4]);
+	            String numeroAgencia = campos[5];
+	            
+	            switch (tipoPessoa) {
+					case Parametros.TAG_CLIENTE:
+						Dados.addPessoa(new Cliente(tipoPessoa, nome, cpf, senha));
+						break;
+					case Parametros.TAG_PRESIDENTE:
+						Dados.addPessoa(new Presidente(tipoPessoa, nome, cpf, senha, salario));
+						break;
+					default:
+			            System.out.println("#Erro#Tipo de pessoa não identificado");
+			            continue;
+				}
+	        }
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        if (arquivo!=null) {
+			try {
+				arquivo.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        }
 	}
 	
 	

@@ -3,7 +3,10 @@ package br.com.residencia.bancoamazonas.enuns;
 public enum TipoPessoa {
 	
 	CLIENTE,
-	FUNCIONARIO;
+	FUNCIONARIO,
+	GERENTE,
+	DIRETOR,
+	PRESIDENTE;
 	//FIM ENUM
 
 }

@@ -6,10 +6,11 @@ import br.com.residencia.bancoamazonas.enuns.TipoPessoa;
 
 public abstract class Pessoa {
 
+
 	private String nome;
 	private String cpf;
 	private String senha;
-	private TipoPessoa tipoPessoa;
+	private String tipoPessoa;
 
 // Metodos Publicos:
 
@@ -17,7 +18,7 @@ public abstract class Pessoa {
 
 	}
 
-	public Pessoa(String nome, String cpf, String senha, TipoPessoa tipoPessoa) {
+	public Pessoa(String tipoPessoa, String nome, String cpf, String senha) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.senha = senha;
@@ -48,14 +49,11 @@ public abstract class Pessoa {
 		this.senha = senha;
 	}
 
-	public TipoPessoa getTipoPessoa() {
-		return tipoPessoa;
+	@Override
+	public String toString() {
+		return "Pessoa [nome=" + nome + ", cpf=" + cpf + ", senha=" + senha + ", tipoPessoa=" + tipoPessoa + "]";
 	}
-
-	public void setTipoPessoa(TipoPessoa tipoPessoa) {
-		this.tipoPessoa = tipoPessoa;
-	}
-
+	
 //	Metodos Especiais:
 
 }

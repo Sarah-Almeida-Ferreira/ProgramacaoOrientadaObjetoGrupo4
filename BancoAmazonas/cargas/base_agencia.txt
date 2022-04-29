@@ -1,0 +1,4 @@
+0001;Norte
+0002;Sul
+0003;Leste
+0004;Oeste
