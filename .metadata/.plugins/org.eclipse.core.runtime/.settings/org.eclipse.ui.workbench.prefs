@@ -1,5 +1,6 @@
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
 //org.eclipse.ui.commands/state/org.eclipse.wst.xml.views.XPathView.processor.xpathprocessor/org.eclipse.ui.commands.radioState=xpath10
+<<<<<<< Updated upstream
 ACTIVE_HYPERLINK_COLOR=255,200,0
 ATMARK_RULE=89,179,179
 ATTRIBUTE_DELIM=89,179,179
@@ -213,3 +214,10 @@ tagAttributeName=255,0,255
 tagAttributeValue=212,0,255
 tagBorder=0,254,254
 tagName=89,179,179
+=======
+PLUGINS_NOT_ACTIVATED_ON_STARTUP=;org.eclipse.m2e.discovery;
+eclipse.preferences.version=1
+org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_BG_START=37,41,45
+org.eclipse.ui.workbench.ACTIVE_TAB_BG_START=37,41,45
+org.eclipse.ui.workbench.INACTIVE_TAB_BG_START=53,60,65
+>>>>>>> Stashed changes

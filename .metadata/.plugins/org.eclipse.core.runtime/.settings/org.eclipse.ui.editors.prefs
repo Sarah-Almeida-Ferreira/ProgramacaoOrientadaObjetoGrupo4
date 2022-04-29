@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 AbstractTextEditor.Color.Background=25,29,31
 AbstractTextEditor.Color.Background.SystemDefault=false
 AbstractTextEditor.Color.FindScope=17,17,17
@@ -48,3 +49,9 @@ searchResultTextStyle=BOX
 secondaryIPColor=47,52,54
 spellingIndicationColor=253,170,211
 writeOccurrenceIndicationColor=65,65,4
+=======
+AbstractTextEditor.Color.Background.SystemDefault=false
+AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
+AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
+eclipse.preferences.version=1
+>>>>>>> Stashed changes

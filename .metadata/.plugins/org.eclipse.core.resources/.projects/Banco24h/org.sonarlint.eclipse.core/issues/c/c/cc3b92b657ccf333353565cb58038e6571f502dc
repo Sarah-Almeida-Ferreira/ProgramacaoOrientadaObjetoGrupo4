@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 d	java:S1067"9Replace this use of System.out or System.err by a logger.(ƒÉ¹ÉHšRMAJORZ
 CODE_SMELL
 u
@@ -72,4 +73,86 @@ i	java:S1068"9Replace this use of System.out or System.err by a logger.(Âš®şÿ
 CODE_SMELL
 ·
 java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(„ÿ¿8Ïâ”µ‡0HšRCRITICALZ
+=======
+c	java:S106J"9Replace this use of System.out or System.err by a logger.(·­(H¯RMAJORZ
+CODE_SMELL
+i	java:S106#"9Replace this use of System.out or System.err by a logger.(Í‰Œ¶ÿÿÿÿÿHRMAJORZ
+CODE_SMELL
+}
+java:S1192D"IDefine a constant instead of duplicating this literal "saldoB: " 3 times.(ºÄûøÿÿÿÿH«RCRITICALZ
+CODE_SMELL
+i	java:S106A"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿH’RMAJORZ
+CODE_SMELL
+i	java:S106!"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿH—RMAJORZ
+CODE_SMELL
+i	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿH‰RMAJORZ
+CODE_SMELL
+n	java:S125"<This block of commented-out lines of code should be removed.(•Õó‘8”º‡0H±RMAJORZ
+CODE_SMELL
+i	java:S106 "9Replace this use of System.out or System.err by a logger.(Çã¹øÿÿÿÿH“RMAJORZ
+CODE_SMELL
+i	java:S106D"9Replace this use of System.out or System.err by a logger.(ºÄûøÿÿÿÿHRMAJORZ
+CODE_SMELL
+}
+java:S11927"IDefine a constant instead of duplicating this literal "saldoA: " 3 times.(Âš®şÿÿÿÿH‹RCRITICALZ
+CODE_SMELL
+p	java:S1064"9Replace this use of System.out or System.err by a logger.(ñ¯Íêÿÿÿÿÿ8”º‡0HµRMAJORZ
+CODE_SMELL
+i	java:S1069"9Replace this use of System.out or System.err by a logger.(æîö¥üÿÿÿÿHˆRMAJORZ
+CODE_SMELL
+i	java:S106["9Replace this use of System.out or System.err by a logger.(ºÄûøÿÿÿÿH¢RMAJORZ
+CODE_SMELL
+u
+java:S1192>"GDefine a constant instead of duplicating this literal "#Erro#" 4 times.(·­(H£RCRITICALZ
+CODE_SMELL
+d	java:S106""9Replace this use of System.out or System.err by a logger.(Ù”‚ĞHœRMAJORZ
+CODE_SMELL
+i	java:S106"9Replace this use of System.out or System.err by a logger.(Û²–©ÿÿÿÿÿHŠRMAJORZ
+CODE_SMELL
+i	java:S106T"9Replace this use of System.out or System.err by a logger.(ıç³ºıÿÿÿÿH–RMAJORZ
+CODE_SMELL
+i	java:S106S"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿH•RMAJORZ
+CODE_SMELL
+c	java:S106>"9Replace this use of System.out or System.err by a logger.(·­(H™RMAJORZ
+CODE_SMELL
+i	java:S1067"9Replace this use of System.out or System.err by a logger.(Âš®şÿÿÿÿH‘RMAJORZ
+CODE_SMELL
+F
+java:S2119_"Save and re-use this "Random".(ü‡À„H”RCRITICALZBUG
+p	java:S106"9Replace this use of System.out or System.err by a logger.(‰¾ˆ¸üÿÿÿÿ8”º‡0H²RMAJORZ
+CODE_SMELL
+w
+java:S1192<"HDefine a constant instead of duplicating this literal " valor=" 4 times.(ÊÄòİHRCRITICALZ
+CODE_SMELL
+c	java:S106Y"9Replace this use of System.out or System.err by a logger.(·­(H°RMAJORZ
+CODE_SMELL
+g
+java:S1144^"/Remove this unused private "popularLog" method.(ûöÔçüÿÿÿÿ8”º‡0HºRMAJORZ
+CODE_SMELL
+i	java:S106@"9Replace this use of System.out or System.err by a logger.(Âš®şÿÿÿÿH˜RMAJORZ
+CODE_SMELL
+p	java:S106L"9Replace this use of System.out or System.err by a logger.(Âš®şÿÿÿÿ8”º‡0H¸RMAJORZ
+CODE_SMELL
+k	java:S106C"9Replace this use of System.out or System.err by a logger.(â‹ßë8”º‡0H·RMAJORZ
+CODE_SMELL
+i	java:S106M"9Replace this use of System.out or System.err by a logger.(ºÄûøÿÿÿÿH¨RMAJORZ
+CODE_SMELL
+d	java:S106E"9Replace this use of System.out or System.err by a logger.(ŠòÃêHªRMAJORZ
+CODE_SMELL
+i
+java:S1135^"2Complete the task associated to this TODO comment.(ûöÔçüÿÿÿÿ8”º‡0H¹RINFOZ
+CODE_SMELL
+k	java:S1066"9Replace this use of System.out or System.err by a logger.(ƒÉ¹É8”º‡0H¶RMAJORZ
+CODE_SMELL
+i	java:S106$"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿH›RMAJORZ
+CODE_SMELL
+d	java:S106"9Replace this use of System.out or System.err by a logger.(¦á˜³HšRMAJORZ
+CODE_SMELL
+c	java:S106Q"9Replace this use of System.out or System.err by a logger.(·­(H©RMAJORZ
+CODE_SMELL
+s	java:S125/"<This block of commented-out lines of code should be removed.(è¨Úøÿÿÿÿ8Õ˜„»‡0H¡RMAJORZ
+CODE_SMELL
+j
+java:S11443"8Remove this unused private "testeOperacoesConta" method.(Šƒú8Õ˜„»‡0H£RMAJORZ
+>>>>>>> Stashed changes
 CODE_SMELL

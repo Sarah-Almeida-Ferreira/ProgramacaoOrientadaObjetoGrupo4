@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 G
 java:S1643@"Use a StringBuilder instead.(Ø×‚†HWRMINORZ
 CODE_SMELL
@@ -7,4 +8,14 @@ java:S1643?"Use a StringBuilder instead.(êâµ²ùÿÿÿÿHXRMINORZ
 CODE_SMELL
 ›
 java:S13198"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(þÍ¦ÖHYRMINORZ
+=======
+œ
+java:S13198"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(þÍ¦ÖHƒRMINORZ
+CODE_SMELL
+M
+java:S1643?"Use a StringBuilder instead.(êâµ²ùÿÿÿÿH†RMINORZ
+CODE_SMELL
+H
+java:S1643@"Use a StringBuilder instead.(Ø×‚†H‡RMINORZ
+>>>>>>> Stashed changes
 CODE_SMELL

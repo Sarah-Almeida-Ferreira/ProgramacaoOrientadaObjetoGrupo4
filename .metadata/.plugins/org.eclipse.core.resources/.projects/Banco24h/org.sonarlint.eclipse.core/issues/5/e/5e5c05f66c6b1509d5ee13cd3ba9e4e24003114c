@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 d	java:S106"9Replace this use of System.out or System.err by a logger.(îú¯òHáRMAJORZ
 CODE_SMELL
 i	java:S106-"9Replace this use of System.out or System.err by a logger.(÷ÈÌŒÿÿÿÿÿHåRMAJORZ
@@ -23,3 +24,120 @@ d	java:S106D"9Replace this use of System.out or System.err by a logger.(ÿˆˆH
 CODE_SMELL
 d	java:S106%"9Replace this use of System.out or System.err by a logger.(ùÔßHãRMAJORZ
 CODE_SMELL
+=======
+d	java:S106C"9Replace this use of System.out or System.err by a logger.(óùÜHÃRMAJORZ
+CODE_SMELL
+d	java:S106L"9Replace this use of System.out or System.err by a logger.(óùÜHÅRMAJORZ
+CODE_SMELL
+c	java:S106#"9Replace this use of System.out or System.err by a logger.(îÇşHÀRMAJORZ
+CODE_SMELL
+d	java:S106?"9Replace this use of System.out or System.err by a logger.(©–ß¡HÇRMAJORZ
+CODE_SMELL
+d	java:S106Q"9Replace this use of System.out or System.err by a logger.(°‘à—H¿RMAJORZ
+CODE_SMELL
+i	java:S106:"9Replace this use of System.out or System.err by a logger.(şä¤¹üÿÿÿÿHÁRMAJORZ
+CODE_SMELL
+i	java:S1063"9Replace this use of System.out or System.err by a logger.(­ÿäÍüÿÿÿÿHÂRMAJORZ
+CODE_SMELL
+d	java:S1065"9Replace this use of System.out or System.err by a logger.(È®¤¨HÄRMAJORZ
+CODE_SMELL
+i	java:S106J"9Replace this use of System.out or System.err by a logger.(÷ÈÌŒÿÿÿÿÿH½RMAJORZ
+CODE_SMELL
+i	java:S106A"9Replace this use of System.out or System.err by a logger.(÷ÈÌŒÿÿÿÿÿH¼RMAJORZ
+CODE_SMELL
+d	java:S106H"9Replace this use of System.out or System.err by a logger.(™Ê›üH¾RMAJORZ
+CODE_SMELL
+ˆ
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(º¾à8Ğ˜„»‡0HÚRCRITICALZ
+CODE_SMELL
+n	java:S125+"<This block of commented-out lines of code should be removed.(è‰ÕÃ8Ğ˜„»‡0HæRMAJORZ
+CODE_SMELL
+€	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Şõ›Ñ8Ğ˜„»‡0HçRMINORZ
+CODE_SMELL
+q
+java:S2696@"6Make the enclosing method "static" or remove this set.(ÎÇ¨ıÿÿÿÿ8Ğ˜„»‡0HèRCRITICALZ
+CODE_SMELL
+l
+java:S2696B"6Make the enclosing method "static" or remove this set.(ôø¢8Ğ˜„»‡0HéRCRITICALZ
+CODE_SMELL
+l
+java:S2696D"6Make the enclosing method "static" or remove this set.(»¹˜Â8Ğ˜„»‡0HêRCRITICALZ
+CODE_SMELL
+q
+java:S2696I"6Make the enclosing method "static" or remove this set.(öë„ğÿÿÿÿÿ8Ğ˜„»‡0HëRCRITICALZ
+CODE_SMELL
+l
+java:S2696K"6Make the enclosing method "static" or remove this set.(ôø¢8Ğ˜„»‡0HìRCRITICALZ
+CODE_SMELL
+l
+java:S2696M"6Make the enclosing method "static" or remove this set.(»¹˜Â8Ğ˜„»‡0HíRCRITICALZ
+CODE_SMELL
+k	java:S106U"9Replace this use of System.out or System.err by a logger.(ÿˆˆ8Ğ˜„»‡0HîRMAJORZ
+CODE_SMELL
+p	java:S106Y"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8Ğ˜„»‡0HïRMAJORZ
+CODE_SMELL
+k	java:S106Z"9Replace this use of System.out or System.err by a logger.(ı§Í÷8Ğ˜„»‡0HğRMAJORZ
+CODE_SMELL
+j	java:S106["9Replace this use of System.out or System.err by a logger.(ë„Ç%8Ğ˜„»‡0HñRMAJORZ
+CODE_SMELL
+p	java:S106a"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8Ğ˜„»‡0HòRMAJORZ
+CODE_SMELL
+k	java:S106b"9Replace this use of System.out or System.err by a logger.(óß¢•8Ğ˜„»‡0HóRMAJORZ
+CODE_SMELL
+p	java:S106c"9Replace this use of System.out or System.err by a logger.(ÃÍùëıÿÿÿÿ8Ğ˜„»‡0HôRMAJORZ
+CODE_SMELL
+p	java:S106d"9Replace this use of System.out or System.err by a logger.( Õì„üÿÿÿÿ8Ğ˜„»‡0HõRMAJORZ
+CODE_SMELL
+j	java:S106e"9Replace this use of System.out or System.err by a logger.(ö¥Ï18Ğ˜„»‡0HöRMAJORZ
+CODE_SMELL
+k	java:S106f"9Replace this use of System.out or System.err by a logger.(•ô½8Ğ˜„»‡0H÷RMAJORZ
+CODE_SMELL
+p	java:S106g"9Replace this use of System.out or System.err by a logger.(ó†ÎÏùÿÿÿÿ8Ğ˜„»‡0HøRMAJORZ
+CODE_SMELL
+p	java:S106i"9Replace this use of System.out or System.err by a logger.(î·öŸùÿÿÿÿ8Ğ˜„»‡0HùRMAJORZ
+CODE_SMELL
+k	java:S106k"9Replace this use of System.out or System.err by a logger.(£öç8Ğ˜„»‡0HúRMAJORZ
+CODE_SMELL
+p	java:S106m"9Replace this use of System.out or System.err by a logger.(×±Ø¥ûÿÿÿÿ8Ğ˜„»‡0HûRMAJORZ
+CODE_SMELL
+p	java:S106q"9Replace this use of System.out or System.err by a logger.(ßıÁÄøÿÿÿÿ8Ğ˜„»‡0HüRMAJORZ
+CODE_SMELL
+p	java:S106t"9Replace this use of System.out or System.err by a logger.(í©ƒüÿÿÿÿ8Ğ˜„»‡0HıRMAJORZ
+CODE_SMELL
+p	java:S106w"9Replace this use of System.out or System.err by a logger.(¾í—Âùÿÿÿÿ8Ğ˜„»‡0HşRMAJORZ
+CODE_SMELL
+p	java:S106z"9Replace this use of System.out or System.err by a logger.(£¨ª³ıÿÿÿÿ8Ğ˜„»‡0HÿRMAJORZ
+CODE_SMELL
+k	java:S106~"9Replace this use of System.out or System.err by a logger.(µ£¬»8Ğ˜„»‡0H€RMAJORZ
+CODE_SMELL
+q	java:S106€"9Replace this use of System.out or System.err by a logger.( ãñËøÿÿÿÿ8Ğ˜„»‡0HRMAJORZ
+CODE_SMELL
+l	java:S106„"9Replace this use of System.out or System.err by a logger.(ø¸§®8Ğ˜„»‡0H‚RMAJORZ
+CODE_SMELL
+q	java:S106‡"9Replace this use of System.out or System.err by a logger.(ÇŒ‘ÿÿÿÿÿ8Ğ˜„»‡0HƒRMAJORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.(ıÁÙ38Ğ˜„»‡0H„RMAJORZ
+CODE_SMELL
+k	java:S106˜"9Replace this use of System.out or System.err by a logger.(ıÁÙ38Ğ˜„»‡0H…RMAJORZ
+CODE_SMELL
+‹
+java:S2142›"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8Ğ˜„»‡0H†RMAJORZBUG
+\	java:S108›")Either remove or fill this block of code.(ä ¹€8Ğ˜„»‡0H‡RMAJORZ
+CODE_SMELL
+q	java:S106 "9Replace this use of System.out or System.err by a logger.(å˜ùòÿÿÿÿÿ8Ğ˜„»‡0HˆRMAJORZ
+CODE_SMELL
+‹
+java:S2142£"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8Ğ˜„»‡0H‰RMAJORZBUG
+\	java:S108£")Either remove or fill this block of code.(ä ¹€8Ğ˜„»‡0HŠRMAJORZ
+CODE_SMELL
+q	java:S106¨"9Replace this use of System.out or System.err by a logger.(‡«Âùøÿÿÿÿ8Ğ˜„»‡0H‹RMAJORZ
+CODE_SMELL
+‹
+java:S2142«"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8Ğ˜„»‡0HŒRMAJORZBUG
+\	java:S108«")Either remove or fill this block of code.(ä ¹€8Ğ˜„»‡0HRMAJORZ
+CODE_SMELL
+±
+java:S1862j"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(³‘û8Ğ˜„»‡0HRMAJORZBUG
+±
+java:S1862"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(³‘û8Ğ˜„»‡0HRMAJORZBUG
+>>>>>>> Stashed changes

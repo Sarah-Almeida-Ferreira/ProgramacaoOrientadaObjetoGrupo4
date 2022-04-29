@@ -1,6 +1,7 @@
 
 X
 (src/br/com/banco24h/entidades/Conta.java,6\1\61427d1ee22eca217910c7e0d48b238615d5399a
+<<<<<<< Updated upstream
 X
 (src/br/com/banco24h/beans/BeanLogin.java,8\4\84d19e81df54007ac312eb708c5f3171fd528d5d
 =
@@ -23,3 +24,19 @@ U
 +src/br/com/banco24h/sistema/Parametros.java,c\e\ce8be9398f55771eeaaecb2c57a3eadd91477425
 X
 (src/br/com/banco24h/sistema/Sistema.java,c\c\cc3b92b657ccf333353565cb58038e6571f502dc
+=======
+e
+5src/br/com/banco24h/entidades/estruturas/Agencia.java,9\0\903aec741f84af23864d58666aa8d52db5b90b2a
+[
++src/br/com/banco24h/sistema/Parametros.java,c\e\ce8be9398f55771eeaaecb2c57a3eadd91477425
+X
+(src/br/com/banco24h/beans/BeanLogin.java,8\4\84d19e81df54007ac312eb708c5f3171fd528d5d
+U
+%src/br/com/banco24h/sistema/Menu.java,5\e\5e5c05f66c6b1509d5ee13cd3ba9e4e24003114c
+X
+(src/br/com/banco24h/sistema/Sistema.java,c\c\cc3b92b657ccf333353565cb58038e6571f502dc
+=
+src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138
+Y
+)src/br/com/banco24h/beans/_BeanLogin.java,c\b\cbd16f5cfeccb076628e7e77f62bea491d7eaff7
+>>>>>>> Stashed changes
