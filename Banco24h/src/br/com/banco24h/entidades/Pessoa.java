@@ -11,6 +11,7 @@ import br.com.banco24h.entidades.pessoas.funcionarios.Diretor;
 import br.com.banco24h.entidades.pessoas.funcionarios.Gerente;
 import br.com.banco24h.entidades.pessoas.funcionarios.Presidente;
 import br.com.banco24h.enums.EnumPessoa;
+import br.com.banco24h.sistema.Menu;
 import br.com.banco24h.sistema.Parametros;
 
 public abstract class Pessoa {
@@ -85,7 +86,7 @@ public abstract class Pessoa {
 				}
 
 			}else if(p.getTipoPessoa()==EnumPessoa.CLIENTE) {
-				saida += ", "+((Cliente)p).listarContas();
+				saida += ", "+((Cliente)p).imprimirConta();
 			}
 			saida += ")";
 		}
@@ -161,6 +162,25 @@ public abstract class Pessoa {
 	
 	public static Cliente getClienteById(int idCliente) {
 		return (Cliente)Pessoa.pessoas.get(idCliente);
+	}
+
+	public static Pessoa validarLoginPessoa() {
+		Pessoa pessoa;
+		boolean achou = false;
+		boolean validou = false;
+		for (int idPessoa : Pessoa.pessoas.keySet()) {
+			pessoa = Pessoa.pessoas.get(idPessoa);
+			achou = pessoa.cpf.equals(Menu.getLogin());
+			if(achou) {
+				validou = pessoa.senha.equals(Menu.getSenha());
+				if(validou) {
+					return pessoa;
+				}else {
+					return null;
+				}
+			}
+		}
+		return null;
 	}
 
 }

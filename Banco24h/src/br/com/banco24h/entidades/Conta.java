@@ -110,12 +110,12 @@ public abstract class Conta {
 			            corrente = new Corrente(EnumConta.CORRENTE, id, numeroConta, idAgencia, idPessoa, saldo);
 						Conta.addConta(corrente);
 						corrente.getAgencia().addConta(corrente);
-						corrente.getCliente().addConta(corrente);
+						corrente.getCliente().setConta(corrente);
 	            	}else if (tipoConta.toUpperCase().equals(EnumConta.POUPANCA.name())) {
 			            poupanca = new Poupanca(EnumConta.POUPANCA, id, numeroConta, idAgencia, idPessoa, saldo);
 						Conta.addConta(poupanca);
 						poupanca.getAgencia().addConta(poupanca);
-						poupanca.getCliente().addConta(poupanca);
+						poupanca.getCliente().setConta(poupanca);
 	            	}else{
 	            		System.out.println("#Erro#Tipo de conta não identificado: "+tipoConta);
 					}

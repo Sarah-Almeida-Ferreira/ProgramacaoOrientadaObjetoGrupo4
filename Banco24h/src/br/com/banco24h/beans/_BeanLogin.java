@@ -2,7 +2,7 @@ package br.com.banco24h.beans;
 
 import br.com.banco24h.enums.EnumPessoa;
 
-public class BeanLogin {
+public class _BeanLogin {
 	
 	private String login = "";
 	private String senha = "";

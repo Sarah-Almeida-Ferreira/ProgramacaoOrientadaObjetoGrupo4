@@ -43,8 +43,8 @@ public class Sistema implements Parametros{
 
 	@Override
 	public void iniciar() { 
-		//new Menu().fluxo();
-		testeOperacoesConta();
+		new Menu().fluxo();
+		//testeOperacoesConta();
 		//popularLog();
 	}
 
