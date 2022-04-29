@@ -1,0 +1,75 @@
+
+d	java:S1067"9Replace this use of System.out or System.err by a logger.(ƒÉ¹ÉHšRMAJORZ
+CODE_SMELL
+u
+java:S1192?"GDefine a constant instead of duplicating this literal "#Erro#" 4 times.(·­(H®RCRITICALZ
+CODE_SMELL
+c	java:S106R"9Replace this use of System.out or System.err by a logger.(·­(H¥RMAJORZ
+CODE_SMELL
+i	java:S106E"9Replace this use of System.out or System.err by a logger.(ºÄûøÿÿÿÿH¡RMAJORZ
+CODE_SMELL
+i	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿHRMAJORZ
+CODE_SMELL
+i	java:S106$"9Replace this use of System.out or System.err by a logger.(Í‰Œ¶ÿÿÿÿÿH•RMAJORZ
+CODE_SMELL
+c	java:S106K"9Replace this use of System.out or System.err by a logger.(·­(H¢RMAJORZ
+CODE_SMELL
+i	java:S106A"9Replace this use of System.out or System.err by a logger.(Âš®şÿÿÿÿHRMAJORZ
+CODE_SMELL
+}
+java:S11928"IDefine a constant instead of duplicating this literal "saldoA: " 3 times.(Âš®şÿÿÿÿH¼RCRITICALZ
+CODE_SMELL
+i	java:S106%"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿHŸRMAJORZ
+CODE_SMELL
+w
+java:S1192="HDefine a constant instead of duplicating this literal " valor=" 4 times.(ÊÄòİH³RCRITICALZ
+CODE_SMELL
+i	java:S106T"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿH§RMAJORZ
+CODE_SMELL
+i	java:S106M"9Replace this use of System.out or System.err by a logger.(Âš®şÿÿÿÿH¤RMAJORZ
+CODE_SMELL
+i	java:S106:"9Replace this use of System.out or System.err by a logger.(æîö¥üÿÿÿÿH™RMAJORZ
+CODE_SMELL
+d	java:S106F"9Replace this use of System.out or System.err by a logger.(ŠòÃêHœRMAJORZ
+CODE_SMELL
+i	java:S106 "9Replace this use of System.out or System.err by a logger.(Û²–©ÿÿÿÿÿH‘RMAJORZ
+CODE_SMELL
+d	java:S106#"9Replace this use of System.out or System.err by a logger.(Ù”‚ĞH”RMAJORZ
+CODE_SMELL
+d	java:S106D"9Replace this use of System.out or System.err by a logger.(â‹ßëH RMAJORZ
+CODE_SMELL
+c	java:S106?"9Replace this use of System.out or System.err by a logger.(·­(H©RMAJORZ
+CODE_SMELL
+d	java:S1065"9Replace this use of System.out or System.err by a logger.(Ó×¸ÁH£RMAJORZ
+CODE_SMELL
+i	java:S106U"9Replace this use of System.out or System.err by a logger.(ıç³ºıÿÿÿÿH˜RMAJORZ
+CODE_SMELL
+F
+java:S2119`"Save and re-use this "Random".(ü‡À„H«RCRITICALZBUG
+}
+java:S1192E"IDefine a constant instead of duplicating this literal "saldoB: " 3 times.(ºÄûøÿÿÿÿH¸RCRITICALZ
+CODE_SMELL
+i	java:S106!"9Replace this use of System.out or System.err by a logger.(Çã¹øÿÿÿÿH’RMAJORZ
+CODE_SMELL
+c	java:S106Z"9Replace this use of System.out or System.err by a logger.(·­(H›RMAJORZ
+CODE_SMELL
+i	java:S106"9Replace this use of System.out or System.err by a logger.(‰¾ˆ¸üÿÿÿÿHRMAJORZ
+CODE_SMELL
+i	java:S106\"9Replace this use of System.out or System.err by a logger.(ºÄûøÿÿÿÿHRMAJORZ
+CODE_SMELL
+d	java:S106"9Replace this use of System.out or System.err by a logger.(¦á˜³HRMAJORZ
+CODE_SMELL
+b
+java:S1135_"2Complete the task associated to this TODO comment.(©ÆÌùÿÿÿÿHªRINFOZ
+CODE_SMELL
+i	java:S106B"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿH¦RMAJORZ
+CODE_SMELL
+i	java:S106N"9Replace this use of System.out or System.err by a logger.(ºÄûøÿÿÿÿH¨RMAJORZ
+CODE_SMELL
+i	java:S106""9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿH“RMAJORZ
+CODE_SMELL
+i	java:S1068"9Replace this use of System.out or System.err by a logger.(Âš®şÿÿÿÿHRMAJORZ
+CODE_SMELL
+·
+java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(„ÿ¿8Ïâ”µ‡0HšRCRITICALZ
+CODE_SMELL
