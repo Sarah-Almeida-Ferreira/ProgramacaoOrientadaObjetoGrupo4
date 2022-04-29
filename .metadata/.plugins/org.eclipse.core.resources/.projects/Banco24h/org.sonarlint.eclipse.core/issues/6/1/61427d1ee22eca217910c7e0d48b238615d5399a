@@ -1,56 +1,56 @@
 
-q	java:S112¡"FDefine and throw a dedicated exception instead of using a generic one.(¶Ï¹ğH+RMAJORZ
+r	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(ÍİÚH¥RMAJORZ
 CODE_SMELL
-q	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(ÍİÚH,RMAJORZ
+n
+java:S1854"<Remove this useless assignment to local variable "poupanca".(íƒ£®úÿÿÿÿHÀRMAJORZ
 CODE_SMELL
-p	java:S112§"FDefine and throw a dedicated exception instead of using a generic one.(¾´¢pH-RMAJORZ
+G
+java:S1643O"Use a StringBuilder instead.(ÿµÔ8HRMINORZ
 CODE_SMELL
-v	java:S112¦"FDefine and throw a dedicated exception instead of using a generic one.(üŞÌ“ûÿÿÿÿH.RMAJORZ
+n
+java:S1854€"<Remove this useless assignment to local variable "corrente".(›í‘¿ıÿÿÿÿH§RMAJORZ
 CODE_SMELL
-q	java:S112¬"FDefine and throw a dedicated exception instead of using a generic one.(Òè±ºH/RMAJORZ
+d	java:S106x"9Replace this use of System.out or System.err by a logger.(ÂÍ…ÒHœRMAJORZ
 CODE_SMELL
-_
-java:S2864H"4Iterate over the "entrySet" instead of the "keySet".(«ø—óH0RMAJORZ
+M
+java:S1643P"Use a StringBuilder instead.(§ÚØŠøÿÿÿÿHRMINORZ
 CODE_SMELL
-x	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œÅ¼ÎH1RMINORZ
+M
+java:S1643Q"Use a StringBuilder instead.(µ™Á¿ûÿÿÿÿH¿RMINORZ
 CODE_SMELL
-€
-java:S3776V"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(œÅ¼ÎH2RCRITICALZ
+f
+java:S4973J"<Strings and Boxed types should be compared using "equals()".(²¨ÛüÿÿÿÿH RMAJORZBUG
+
+java:S3776V"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(œÅ¼ÎH¯RCRITICALZ
 CODE_SMELL
-m
-java:S1854"<Remove this useless assignment to local variable "poupanca".(íƒ£®úÿÿÿÿHARMAJORZ
+w	java:S112¦"FDefine and throw a dedicated exception instead of using a generic one.(üŞÌ“ûÿÿÿÿH­RMAJORZ
 CODE_SMELL
-m
-java:S1854€"<Remove this useless assignment to local variable "corrente".(›í‘¿ıÿÿÿÿHBRMAJORZ
+`
+java:S2864H"4Iterate over the "entrySet" instead of the "keySet".(«ø—óH©RMAJORZ
 CODE_SMELL
-c	java:S106x"9Replace this use of System.out or System.err by a logger.(ÂÍ…ÒHCRMAJORZ
+r	java:S112¬"FDefine and throw a dedicated exception instead of using a generic one.(Òè±ºH¦RMAJORZ
 CODE_SMELL
-Y
-java:S1905²"(Remove this unnecessary cast to "Conta".(æÈşÑıÿÿÿÿHDRMINORZ
+M
+java:S1643K"Use a StringBuilder instead.(îÿƒÔúÿÿÿÿH¬RMINORZ
 CODE_SMELL
-L
-java:S1643J"Use a StringBuilder instead.(²¨ÛüÿÿÿÿHFRMINORZ
+r	java:S112¡"FDefine and throw a dedicated exception instead of using a generic one.(¶Ï¹ğH¾RMAJORZ
 CODE_SMELL
-L
-java:S1643K"Use a StringBuilder instead.(îÿƒÔúÿÿÿÿHGRMINORZ
+M
+java:S1643L"Use a StringBuilder instead.(²Ê–ÒûÿÿÿÿH£RMINORZ
 CODE_SMELL
-L
-java:S1643L"Use a StringBuilder instead.(²Ê–ÒûÿÿÿÿHHRMINORZ
+M
+java:S1643M"Use a StringBuilder instead.(ÓÁøÑùÿÿÿÿH¨RMINORZ
 CODE_SMELL
-L
-java:S1643M"Use a StringBuilder instead.(ÓÁøÑùÿÿÿÿHIRMINORZ
+Z
+java:S1905²"(Remove this unnecessary cast to "Conta".(æÈşÑıÿÿÿÿHªRMINORZ
 CODE_SMELL
-F
-java:S1643N"Use a StringBuilder instead.(¥öá3HJRMINORZ
+G
+java:S1643N"Use a StringBuilder instead.(¥öá3H¤RMINORZ
 CODE_SMELL
-F
-java:S1643O"Use a StringBuilder instead.(ÿµÔ8HKRMINORZ
+q	java:S112§"FDefine and throw a dedicated exception instead of using a generic one.(¾´¢pHŸRMAJORZ
 CODE_SMELL
-L
-java:S1643P"Use a StringBuilder instead.(§ÚØŠøÿÿÿÿHLRMINORZ
+y	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œÅ¼ÎH®RMINORZ
 CODE_SMELL
-L
-java:S1643Q"Use a StringBuilder instead.(µ™Á¿ûÿÿÿÿHMRMINORZ
+M
+java:S1643J"Use a StringBuilder instead.(²¨ÛüÿÿÿÿHÁRMINORZ
 CODE_SMELL
-e
-java:S4973J"<Strings and Boxed types should be compared using "equals()".(²¨ÛüÿÿÿÿHNRMAJORZBUG
