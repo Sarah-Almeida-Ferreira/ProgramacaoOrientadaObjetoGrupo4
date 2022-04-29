@@ -35,7 +35,7 @@ public abstract class Conta {
 		this.saldo += valorDepositado;
 	}
 
-	public boolean transferir(double valorTransferido, Conta contaDestino) {
+	public static boolean transferir(double valorTransferido, Conta contaDestino) {
 		if (sacar(valorTransferido)) {
 			contaDestino.depositar(valorTransferido);
 			return true;

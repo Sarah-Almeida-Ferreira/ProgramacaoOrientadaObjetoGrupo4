@@ -2,15 +2,17 @@ package br.com.residencia.bancoamazonas.principal;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.Scanner;
 
 import br.com.residencia.bancoamazonas.leitura.Leitor;
+import br.com.residencia.bancoamazonas.menu.MenuInterativo;
 
 public class SistemaInterno {
 
 	public static void main(String[] args) throws IOException, ParseException {
-		
-		
-		
+		Scanner sc = new Scanner(System.in);
+		MenuInterativo.menuCliente(sc);
+		sc.close();
 		
 		
 		
