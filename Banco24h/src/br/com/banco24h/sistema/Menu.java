@@ -34,7 +34,7 @@ public class Menu {
 	}
 
 	public int menuClienteOuFuncionario() {
-		System.out.println("Você é cliente ou funcionário? cliente=1 funcionario=2");
+		System.out.println("Você é cliente ou funcionário? cliente=1 funcionario=2 Sair=0");
 		return op.nextInt();
 	}
 

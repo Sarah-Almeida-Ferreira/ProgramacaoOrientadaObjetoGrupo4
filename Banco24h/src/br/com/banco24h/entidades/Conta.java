@@ -22,11 +22,12 @@ public abstract class Conta {
 	private int numeroConta = 0;
 	private int idAgencia = 0;
 	private int idCliente = 0;
+	private double saldo = 0d;
 
 	private Agencia agencia = null;
 	private Cliente cliente = null;
 
-	protected Conta(EnumConta tipoConta, int id, int numeroConta, int idAgencia, int idCliente) {
+	protected Conta(EnumConta tipoConta, int id, int numeroConta, int idAgencia, int idCliente, double saldo) {
 		this.tipoConta=tipoConta;
 		this.id=id;
 		this.numeroConta=numeroConta;
@@ -34,6 +35,7 @@ public abstract class Conta {
 		this.idCliente=idCliente;
 		this.agencia=Estrutura.getAgenciaById(idAgencia);
 		this.cliente=Pessoa.getClienteById(idCliente);
+		this.saldo=saldo;
 	}
 	
 	public EnumConta getTipoConta() {
@@ -75,11 +77,7 @@ public abstract class Conta {
 			saida += ", numeroConta= "+c.getNumeroConta();
 			saida += ", Agencia("+c.getAgencia().getNumeroAgencia()+"/"+c.getAgencia().getEndereco()+")";
 			saida += ", Cliente("+c.getCliente().getNome()+")";
-			if(c.getTipoConta()==EnumConta.CORRENTE) {
-				saida += ", limite="+((Corrente)c).getLimite();
-			}else if(c.getTipoConta()==EnumConta.POUPANCA) {
-				saida += ", aniversario="+((Poupanca)c).getAniversario();
-			}
+			saida += ", saldo="+String.format("%.2f", c.getSaldo());			
 			saida += ")";
 		}
 		return saida;
@@ -96,8 +94,7 @@ public abstract class Conta {
         	int numeroConta = 0; 
         	int idAgencia = 0; 
         	int idPessoa = 0;
-        	int limite = 0; 
-        	int aniversario = 0; 
+        	double saldo = 0d;
         	Corrente corrente;
         	Poupanca poupanca;
 	        while((linha = arquivo.readLine()) != null){
@@ -108,15 +105,14 @@ public abstract class Conta {
 		            if(campos.length>=3) numeroConta = Integer.valueOf(campos[2]); 
 		            if(campos.length>=4) idAgencia = Integer.valueOf(campos[3]); 
 		            if(campos.length>=5) idPessoa = Integer.valueOf(campos[4]); 
+		            if(campos.length>=6) saldo = Double.valueOf(campos[5]); 
 	            	if (tipoConta.toUpperCase().equals(EnumConta.CORRENTE.name())) {
-			            if(campos.length>=6) limite = Integer.valueOf(campos[5]); 
-			            corrente = new Corrente(EnumConta.CORRENTE, id, numeroConta, idAgencia, idPessoa, limite);
+			            corrente = new Corrente(EnumConta.CORRENTE, id, numeroConta, idAgencia, idPessoa, saldo);
 						Conta.addConta(corrente);
 						corrente.getAgencia().addConta(corrente);
 						corrente.getCliente().addConta(corrente);
 	            	}else if (tipoConta.toUpperCase().equals(EnumConta.POUPANCA.name())) {
-			            if(campos.length>=6) aniversario = Integer.valueOf(campos[5]);
-			            poupanca = new Poupanca(EnumConta.POUPANCA, id, numeroConta, idAgencia, idPessoa, aniversario);
+			            poupanca = new Poupanca(EnumConta.POUPANCA, id, numeroConta, idAgencia, idPessoa, saldo);
 						Conta.addConta(poupanca);
 						poupanca.getAgencia().addConta(poupanca);
 						poupanca.getCliente().addConta(poupanca);
@@ -128,8 +124,7 @@ public abstract class Conta {
 	            	numeroConta = 0;
 	            	idAgencia = 0; 
 	            	idPessoa = 0; 
-	            	limite = 0;
-	            	aniversario = 0;
+	            	saldo = 0d;
 	            	corrente = null;
 	            	poupanca = null;
 	        	}
@@ -152,6 +147,10 @@ public abstract class Conta {
 
 	public Cliente getCliente() {
 		return cliente;
+	}
+
+	public double getSaldo() {
+		return saldo;
 	}
 
 }
