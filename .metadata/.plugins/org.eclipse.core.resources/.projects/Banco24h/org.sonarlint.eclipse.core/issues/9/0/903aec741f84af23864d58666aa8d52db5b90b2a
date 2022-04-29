@@ -1,0 +1,10 @@
+
+G
+java:S1643@"Use a StringBuilder instead.(Ø×‚†HWRMINORZ
+CODE_SMELL
+L
+java:S1643?"Use a StringBuilder instead.(êâµ²ùÿÿÿÿHXRMINORZ
+CODE_SMELL
+›
+java:S13198"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(þÍ¦ÖHYRMINORZ
+CODE_SMELL

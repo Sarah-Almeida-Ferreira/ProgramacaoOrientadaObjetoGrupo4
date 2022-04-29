@@ -1,0 +1,56 @@
+
+q	java:S112°"FDefine and throw a dedicated exception instead of using a generic one.(∂œπH+RMAJORZ
+CODE_SMELL
+q	java:S112†"FDefine and throw a dedicated exception instead of using a generic one.(Õ›⁄ûH,RMAJORZ
+CODE_SMELL
+p	java:S112ß"FDefine and throw a dedicated exception instead of using a generic one.(æ¥¢pH-RMAJORZ
+CODE_SMELL
+v	java:S112¶"FDefine and throw a dedicated exception instead of using a generic one.(¸ﬁÃì˚ˇˇˇˇH.RMAJORZ
+CODE_SMELL
+q	java:S112¨"FDefine and throw a dedicated exception instead of using a generic one.(“Ë±∫H/RMAJORZ
+CODE_SMELL
+_
+java:S2864H"4Iterate over the "entrySet" instead of the "keySet".(´¯óÛH0RMAJORZ
+CODE_SMELL
+x	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú≈ºŒH1RMINORZ
+CODE_SMELL
+Ä
+java:S3776V"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(ú≈ºŒH2RCRITICALZ
+CODE_SMELL
+m
+java:S1854Å"<Remove this useless assignment to local variable "poupanca".(ÌÉ£Æ˙ˇˇˇˇHARMAJORZ
+CODE_SMELL
+m
+java:S1854Ä"<Remove this useless assignment to local variable "corrente".(õÌëø˝ˇˇˇˇHBRMAJORZ
+CODE_SMELL
+c	java:S106x"9Replace this use of System.out or System.err by a logger.(¬ÕÖ“HCRMAJORZ
+CODE_SMELL
+Y
+java:S1905≤"(Remove this unnecessary cast to "Conta".(Ê»˛—˝ˇˇˇˇHDRMINORZ
+CODE_SMELL
+L
+java:S1643J"Use a StringBuilder instead.(≤ê®€¸ˇˇˇˇHFRMINORZ
+CODE_SMELL
+L
+java:S1643K"Use a StringBuilder instead.(ÓˇÉ‘˙ˇˇˇˇHGRMINORZ
+CODE_SMELL
+L
+java:S1643L"Use a StringBuilder instead.(≤ ñ“˚ˇˇˇˇHHRMINORZ
+CODE_SMELL
+L
+java:S1643M"Use a StringBuilder instead.(”¡¯—˘ˇˇˇˇHIRMINORZ
+CODE_SMELL
+F
+java:S1643N"Use a StringBuilder instead.(•ˆ·3HJRMINORZ
+CODE_SMELL
+F
+java:S1643O"Use a StringBuilder instead.(ˇµ‘8HKRMINORZ
+CODE_SMELL
+L
+java:S1643P"Use a StringBuilder instead.(ß⁄ÿä¯ˇˇˇˇHLRMINORZ
+CODE_SMELL
+L
+java:S1643Q"Use a StringBuilder instead.(µô¡ø˚ˇˇˇˇHMRMINORZ
+CODE_SMELL
+e
+java:S4973J"<Strings and Boxed types should be compared using "equals()".(≤ê®€¸ˇˇˇˇHNRMAJORZBUG
