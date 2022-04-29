@@ -1,4 +1,4 @@
-package entidades.contas;
+package br.com.residencia.banco24h.contas;
 
 import entidades.Conta;
 

@@ -1,4 +1,4 @@
-package entidades;
+package br.com.residencia.banco24h.entidades;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -107,7 +107,7 @@ public abstract class Conta {
 			            if(campos.length>=6) aniversario = Integer.valueOf(campos[5]); 
 						Conta.addConta(new Poupanca(EnumTipoConta.POUPANCA, id, numeroConta, idAgencia, idPessoa, aniversario));
 	            	}else{
-	            		System.out.println("#Erro#Tipo de conta não identificado: "+tipoConta);
+	            		System.out.println("#Erro#Tipo de conta nï¿½o identificado: "+tipoConta);
 					}
 	            	tipoConta = "";
 	            	id = 0;

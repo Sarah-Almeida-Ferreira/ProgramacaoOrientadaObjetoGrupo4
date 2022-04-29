@@ -1,4 +1,4 @@
-package entidades;
+package br.com.residencia.banco24h.entidades;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -115,7 +115,7 @@ public abstract class Pessoa {
 	            	} else if (tipoPessoa.toUpperCase().equals(EnumTipoPessoa.GERENTE.name())) {
 						Pessoa.addPessoa(new Gerente(EnumTipoPessoa.GERENTE, id, nome, cpf, senha, idLotacao));
 	            	} else {
-		            	System.out.println("#Erro#Tipo de pessoa não identificado: "+tipoPessoa);
+		            	System.out.println("#Erro#Tipo de pessoa nï¿½o identificado: "+tipoPessoa);
 					}
 		        	tipoPessoa = "";
 		        	id = 0; 

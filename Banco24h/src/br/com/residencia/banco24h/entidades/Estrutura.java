@@ -1,4 +1,4 @@
-package entidades;
+package br.com.residencia.banco24h.entidades;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -99,7 +99,7 @@ public abstract class Estrutura {
 			            if(campos.length>=5) endereco = campos[4]; 
 						Estrutura.addEstrutura(new Agencia(EnumTipoEstrutura.AGENCIA, id, numeroAgencia, idRegiao, endereco));
 	            	}else{
-	            		System.out.println("#Erro#Tipo de conta não identificado: "+tipoEstrutura);
+	            		System.out.println("#Erro#Tipo de conta nï¿½o identificado: "+tipoEstrutura);
 					}
 	            	tipoEstrutura = "";
 	            	id = 0;

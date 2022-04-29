@@ -1,4 +1,4 @@
-package entidades.estruturas;
+package br.com.residencia.banco24h.estruturas;
 
 import entidades.Estrutura;
 
