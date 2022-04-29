@@ -17,8 +17,6 @@ K
 src/sistema/Parametros.java,2\9\29ccfe5505ccc5474b830650f96535145ba8cf27
 J
 src/sistema/Relatorio.java,d\7\d7419e2b77cdf9f403d525d9968ae007abd38858
-b
-2src/br/com/residencia/banco24h/principal/Main.java,5\3\535c36924b34ed2c37a9ab3bd714bf5c5b693e25
 U
 %src/br/com/banco24h/sistema/Menu.java,5\e\5e5c05f66c6b1509d5ee13cd3ba9e4e24003114c
 [
