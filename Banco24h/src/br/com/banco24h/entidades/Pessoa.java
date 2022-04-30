@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import br.com.banco24h.entidades.estruturas.Regional;
 import br.com.banco24h.entidades.pessoas.Cliente;
 import br.com.banco24h.entidades.pessoas.funcionarios.Diretor;
 import br.com.banco24h.entidades.pessoas.funcionarios.Gerente;
@@ -13,6 +14,8 @@ import br.com.banco24h.entidades.pessoas.funcionarios.Presidente;
 import br.com.banco24h.enums.EnumPessoa;
 import br.com.banco24h.sistema.Menu;
 import br.com.banco24h.sistema.Parametros;
+import br.com.banco24h.entidades.estruturas.Agencia;
+import br.com.banco24h.entidades.estruturas.Banco;
 
 public abstract class Pessoa {
 	
@@ -182,5 +185,54 @@ public abstract class Pessoa {
 		}
 		return null;
 	}
+	public static int getQuantidadeContasAgenciaGerente(Gerente gerente) {
+        return gerente.getAgencia().getContas().size();
+    }
 
+	public static int getQuantidadeContasRegionalDiretor(Diretor diretor){
+		Regional regional = diretor.getRegional();
+		int quantidadeContas = 0;
+		for(Agencia agencia: regional.getAgencias()){
+			quantidadeContas += agencia.getContas().size();
+		}
+		return quantidadeContas;
+	}
+	
+	public static int getQuantidadeContas_BancoPresidente(Presidente presidente){
+		Banco banco = presidente.getBanco();
+		int quantidadeContas = 0;
+		for(Regional regional: banco.getRegionais()){
+			for(Agencia agencia: regional.getAgencias()){
+				quantidadeContas += agencia.getContas().size();
+			}
+		}
+		return quantidadeContas;
+	}
+	
+	public static String getRelatorioListagemClientesBanco(Banco banco){
+		StringBuilder saida = new StringBuilder();
+		Cliente cliente;
+		saida.append("Banco "+banco.getNomeBanco()+"\n");
+		for(Regional regional:banco.getRegionais()){
+			for(Agencia agencia: regional.getAgencias()){
+				for(Conta conta: agencia.getContas()){
+					cliente = conta.getCliente();
+					saida.append("Cliente: Nome: "+cliente.getNome()+", CPF: "+cliente.getCpf()+", Conta: "+conta.getNumeroConta()+", agencia: "+agencia.getNumeroAgencia()+", regional: "+regional.getNomeRegiao()+"\n");
+				}
+			}
+		}
+		return saida.toString();
+	}
+	
+	public static double getCapitalTotalBanco(Banco banco){
+		double total = 0d;
+		for(Regional regional:banco.getRegionais()){
+			for(Agencia agencia: regional.getAgencias()){
+				for(Conta conta: agencia.getContas()){
+					total += conta.getSaldo();
+				}
+			}
+		}
+		return total;
+	}
 }
