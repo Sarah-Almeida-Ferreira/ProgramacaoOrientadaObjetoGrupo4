@@ -11,7 +11,9 @@ public interface Parametros {
 	final String ARQUIVO_PESSOAS = PATH_CARGAS + "pessoas.txt";
 	final String ARQUIVO_CONTAS = PATH_CARGAS + "contas.txt";
 	final String ARQUIVO_ESTRUTURAS = PATH_CARGAS + "estruturas.txt";
-	final String ARQUIVO_RELATORIOS = PATH_RELATORIOS + "relatorios.txt";
+	final String ARQUIVO_OPERACOES = PATH_RELATORIOS + "operacoes.txt";
+	final String ARQUIVO_RELATORIOS_PREFIX = PATH_RELATORIOS + "relatorios";
+	final String ARQUIVO_RELATORIOS_SUFIX = ".txt";
 
 	void start();
 	void carregar();

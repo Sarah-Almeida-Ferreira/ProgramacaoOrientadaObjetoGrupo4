@@ -1,7 +1,4 @@
 package br.com.banco24h.sistema;
-import java.util.Date;
-import java.util.Random;
-
 import br.com.banco24h.entidades.Conta;
 import br.com.banco24h.entidades.Estrutura;
 import br.com.banco24h.entidades.Pessoa;
@@ -38,7 +35,7 @@ public class Sistema implements Parametros{
 
 	@Override
 	public void descarregar() {
-		Relatorio.descarregar(Parametros.ARQUIVO_RELATORIOS);
+		Log.descarregarLogOperacao(Parametros.ARQUIVO_OPERACOES);
 	}
 
 	@Override
@@ -46,66 +43,8 @@ public class Sistema implements Parametros{
 		try {
 			new Menu().fluxo();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//testeOperacoesConta();
-		//popularLog();
-	}
-
-	private void testeOperacoesConta() {
-		System.out.println("Teste operacoes conta");
-		Conta contaA = Conta.getContaById(2001);
-		System.out.println("ContaA: "+ contaA.getId());
-		System.out.println("saldoA: "+contaA.getSaldo());
-		double valor = 100.10d;
-		System.out.println("depósitoA: "+valor);
-		try {
-			Conta.depositar(contaA, valor);
-			Log.addLog("Deposito: conta: "+contaA.getId()+" valor="+String.format("%.2f", valor));
-		} catch (Exception e) {
-			System.out.println("#Erro#"+e.getMessage());
-		}
-		System.out.println("saldoA: "+contaA.getSaldo());
-		System.out.println();
-		Conta contaB = Conta.getContaById(2002);
-		System.out.println("ContaB: "+contaB.getId());
-		System.out.println("saldoB: "+contaB.getSaldo());
-		System.out.println("TransferenciaA->B: contaOrigem="+contaA.getId()+" contaDestino="+contaB.getId()+" valor="+valor);
-		try {
-			Conta.transferir(contaA, contaB, valor);
-			Log.addLog("Transferencia: contaAOrigem: "+contaA.getId()+" contaDestino: "+contaB.getId()+" valor="+String.format("%.2f", valor));
-		} catch (Exception e) {
-			System.out.println("#Erro#"+e.getMessage());
-		}
-		System.out.println("saldoA: "+contaA.getSaldo());
-		System.out.println("saldoB: "+contaB.getSaldo());
-		try {
-			Conta.sacar(contaA, valor);
-		} catch (Exception e) {
-			System.out.println("#Erro#"+e.getMessage());
-		}
-		System.out.println();
-		System.out.println("sacarB: "+valor);
-		try {
-			Conta.sacar(contaB, valor);
-			Log.addLog("Saque: contaA: "+contaB.getId()+" valor="+String.format("%.2f", valor));
-		} catch (Exception e) {
-			System.out.println("#Erro#"+e.getMessage());
-		}
-		System.out.println("saldoB: "+contaB.getSaldo());
-	}
-
-	private void popularLog() {//método descartável //TODO Excluir método
-		Random gerador = new Random();
-		Log.addLog(String.valueOf(gerador.nextInt())+"_"+new Date());
-		Log.addLog(String.valueOf(gerador.nextInt())+"_"+new Date());
-		Log.addLog(String.valueOf(gerador.nextInt())+"_"+new Date());
-		Log.addLog(String.valueOf(gerador.nextInt())+"_"+new Date());
-		Log.addLog(String.valueOf(gerador.nextInt())+"_"+new Date());
-		Log.addLog(String.valueOf(gerador.nextInt())+"_"+new Date());
-		Log.addLog(String.valueOf(gerador.nextInt())+"_"+new Date());
-		Log.addLog(String.valueOf(gerador.nextInt())+"_"+new Date());
 	}
 	
 }

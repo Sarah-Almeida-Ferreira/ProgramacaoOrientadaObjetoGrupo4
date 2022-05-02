@@ -27,6 +27,7 @@ public abstract class Conta {
 	private int idAgencia = 0;
 	private int idCliente = 0;
 	private double saldo = 0d;
+	private double totalTributo = 0;
 
 	private Agencia agencia = null;
 	private Cliente cliente = null;
@@ -62,6 +63,10 @@ public abstract class Conta {
 		return idCliente;
 	}
 
+	public double getTotalTributos() {
+		return totalTributo;
+	}
+	
 	public static void addConta(Conta conta) {
 		Conta.contas.put(conta.id, conta);
 	}
@@ -127,7 +132,7 @@ public abstract class Conta {
 						poupanca.getAgencia().addConta(poupanca);
 						poupanca.getCliente().setConta(poupanca);
 					} else {
-						System.out.println("#Erro#Tipo de conta não identificado: " + tipoConta);
+						System.out.println("#Erro#Tipo de conta nï¿½o identificado: " + tipoConta);
 					}
 					tipoConta = "";
 					id = 0;
@@ -160,7 +165,7 @@ public abstract class Conta {
 	}
 
 	public double getSaldo() {
-		return this.saldo;
+		return saldo;
 	}
 
 	public static Double getTAXA_SAQUE() {
@@ -175,39 +180,40 @@ public abstract class Conta {
 		return TAXA_TRANSFERENCIA;
 	}
 
-	public void setSaldo(double novoSaldo) {
-		this.saldo = novoSaldo;
-	}
-
-	public static boolean sacar(Conta conta, double valorSacado) {
-		if (conta.getSaldo() < valorSacado + TAXA_SAQUE) {
+	public boolean sacar(double valorSacado) {
+		if (saldo < valorSacado + TAXA_SAQUE) {
 			System.out.println("\nNao ha saldo disponivel, antes de sacar tente depositar");
 			return false;
 		}else if(valorSacado < 0) {
 			System.out.println("\nNao e possivel sacar valores negativos.");
 			return false;
 		}
-
-		conta.setSaldo(conta.getSaldo() - valorSacado);
+		totalTributo += TAXA_SAQUE;
+		saldo -= valorSacado;
 		return true;
 	}
 
-	public static boolean depositar(Conta conta, double valorDepositado) {
+	public boolean depositar(double valorDepositado) {
 		if (valorDepositado < 0) {
 			System.out.println("\nO Valor a ser depositado nao pode ser negativo. Tente Novamente!");
 			return false;
 		}
-		conta.setSaldo(conta.getSaldo() + valorDepositado);
+		totalTributo += TAXA_DEPOSITO;
+		saldo += valorDepositado;
 		return true;
 	}
 
-	public static boolean transferir(Conta contaOrigem, Conta contaDestino, double valorTransferido) {
+	public boolean transferir(Conta contaDestino, double valorTransferido) {
 		if (valorTransferido < 0) {
 			System.out.println("\nO Valor a ser tranferido nao pode ser negativo");
 			return false;
 		}
-		Conta.depositar(contaDestino, valorTransferido);
-		return true;
+		if(sacar(valorTransferido)) {
+			//sacar(valorTransferido);
+			contaDestino.depositar(valorTransferido);
+			return true;
+		}
+		return false;
 	}
 
 	public static Conta getContaById(int idConta) {

@@ -4,26 +4,25 @@ import java.util.Scanner;
 
 import br.com.banco24h.entidades.Conta;
 import br.com.banco24h.entidades.Pessoa;
+import br.com.banco24h.entidades.contas.Poupanca;
 import br.com.banco24h.entidades.estruturas.Banco;
-import br.com.banco24h.entidades.estruturas.Regional;
-import br.com.banco24h.enums.EnumConta;
-import br.com.banco24h.enums.EnumPessoa;
 import br.com.banco24h.entidades.pessoas.Cliente;
 import br.com.banco24h.entidades.pessoas.funcionarios.Diretor;
 import br.com.banco24h.entidades.pessoas.funcionarios.Gerente;
 import br.com.banco24h.entidades.pessoas.funcionarios.Presidente;
+import br.com.banco24h.enums.EnumConta;
+import br.com.banco24h.enums.EnumPessoa;
 
 public class Menu {
 
-	private Scanner op = new Scanner(System.in);
+	private static Scanner op = new Scanner(System.in);
 
-	private Pessoa pessoaLogada = null;
-	private double totalTributo = 0;
+	private static Pessoa pessoaLogada = null;
 	private static String login = "";
 	private static String senha = "";
 	private static EnumPessoa tipoPessoa;
 
-	public void fluxo() throws Exception {
+	public void fluxo(){
 		int opMenuClienteOuFuncionario = -1;
 		while ((menuBoasVindas() != 0) && (opMenuClienteOuFuncionario != 0)) {
 			while ((opMenuClienteOuFuncionario = menuClienteOuFuncionario()) != 0) {
@@ -32,20 +31,21 @@ public class Menu {
 				} else if (opMenuClienteOuFuncionario == 2) {
 					menuLoginFuncionario();
 				} else {
-					menuOpcaoNaoReconhecida();
+					System.out.println("Opcao nao identificada! Tente novamente.");
 				}
 				if ((Menu.login == null) || (!"".equals(Menu.login))) {
 					pessoaLogada = Pessoa.validarLoginPessoa();
 				}
 				if (pessoaLogada != null) {
-					System.out.println("pessoaLogada" + pessoaLogada);
+					System.out.println("\nPessoa Logada: " + pessoaLogada.getNome() + " ("+pessoaLogada.getTipoPessoa()+")\n");
 					if (pessoaLogada.getTipoPessoa() == EnumPessoa.CLIENTE) {
 						menuCliente();
 					} else {
 						menuFuncionario();
 					}
 				} else {
-					System.out.println("Usuário e senha incorretos! Tente novamente.");
+					System.out.println("Usuï¿½rio e senha incorretos! Tente novamente.");
+					fluxo();
 				}
 			}
 			menuSaida();
@@ -74,11 +74,7 @@ public class Menu {
 		System.out.print("Digite sua senha: ");
 		Menu.senha = op.next();
 	}
-
-	public void menuOpcaoNaoReconhecida() {
-		System.out.println("\n\nSua opcao de escolha nao foi reconhecida pelo nosso sistema.");
-	}
-
+	
 	public void menuSaida() {
 		System.out.println("\n\nObrigado por ter usado nosso sistema!");
 	}
@@ -99,10 +95,10 @@ public class Menu {
 			System.out.println("\n============ MENU CLIENTE ============\n" + "Escolha uma opcao abaixo:\n\n"
 					+ "[1]\tSaldo\n" + "[2]\tSaque\n" + "[3]\tDeposito\n" + "[4]\tTransferencia");
 
-			if (((Cliente) this.pessoaLogada).getTipoConta() == EnumConta.CORRENTE) {
+			if (((Cliente)pessoaLogada).getTipoConta() == EnumConta.CORRENTE) {
 				System.out.println("[5]\tTributos Conta-Corrente");
-			} else if (((Cliente) this.pessoaLogada).getTipoConta() == EnumConta.POUPANCA) {
-				System.out.println("[5]\tSimulação Poupanca");
+			} else if (((Cliente)pessoaLogada).getTipoConta() == EnumConta.POUPANCA) {
+				System.out.println("[5]\tSimulaï¿½ï¿½o Poupanca");
 			}
 			System.out.println("[6]\tSair");
 			o = op.nextInt();
@@ -120,10 +116,10 @@ public class Menu {
 				menuTransferencia(conta);
 				break;
 			case 5:
-				if (((Cliente) this.pessoaLogada).getTipoConta() == EnumConta.CORRENTE) {
-					menuTributos();
-				} else if (((Cliente) this.pessoaLogada).getTipoConta() == EnumConta.POUPANCA) {
-					menuSimulacaoPoupanca();
+				if (((Cliente)pessoaLogada).getTipoConta() == EnumConta.CORRENTE) {
+					menuTributos(((Cliente)pessoaLogada).getConta());
+				} else if (((Cliente)pessoaLogada).getTipoConta() == EnumConta.POUPANCA) {
+					menuSimulacaoPoupanca((Poupanca)((Cliente)pessoaLogada).getConta());
 				}
 				break;
 			case 6:
@@ -140,41 +136,28 @@ public class Menu {
 	public void menuSaldo(Conta conta) {
 		System.out.println("\n============ MENU SALDO ============\n");
 
-		System.out.printf("Saldo disponível R$ %.2f", conta.getSaldo(), "\n");
+		System.out.printf("Saldo disponï¿½vel R$ %.2f", conta.getSaldo(), "\n");
 	}
 
-	public void menuSaque(Conta conta) {
+	public static void menuSaque(Conta conta) {
 
 		System.out.println("\n============ MENU SAQUE ============\n");
 		System.out.println("Digite o valor a ser sacado: ");
 		double valorSacado = op.nextDouble();
-		if (((Cliente) this.pessoaLogada).getTipoConta() == EnumConta.CORRENTE) {
-			if (Conta.sacar(conta, valorSacado - Conta.getTAXA_SAQUE())) {
-				totalTributo += Conta.getTAXA_SAQUE();
+			if (conta.sacar(valorSacado)) {
+				Log.addLogOperacao("SAQUE: conta="+conta.getId()+" valorSacado="+String.format("%.2f", valorSacado));
 				System.out.println("Seu novo saldo e de R$ " + conta.getSaldo());
 			}
-
-		} else {
-			if (Conta.sacar(conta, valorSacado)) {
-				System.out.println("Seu novo saldo e de R$ " + conta.getSaldo());
-			}
-		}
 	}
 
 	public void menuDeposito(Conta conta) {
 		System.out.println("\n============ MENU DEPOSITO ============\n");
 		System.out.println("Digite o valor a ser depositado: ");
 		double valorDepositado = op.nextDouble();
-		if (((Cliente) this.pessoaLogada).getTipoConta() == EnumConta.CORRENTE) {
-			if (Conta.depositar(conta, valorDepositado - Conta.getTAXA_DEPOSITO())) {
-				totalTributo += Conta.getTAXA_DEPOSITO();
-				System.out.println("Seu novo saldo e de R$ " + conta.getSaldo());
-			}
-		}
-		if (Conta.depositar(conta, valorDepositado)) {
+		if (conta.depositar(valorDepositado)) {
+			Log.addLogOperacao("DEPOSITO: conta="+conta.getId()+" valorDepositado="+String.format("%.2f", valorDepositado));
 			System.out.println("Seu novo saldo e de R$ " + conta.getSaldo());
 		}
-
 	}
 
 	public void menuTransferencia(Conta conta) {
@@ -183,23 +166,14 @@ public class Menu {
 		double valorTransferido = op.nextDouble();
 		System.out.println("Digite o numero da Conta destino: ");
 		int contaDestino = op.nextInt();
-
-		if (((Cliente) this.pessoaLogada).getTipoConta() == EnumConta.CORRENTE) {
-			if (Conta.transferir(conta, Conta.getContaById(contaDestino),
-					valorTransferido - Conta.getTAXA_TRANSFERENCIA())) {
-				totalTributo += Conta.getTAXA_TRANSFERENCIA();
-				System.out.println("Seu novo saldo e de R$ " + conta.getSaldo());
-				System.out.println("O saldo da nova conta e de R$ " + Conta.getContaById(contaDestino).getSaldo());
-			}
-		}
-		if (Conta.transferir(conta, Conta.getContaById(contaDestino), valorTransferido)) {
-
+		if (conta.transferir(Conta.getContaById(contaDestino), valorTransferido)) {
+			Log.addLogOperacao("TRANSFERENCIA: contaOrigem="+conta.getId()+" contaDestino="+conta.getId()+ " valorTransferido="+String.format("%.2f", valorTransferido));
 			System.out.println("Seu novo saldo e de R$ " + conta.getSaldo());
-			System.out.println("O saldo da nova conta e de R$ " + Conta.getContaById(contaDestino).getSaldo());
+			//System.out.println("O saldo da nova conta e de R$ " + Conta.getContaById(contaDestino).getSaldo());
 		}
 	}
 
-	public void menuTributos() {
+	public void menuTributos(Conta conta) {
 		System.out.println("\n============ MENU TRIBUTOS ============\n");
 
 		System.out.println("********** Tabela de Precos **********");
@@ -208,26 +182,19 @@ public class Menu {
 		System.out.printf("\nTaxa por Transferencia: R$ %.2f", Conta.getTAXA_TRANSFERENCIA(), "\n");
 		System.out.println("\n**************************************\n");
 
-		System.out.printf("Valor Total de Tributos: R$ %.2f", totalTributo, "\n\n");
+		System.out.printf("Valor Total de Tributos: R$ %.2f", conta.getTotalTributos(), "\n\n");
 	}
 
-	public void menuSimulacaoPoupanca() {
+	public void menuSimulacaoPoupanca(Poupanca poupanca) {
 		System.out.println("\n============ MENU SIMULACAO POUPANCA ============\n");
 		System.out.println("Digite o valor a ser aplicado: ");
 		double capitalInicial = op.nextDouble();
 		System.out.println("Digite a quantidade de meses da aplicacao: ");
 		int tempoDaAplicacao = op.nextInt();
 
-		final double TAXA_JUROS = 0.02d;
-		if (tempoDaAplicacao < 0) {
-			System.out.println("O tempo minimo de rendimento e 1 mes. Tente novamente!");
-		} else {
-			double rendimento = capitalInicial * TAXA_JUROS * tempoDaAplicacao;
-			double montante = capitalInicial + rendimento;
-			System.out.printf("\nSeu rendimento em %d dias sera de %.2f", tempoDaAplicacao, rendimento);
-			System.out.printf("\nResultando em um montante de R$ %.2f", montante, "\n");
-		}
-
+		poupanca.simulacaoPupanca(capitalInicial, tempoDaAplicacao);
+		System.out.printf("\nSeu rendimento em %d meses sera de %.2f", tempoDaAplicacao, poupanca.getRendimento());
+		System.out.printf("\nResultando em um montante de R$ %.2f", poupanca.getMontante(), "\n");
 	}
 
 	public static String getSenha() {
@@ -243,7 +210,6 @@ public class Menu {
 	}
 
 	public void menuFuncionario() {
-		// System.out.println("Menu Funcionario");
 		if (pessoaLogada.getTipoPessoa() == EnumPessoa.PRESIDENTE) {
 			menuPresidente();
 		} else if (pessoaLogada.getTipoPessoa() == EnumPessoa.DIRETOR) {
@@ -256,117 +222,82 @@ public class Menu {
 	private void menuGerente() {
 		int o;
 		do {
-		System.out.println("Olá, " + pessoaLogada.getNome() + ".");
-		System.out.println("Escolha uma opção abaixo");
-		System.out.println("1-Relatório do número de contas da agência");
-		System.out.println("2-Sair");
+		System.out.println("Olï¿½, " + pessoaLogada.getNome() + ".");
+		System.out.println("Escolha uma opï¿½ï¿½o abaixo");
+		System.out.println("[1]\tRelatï¿½rio do nï¿½mero de contas da agï¿½ncia");
+		System.out.println("[2]\tSair");
 		o = op.nextInt();
 		switch (o) {
 		case 1:
-			menuRelatorioGerente_ContasAgencia();
+			((Gerente)pessoaLogada).relatorioContasDaAgencia();
 			break;
 		case 2:
 			return;
 		default:
-			System.out.println("opção não identificada");
+			System.out.println("Opï¿½ao nao identificada! Tente novamente.");
 			menuGerente();
 		}
 		}while (o != 6);
 	}
 
-	public int menuRelatorioGerente_ContasAgencia() {
-		System.out.println("Relatório do número de contas da sua agência: ");
-		System.out.println("Número de contas: " + Pessoa.getQuantidadeContasAgenciaGerente((Gerente) pessoaLogada));
-		System.out.println();
-		System.out.println("Digite um número para retornar: ");
-		return op.nextInt();
-	}
-
 	private void menuDiretor() {
 		int o;
 		do {
-		System.out.println("Olá Diretor " + pessoaLogada.getNome() + ".");
-		System.out.println("Escolha uma opção abaixo");
-		System.out.println("1-Relatório do número de contas da região: ");
-		System.out.println("2-Relatório de clientes do banco: ");
-		System.out.println("3-Sair: ");
+		System.out.println("Olï¿½, " + pessoaLogada.getNome() + "!");
+		System.out.println("Escolha uma opï¿½ï¿½o abaixo");
+		System.out.println("[1]\tRelatï¿½rio do nï¿½mero de contas da regiï¿½o: ");
+		System.out.println("[2]\tRelatï¿½rio de clientes do banco: ");
+		System.out.println("[3]\tSair: ");
 		o = op.nextInt();
 		switch (o) {
 		case 1:
-			menuRelatorioDiretor_ContasRegiao(((Diretor) pessoaLogada).getRegional());
+			((Diretor)pessoaLogada).relatorioContasRegiao(((Diretor) pessoaLogada).getRegional());
 			break;
 		case 2:
-			listagemClientesBanco(((Diretor) pessoaLogada).getRegional().getBanco());
+			Banco.listagemClientesBanco(((Diretor)pessoaLogada).getRegional().getBanco());
 			break;
 		case 3:
-			break;
+			return;
 		default:
-			System.out.println("Opção não identificada!");
-			menuGerente();
+			System.out.println("Opcao nao identificada! Tente novamente.");
 		}
 		}while (o != 3);
-	}
-
-	private int listagemClientesBanco(Banco banco) {
-		System.out.println("Relatório de clientes do banco: " + banco.getNomeBanco());
-		System.out.println(Pessoa.getRelatorioListagemClientesBanco(banco));
-		System.out.println();
-		System.out.println("Digite um número para retornar. ");
-		return op.nextInt();
-	}
-
-	private int menuRelatorioDiretor_ContasRegiao(Regional regiao) {
-		System.out.println("Relatório do número de contas da regiao: " + regiao.getNomeRegiao());
-		System.out.println("Número de contas: " + Pessoa.getQuantidadeContasRegionalDiretor((Diretor) pessoaLogada));
-		System.out.println();
-		System.out.println("Digite um número para retornar. ");
-		return op.nextInt();
-	}
-
-	private int menuRelatorioPresidente_ContasBanco(Banco banco) {
-		System.out.println("Relatório número de contas do banco: " + banco.getNomeBanco());
-		System.out
-				.println("Número de contas: " + Pessoa.getQuantidadeContas_BancoPresidente((Presidente) pessoaLogada));
-		System.out.println();
-		System.out.println("Digite um número para retornar. ");
-		return op.nextInt();
 	}
 
 	private void menuPresidente() {
 		int o;
 		do {
-		System.out.println("Olá Presidente " + pessoaLogada.getNome() + ".");
-		System.out.println("Escolha uma opção abaixo");
-		System.out.println("1-Relatório do número de contas do banco: ");
-		System.out.println("2-Relatório de clientes do banco: ");
-		System.out.println("3-Valor total do capital armazenado no banco: ");
-		System.out.println("4-Sair: ");
-		o = op.nextInt();
-		switch (o) {
-		case 1:
-			menuRelatorioPresidente_ContasBanco(((Presidente) pessoaLogada).getBanco());
-			break;
-		case 2:
-			listagemClientesBanco(((Presidente) pessoaLogada).getBanco());
-			break;
-		case 3:
-			menuRelatorioPresidente_CapitalBanco(((Presidente) pessoaLogada).getBanco());
-			break;
-		case 4:
-			break;
-		default:
-			System.out.println("Opção não identificada!");
-			menuGerente();
+			System.out.println("====== Menu Presidente ======");
+			System.out.println();
+			System.out.println("Olï¿½, " + pessoaLogada.getNome() + "!");
+			System.out.println();
+			System.out.println("Escolha uma opï¿½ï¿½o abaixo");
+			System.out.println("[1]\tRelatï¿½rio do nï¿½mero de contas do banco: ");
+			System.out.println("[2]\tRelatï¿½rio de clientes do banco: ");
+			System.out.println("[3]\tValor total do capital armazenado no banco: ");
+			System.out.println("[4]\tSair: ");
+			o = op.nextInt();
+			switch (o) {
+			case 1:
+				Presidente.relatorioContasBanco(((Presidente) pessoaLogada).getBanco());
+				break;
+			case 2:
+				Banco.listagemClientesBanco(((Presidente) pessoaLogada).getBanco());
+				break;
+			case 3:
+				Presidente.relatorioCapitalBanco(((Presidente) pessoaLogada).getBanco());
+				break;
+			case 4:
+				return;
+			default:
+				System.out.println("Opcao nao identificada! Tente novamente.");
 		}
 		}while (o != 4);
 	}
 
-	private int menuRelatorioPresidente_CapitalBanco(Banco banco) {
-		System.out.println("Relatório capital acumulado do banco: " + banco.getNomeBanco());
-		System.out.println("Capital do banco em R$: " + String.format("%.2f", Pessoa.getCapitalTotalBanco(banco)));
-		System.out.println();
-		System.out.println("Digite um número para retornar. ");
-		return op.nextInt();
-
+	public static Pessoa getPessoaLogada() {
+		return pessoaLogada;
 	}
+
+	
 }
