@@ -1,56 +1,0 @@
-
-r	java:S112†"FDefine and throw a dedicated exception instead of using a generic one.(Õ›⁄ûH•RMAJORZ
-CODE_SMELL
-n
-java:S1854Å"<Remove this useless assignment to local variable "poupanca".(ÌÉ£Æ˙ˇˇˇˇH¿RMAJORZ
-CODE_SMELL
-G
-java:S1643O"Use a StringBuilder instead.(ˇµ‘8HùRMINORZ
-CODE_SMELL
-n
-java:S1854Ä"<Remove this useless assignment to local variable "corrente".(õÌëø˝ˇˇˇˇHßRMAJORZ
-CODE_SMELL
-d	java:S106x"9Replace this use of System.out or System.err by a logger.(¬ÕÖ“HúRMAJORZ
-CODE_SMELL
-M
-java:S1643P"Use a StringBuilder instead.(ß⁄ÿä¯ˇˇˇˇHûRMINORZ
-CODE_SMELL
-M
-java:S1643Q"Use a StringBuilder instead.(µô¡ø˚ˇˇˇˇHøRMINORZ
-CODE_SMELL
-f
-java:S4973J"<Strings and Boxed types should be compared using "equals()".(≤ê®€¸ˇˇˇˇH†RMAJORZBUG
-Å
-java:S3776V"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(ú≈ºŒHØRCRITICALZ
-CODE_SMELL
-w	java:S112¶"FDefine and throw a dedicated exception instead of using a generic one.(¸ﬁÃì˚ˇˇˇˇH≠RMAJORZ
-CODE_SMELL
-`
-java:S2864H"4Iterate over the "entrySet" instead of the "keySet".(´¯óÛH©RMAJORZ
-CODE_SMELL
-r	java:S112¨"FDefine and throw a dedicated exception instead of using a generic one.(“Ë±∫H¶RMAJORZ
-CODE_SMELL
-M
-java:S1643K"Use a StringBuilder instead.(ÓˇÉ‘˙ˇˇˇˇH¨RMINORZ
-CODE_SMELL
-r	java:S112°"FDefine and throw a dedicated exception instead of using a generic one.(∂œπHæRMAJORZ
-CODE_SMELL
-M
-java:S1643L"Use a StringBuilder instead.(≤ ñ“˚ˇˇˇˇH£RMINORZ
-CODE_SMELL
-M
-java:S1643M"Use a StringBuilder instead.(”¡¯—˘ˇˇˇˇH®RMINORZ
-CODE_SMELL
-Z
-java:S1905≤"(Remove this unnecessary cast to "Conta".(Ê»˛—˝ˇˇˇˇH™RMINORZ
-CODE_SMELL
-G
-java:S1643N"Use a StringBuilder instead.(•ˆ·3H§RMINORZ
-CODE_SMELL
-q	java:S112ß"FDefine and throw a dedicated exception instead of using a generic one.(æ¥¢pHüRMAJORZ
-CODE_SMELL
-y	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú≈ºŒHÆRMINORZ
-CODE_SMELL
-M
-java:S1643J"Use a StringBuilder instead.(≤ê®€¸ˇˇˇˇH¡RMINORZ
-CODE_SMELL
