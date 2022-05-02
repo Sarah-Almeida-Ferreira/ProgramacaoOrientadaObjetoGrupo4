@@ -1,24 +1,0 @@
-
-h	java:S106"9Replace this use of System.out or System.err by a logger.(‰¾ˆ¸üÿÿÿÿHaRMAJORZ
-CODE_SMELL
-c	java:S106"9Replace this use of System.out or System.err by a logger.(¦á˜³HbRMAJORZ
-CODE_SMELL
-h	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿHcRMAJORZ
-CODE_SMELL
-h	java:S106"9Replace this use of System.out or System.err by a logger.(Û²–©ÿÿÿÿÿHdRMAJORZ
-CODE_SMELL
-h	java:S106"9Replace this use of System.out or System.err by a logger.(Çã¹øÿÿÿÿHeRMAJORZ
-CODE_SMELL
-h	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿHfRMAJORZ
-CODE_SMELL
-c	java:S106"9Replace this use of System.out or System.err by a logger.(Ù”‚ĞHgRMAJORZ
-CODE_SMELL
-h	java:S106 "9Replace this use of System.out or System.err by a logger.(Í‰Œ¶ÿÿÿÿÿHhRMAJORZ
-CODE_SMELL
-h	java:S106!"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿHiRMAJORZ
-CODE_SMELL
-a
-java:S1135,"2Complete the task associated to this TODO comment.(ûöÔçüÿÿÿÿHjRINFOZ
-CODE_SMELL
-E
-java:S2119-"Save and re-use this "Random".(ü‡À„HkRCRITICALZBUG

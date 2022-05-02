@@ -1,7 +1,0 @@
-
-Э
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(†дцџщ€€€€HкRMINORZ
-CODE_SMELL
-Ґ
-java:S1130"qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.(†дцџщ€€€€HмRMINORZ
-CODE_SMELL
