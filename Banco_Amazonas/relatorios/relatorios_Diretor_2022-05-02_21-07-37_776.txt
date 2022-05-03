@@ -1,0 +1,2 @@
+Relatorio do numero de contas da regiao: RJ-BANCO DO BRASIL
+Numero de contas: 6

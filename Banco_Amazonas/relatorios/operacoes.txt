@@ -1,3 +1,3 @@
-SAQUE: conta=2001 valorSacado=1000.0
-DEPOSITO: conta=2001 valorDepositado=1000.0
-TRANSFERENCIA: contaOrigem=2001 contaDestino=2001 valorTransferido=1000.0
+SAQUE: conta=2010 valorSacado=300,00
+DEPOSITO: conta=2010 valorDepositado=500,00
+TRANSFERENCIA: contaOrigem=2010 contaDestino=2012 valorTransferido=600,00

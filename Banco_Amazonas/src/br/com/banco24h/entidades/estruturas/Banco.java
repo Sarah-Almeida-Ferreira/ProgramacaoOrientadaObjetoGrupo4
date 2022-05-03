@@ -7,6 +7,8 @@ import br.com.banco24h.entidades.Estrutura;
 import br.com.banco24h.entidades.Pessoa;
 import br.com.banco24h.entidades.pessoas.funcionarios.Presidente;
 import br.com.banco24h.enums.EnumEstrutura;
+import br.com.banco24h.sistema.Log;
+import br.com.banco24h.sistema.Parametros;
 
 public class Banco extends Estrutura{
 	private static Scanner op = new Scanner(System.in);
@@ -49,14 +51,21 @@ public class Banco extends Estrutura{
 		this.presidente = presidente;
 	}
 	
-	public static void listagemClientesBanco(Banco banco) {
-		int o;	
+	public static void listagemClientesBanco(Banco banco, Pessoa pessoa) {
+		int o;
+		String saida = "";
+		String listagem = "";
 		do {
-			System.out.println("Relatório de clientes do banco: " + banco.getNomeBanco());
-			System.out.println(Pessoa.getRelatorioListagemClientesBanco(banco));
+			System.out.println("Relatorio de clientes do banco: " + banco.getNomeBanco());
+			listagem = Pessoa.getRelatorioListagemClientesBanco(banco);
+			System.out.println(listagem);
+			saida = listagem;
 			System.out.println();
 			System.out.println("Digite [0] para retornar. ");
 			o = op.nextInt();
 		} while (o != 0);
+		String nomeArqRelatorio = Parametros.ARQUIVO_RELATORIOS_PREFIX+"_"+pessoa.getTipoPessoa().getDescricaoPrimeiraMaiuscula()+"_"+Log.getDateTimeTag()+Parametros.ARQUIVO_RELATORIOS_SUFIX;;
+		Log.addLogRelatorio(saida);
+		Log.descarregarLogRelatorio(nomeArqRelatorio);
 	}
 }

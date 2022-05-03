@@ -1,0 +1,14 @@
+Banco BANCO DO BRASIL
+Cliente: Nome: JOAO, CPF: 10000000001, Conta: 11111, agencia: 111111, regional: RJ
+Cliente: Nome: FILIPE, CPF: 10000000010, Conta: 11111, agencia: 111111, regional: RJ
+Cliente: Nome: JUDAS, CPF: 10000000015, Conta: 22222, agencia: 111111, regional: RJ
+Cliente: Nome: ANDRE, CPF: 10000000011, Conta: 11111, agencia: 222222, regional: RJ
+Cliente: Nome: PEDRO, CPF: 10000000012, Conta: 11111, agencia: 222222, regional: RJ
+Cliente: Nome: TOME, CPF: 10000000016, Conta: 22222, agencia: 222222, regional: RJ
+Cliente: Nome: TIAGO Maior, CPF: 10000000013, Conta: 11111, agencia: 222222, regional: SP
+Cliente: Nome: BARTOLOMEU, CPF: 10000000017, Conta: 22222, agencia: 222222, regional: SP
+Cliente: Nome: SIMAO, CPF: 10000000018, Conta: 22222, agencia: 222222, regional: SP
+Cliente: Nome: JUDAS Iscariotes, CPF: 10000000014, Conta: 11111, agencia: 222222, regional: SP
+Cliente: Nome: MATEUS, CPF: 10000000019, Conta: 22222, agencia: 222222, regional: SP
+Cliente: Nome: TADEU, CPF: 10000000008, Conta: 22222, agencia: 222222, regional: SP
+Total de clientes = 12

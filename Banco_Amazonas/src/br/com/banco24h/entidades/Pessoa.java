@@ -137,7 +137,7 @@ public abstract class Pessoa {
 						Pessoa.addPessoa(gerente);
 						gerente.getAgencia().setGerente(gerente);
 	            	} else {
-		            	System.out.println("#Erro#Tipo de pessoa não identificado: "+tipoPessoa);
+		            	System.out.println("#Erro#Tipo de pessoa nï¿½o identificado: "+tipoPessoa);
 					}
 		        	tipoPessoa = "";
 		        	id = 0; 
@@ -212,15 +212,18 @@ public abstract class Pessoa {
 	public static String getRelatorioListagemClientesBanco(Banco banco){
 		StringBuilder saida = new StringBuilder();
 		Cliente cliente;
+		int i = 0;
 		saida.append("Banco "+banco.getNomeBanco()+"\n");
 		for(Regional regional:banco.getRegionais()){
 			for(Agencia agencia: regional.getAgencias()){
 				for(Conta conta: agencia.getContas()){
+					i++;
 					cliente = conta.getCliente();
 					saida.append("Cliente: Nome: "+cliente.getNome()+", CPF: "+cliente.getCpf()+", Conta: "+conta.getNumeroConta()+", agencia: "+agencia.getNumeroAgencia()+", regional: "+regional.getNomeRegiao()+"\n");
 				}
 			}
 		}
+		saida.append("Total de clientes = "+i+"\n");
 		return saida.toString();
 	}
 	

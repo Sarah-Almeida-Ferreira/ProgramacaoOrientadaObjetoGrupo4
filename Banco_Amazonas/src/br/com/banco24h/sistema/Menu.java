@@ -98,7 +98,7 @@ public class Menu {
 			if (((Cliente)pessoaLogada).getTipoConta() == EnumConta.CORRENTE) {
 				System.out.println("[5]\tTributos Conta-Corrente");
 			} else if (((Cliente)pessoaLogada).getTipoConta() == EnumConta.POUPANCA) {
-				System.out.println("[5]\tSimula��o Poupanca");
+				System.out.println("[5]\tSimulacao Poupanca");
 			}
 			System.out.println("[6]\tSair");
 			o = op.nextInt();
@@ -136,7 +136,7 @@ public class Menu {
 	public void menuSaldo(Conta conta) {
 		System.out.println("\n============ MENU SALDO ============\n");
 
-		System.out.printf("Saldo dispon�vel R$ %.2f", conta.getSaldo(), "\n");
+		System.out.printf("Saldo disponivel R$ %.2f", conta.getSaldo(), "\n");
 	}
 
 	public static void menuSaque(Conta conta) {
@@ -167,7 +167,7 @@ public class Menu {
 		System.out.println("Digite o numero da Conta destino: ");
 		int contaDestino = op.nextInt();
 		if (conta.transferir(Conta.getContaById(contaDestino), valorTransferido)) {
-			Log.addLogOperacao("TRANSFERENCIA: contaOrigem="+conta.getId()+" contaDestino="+conta.getId()+ " valorTransferido="+String.format("%.2f", valorTransferido));
+			Log.addLogOperacao("TRANSFERENCIA: contaOrigem="+conta.getId()+" contaDestino="+contaDestino+ " valorTransferido="+String.format("%.2f", valorTransferido));
 			System.out.println("Seu novo saldo e de R$ " + conta.getSaldo());
 			//System.out.println("O saldo da nova conta e de R$ " + Conta.getContaById(contaDestino).getSaldo());
 		}
@@ -222,45 +222,45 @@ public class Menu {
 	private void menuGerente() {
 		int o;
 		do {
-		System.out.println("Ol�, " + pessoaLogada.getNome() + ".");
-		System.out.println("Escolha uma op��o abaixo");
-		System.out.println("[1]\tRelat�rio do n�mero de contas da ag�ncia");
-		System.out.println("[2]\tSair");
-		o = op.nextInt();
-		switch (o) {
-		case 1:
-			((Gerente)pessoaLogada).relatorioContasDaAgencia();
-			break;
-		case 2:
-			return;
-		default:
-			System.out.println("Op�ao nao identificada! Tente novamente.");
-			menuGerente();
-		}
+			System.out.println("Ola, " + pessoaLogada.getNome() + ".");
+			System.out.println("Escolha uma opcao abaixo");
+			System.out.println("[1]\tRelatorio do numero de contas da agencia");
+			System.out.println("[2]\tSair");
+			o = op.nextInt();
+			switch (o) {
+				case 1:
+					((Gerente)pessoaLogada).relatorioContasDaAgencia();
+					break;
+				case 2:
+					return;
+				default:
+					System.out.println("Opcao nao identificada! Tente novamente.");
+					menuGerente();
+			}
 		}while (o != 6);
 	}
 
 	private void menuDiretor() {
 		int o;
 		do {
-		System.out.println("Ol�, " + pessoaLogada.getNome() + "!");
-		System.out.println("Escolha uma op��o abaixo");
-		System.out.println("[1]\tRelat�rio do n�mero de contas da regi�o: ");
-		System.out.println("[2]\tRelat�rio de clientes do banco: ");
-		System.out.println("[3]\tSair: ");
-		o = op.nextInt();
-		switch (o) {
-		case 1:
-			((Diretor)pessoaLogada).relatorioContasRegiao(((Diretor) pessoaLogada).getRegional());
-			break;
-		case 2:
-			Banco.listagemClientesBanco(((Diretor)pessoaLogada).getRegional().getBanco());
-			break;
-		case 3:
-			return;
-		default:
-			System.out.println("Opcao nao identificada! Tente novamente.");
-		}
+			System.out.println("Ola, " + pessoaLogada.getNome() + "!");
+			System.out.println("Escolha uma opcao abaixo");
+			System.out.println("[1]\tRelatorio do numero de contas da regiao: ");
+			System.out.println("[2]\tRelatorio de clientes do banco: ");
+			System.out.println("[3]\tSair: ");
+			o = op.nextInt();
+			switch (o) {
+				case 1:
+					((Diretor)pessoaLogada).relatorioContasRegiao(((Diretor) pessoaLogada).getRegional());
+					break;
+				case 2:
+					Banco.listagemClientesBanco(((Diretor)pessoaLogada).getRegional().getBanco(), pessoaLogada);
+					break;
+				case 3:
+					return;
+				default:
+					System.out.println("Opcao nao identificada! Tente novamente.");
+			}
 		}while (o != 3);
 	}
 
@@ -269,29 +269,29 @@ public class Menu {
 		do {
 			System.out.println("====== Menu Presidente ======");
 			System.out.println();
-			System.out.println("Ol�, " + pessoaLogada.getNome() + "!");
+			System.out.println("Ola, " + pessoaLogada.getNome() + "!");
 			System.out.println();
-			System.out.println("Escolha uma op��o abaixo");
-			System.out.println("[1]\tRelat�rio do n�mero de contas do banco: ");
-			System.out.println("[2]\tRelat�rio de clientes do banco: ");
+			System.out.println("Escolha uma opcao abaixo");
+			System.out.println("[1]\tRelatorio do numero de contas do banco: ");
+			System.out.println("[2]\tRelatorio de clientes do banco: ");
 			System.out.println("[3]\tValor total do capital armazenado no banco: ");
 			System.out.println("[4]\tSair: ");
 			o = op.nextInt();
 			switch (o) {
-			case 1:
-				Presidente.relatorioContasBanco(((Presidente) pessoaLogada).getBanco());
-				break;
-			case 2:
-				Banco.listagemClientesBanco(((Presidente) pessoaLogada).getBanco());
-				break;
-			case 3:
-				Presidente.relatorioCapitalBanco(((Presidente) pessoaLogada).getBanco());
-				break;
-			case 4:
-				return;
-			default:
-				System.out.println("Opcao nao identificada! Tente novamente.");
-		}
+				case 1:
+					Presidente.relatorioContasBanco(((Presidente) pessoaLogada).getBanco(), pessoaLogada);
+					break;
+				case 2:
+					Banco.listagemClientesBanco(((Presidente) pessoaLogada).getBanco(), pessoaLogada);
+					break;
+				case 3:
+					Presidente.relatorioCapitalBanco(((Presidente) pessoaLogada).getBanco(), pessoaLogada);
+					break;
+				case 4:
+					return;
+				default:
+					System.out.println("Opcao nao identificada! Tente novamente.");
+			}
 		}while (o != 4);
 	}
 
